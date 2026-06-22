@@ -210,8 +210,9 @@
     </svg>
     <h2>New foods, every week</h2>
     <p>Get the “is it safe?” newsletter — one practical pet tip in your inbox.</p>
-    <form class="nl" onsubmit="event.preventDefault();this.querySelector('input').value='Thanks! 🐾';">
-      <input type="email" placeholder="you@email.com" required>
+    <form class="nl" id="nl-form" onsubmit="event.preventDefault();var i=this.querySelector('input');i.value='Thanks! 🐾';i.blur();">
+      <!-- To go live: add action="YOUR_EMAIL_SERVICE_FORM_URL" method="post" and remove the onsubmit above (see COWORK-CHECKLIST). -->
+      <input id="nl-email" type="email" name="email" aria-label="Email address" placeholder="you@email.com" autocomplete="email" required>
       <button class="btn btn-primary" type="submit">Subscribe</button>
     </form>
   </div>
