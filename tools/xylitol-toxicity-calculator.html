@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Xylitol Toxicity Calculator — Sugar-Free Gum &amp; More | CanMyPet</title>
+<meta name="description" content="Free dog xylitol toxicity calculator. Your dog ate sugar-free gum or candy? Estimate the risk by weight and amount — and know whether to call your vet now.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/xylitol-toxicity-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dog Xylitol Toxicity Calculator — Sugar-Free Gum &amp; More | CanMyPet">
+<meta property="og:description" content="Dog ate sugar-free gum? Estimate the xylitol risk by weight and amount — and whether to call your vet now.">
+<meta property="og:url" content="https://canmypethave.com/tools/xylitol-toxicity-calculator.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canmypethave.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://canmypethave.com/index.html#tools"},{"@type":"ListItem","position":3,"name":"Xylitol toxicity calculator","item":"https://canmypethave.com/tools/xylitol-toxicity-calculator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much xylitol is toxic to a dog?","acceptedAnswer":{"@type":"Answer","text":"Dangerous blood-sugar drops can start around 100 mg of xylitol per kg of body weight, and liver damage becomes a risk above about 500 mg/kg. Because the xylitol in sugar-free gum varies enormously (from under 0.1 g to over 1 g per piece), even one or two pieces can be dangerous for a small dog."}},{"@type":"Question","name":"My dog ate sugar-free gum — what do I do?","acceptedAnswer":{"@type":"Answer","text":"Treat it as urgent. Call your veterinarian or a pet poison helpline immediately (ASPCA 888-426-4435 or Pet Poison Helpline 855-764-7661). Xylitol acts fast, so do not wait for symptoms."}},{"@type":"Question","name":"Is xylitol toxic to cats?","acceptedAnswer":{"@type":"Answer","text":"Xylitol appears far less acutely toxic to cats than to dogs, but it offers no benefit and should still be kept away. This calculator is designed for dogs."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="../foods/index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="btn btn-primary" href="../index.html#search"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#tools">Tools</a> · Xylitol toxicity calculator</div>
+  <div style="max-width:720px;margin:18px 0 22px">
+    <span class="eyebrow">Free tool · dogs</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">Dog xylitol toxicity calculator</h1>
+    <p class="muted" style="font-size:18px">Your dog ate sugar-free gum, candy or something with xylitol? Estimate the risk by weight and amount. Xylitol is one of the fastest-acting dog poisons — when in doubt, call now.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="emergency" style="max-width:1160px">
+    <h3>⚠ Xylitol acts fast — don't wait for symptoms</h3>
+    <p style="margin-bottom:10px">This tool is a guide, not a diagnosis. If your dog ate anything with xylitol, call a professional right now:</p>
+    <ul style="margin-bottom:0">
+      <li><strong>ASPCA Animal Poison Control:</strong> (888) 426-4435</li>
+      <li><strong>Pet Poison Helpline:</strong> (855) 764-7661</li>
+      <li>Or call your own veterinarian. (Helplines may charge a consultation fee.)</li>
+    </ul>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div class="calc-wrap">
+    <div class="calc">
+      <div class="field">
+        <label>Dog's weight</label>
+        <div style="display:flex;gap:10px">
+          <input type="number" id="weight" value="20" min="0.5" step="0.5" style="flex:1">
+          <div class="seg" style="flex:none;width:120px">
+            <button type="button" data-wunit="lb" class="active">lb</button>
+            <button type="button" data-wunit="kg">kg</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>What did your dog eat?</label>
+        <select id="source">
+          <option value="300" data-unit="pieces" selected>Sugar-free gum — pieces</option>
+          <option value="300" data-unit="pieces">Sugar-free mints / candy — pieces</option>
+          <option value="4000" data-unit="teaspoons">Granulated xylitol — teaspoons</option>
+          <option value="1000" data-unit="grams">Xylitol — grams (if known)</option>
+        </select>
+        <p class="muted" style="font-size:13px;margin-top:8px">⚠ Gum varies hugely — some pieces have under 0.1 g, others over 1 g of xylitol. This uses a typical estimate, so if a brand is high-xylitol, assume worse.</p>
+      </div>
+
+      <div class="field" style="margin-bottom:6px">
+        <label>How many <span id="unitlbl">pieces</span>?</label>
+        <input type="number" id="amount" value="1" min="0" step="0.5">
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="muted" style="color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Estimated risk</div>
+      <div class="big" id="risk">—</div>
+      <div class="unit" id="risksub">enter the details</div>
+      <div class="row"><span>Xylitol eaten (est.)</span><strong id="mg">—</strong></div>
+      <div class="row"><span>Dose for this dog</span><strong id="dose">—</strong></div>
+      <p class="note" id="advice">This is an estimate only, not a diagnosis. Because gum xylitol varies so much, when in doubt treat it as an emergency and call your vet.</p>
+    </div>
+  </div>
+
+  <div class="aff-card" style="max-width:1160px"><div class="ai">🛡️</div><div><h4>Talk to a vet now — from home</h4><p>Xylitol works fast, so quick advice matters. An online vet can triage in minutes, and pet insurance can cover the emergency visit.</p></div><a class="btn btn-dark" rel="sponsored nofollow" href="#">See options</a></div>
+  <div class="ad-slot" style="max-width:1160px">Ad placement</div>
+
+  <div class="article" style="max-width:760px;margin-top:10px">
+    <h2>Why xylitol is so dangerous to dogs</h2>
+    <p>Xylitol is a sugar-free sweetener found in gum, mints, candy, some peanut butters, baked goods, toothpaste and supplements. In dogs it tricks the body into releasing a surge of insulin, causing a rapid, dangerous drop in blood sugar — and at higher doses it can cause liver damage. It acts within <strong>15–60 minutes</strong>, so speed matters.</p>
+    <p>Veterinarians measure the risk in milligrams of xylitol per kilogram of body weight:</p>
+    <ul>
+      <li><strong>Under ~75 mg/kg</strong> — lower risk, but still worth a call.</li>
+      <li><strong>~100 mg/kg and up</strong> — dangerous blood-sugar drop (hypoglycemia) likely — emergency.</li>
+      <li><strong>~500 mg/kg and up</strong> — risk of liver damage — serious emergency.</li>
+    </ul>
+    <p>The hard part is that the xylitol content of sugar-free gum varies enormously between brands. That's why this tool errs on the cautious side — and why, with xylitol, <strong>when in doubt you should treat it as an emergency.</strong></p>
+    <h2>What to do if your dog ate xylitol</h2>
+    <ul>
+      <li>Call your vet or a pet poison helpline immediately — do not wait for symptoms.</li>
+      <li>Note the <strong>product, brand and amount</strong>, and <strong>when</strong> it was eaten.</li>
+      <li>Do not induce vomiting unless a professional tells you to.</li>
+      <li>Watch for weakness, wobbliness, vomiting, collapse or seizures.</li>
+    </ul>
+    <p>For the full guide, see <a href="../foods/can-dogs-eat-xylitol.html" style="color:var(--pine);font-weight:600">Can dogs eat xylitol?</a></p>
+    <div class="disclaimer">This calculator provides a general estimate based on typical xylitol levels and standard veterinary thresholds. It is not a diagnosis or a substitute for professional veterinary care. Xylitol amounts vary widely — if your dog has eaten any, contact your veterinarian or a pet poison helpline.</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="dog-feeding-calculator.html">Feeding calculator</a><a href="pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../foods/can-cats-eat-milk.html">Cats &amp; milk</a></div>
+      <div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+    </div>
+    <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p>
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made by Muellers Media Works (MMW) 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var wunit='lb';
+  var w=document.getElementById('weight'), s=document.getElementById('source'), a=document.getElementById('amount');
+  var COL={safe:getComputedStyle(document.documentElement).getPropertyValue('--safe')||'#3FA66A',
+           caution:getComputedStyle(document.documentElement).getPropertyValue('--caution')||'#E8A53D',
+           danger:getComputedStyle(document.documentElement).getPropertyValue('--danger')||'#FF6B5E'};
+  function calc(){
+    var opt=s.options[s.selectedIndex];
+    document.getElementById('unitlbl').textContent=opt.getAttribute('data-unit')||'units';
+    var wv=parseFloat(w.value)||0, av=parseFloat(a.value)||0, per=parseFloat(s.value)||0;
+    var kg = wunit==='kg'? wv : wv*0.453592;
+    var risk=document.getElementById('risk'), sub=document.getElementById('risksub'), adv=document.getElementById('advice');
+    if(kg<=0||av<=0){ risk.textContent='—'; risk.style.color='#fff'; sub.textContent='enter the details';
+      document.getElementById('mg').textContent='—'; document.getElementById('dose').textContent='—';
+      adv.textContent='This is an estimate only, not a diagnosis. When in doubt, treat it as an emergency and call your vet.'; return; }
+    var mg = av*per;          // total xylitol mg
+    var dose = mg/kg;
+    document.getElementById('mg').textContent = (mg>=1000? (mg/1000).toFixed(1)+' g' : Math.round(mg)+' mg');
+    document.getElementById('dose').textContent = dose.toFixed(0)+' mg/kg';
+    var label, cls, sline, aline;
+    if(dose<75){ label='Lower risk'; cls='caution'; sline='but still call to be safe';
+      aline='This estimate is on the lower side, but xylitol amounts vary a lot and it acts fast. Call your vet or a poison helpline to be safe — especially for a small dog or if you are unsure of the amount.'; }
+    else if(dose<100){ label='Borderline — call now'; cls='caution'; sline='hypoglycemia possible';
+      aline='This is near the level where blood sugar can drop dangerously. Call your veterinarian or a pet poison helpline right away.'; }
+    else if(dose<500){ label='Hypoglycemia risk'; cls='danger'; sline='emergency';
+      aline='This dose can cause a dangerous drop in blood sugar. Treat it as an emergency — contact your vet or an emergency animal hospital now.'; }
+    else { label='Severe — liver risk'; cls='danger'; sline='dire emergency';
+      aline='This is a high dose that risks liver damage as well as low blood sugar. Go to an emergency vet immediately.'; }
+    risk.textContent=label; risk.style.color=(COL[cls]||'#fff').trim();
+    sub.textContent=sline; adv.textContent=aline;
+  }
+  document.querySelectorAll('.seg button[data-wunit]').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.seg button[data-wunit]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); wunit=b.dataset.wunit; calc(); });
+  });
+  [w,s,a].forEach(function(el){el.addEventListener('input',calc); el.addEventListener('change',calc);});
+  calc();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>

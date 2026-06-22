@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onion &amp; Garlic Toxicity Calculator for Dogs &amp; Cats | CanMyPet</title>
+<meta name="description" content="Free onion and garlic toxicity calculator for dogs and cats. Estimate the risk by species, weight, type and amount eaten — and whether to call your vet.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/onion-garlic-toxicity-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Onion &amp; Garlic Toxicity Calculator for Dogs &amp; Cats | CanMyPet">
+<meta property="og:description" content="Estimate onion or garlic poisoning risk by species, weight, type and amount — and whether to call your vet.">
+<meta property="og:url" content="https://canmypethave.com/tools/onion-garlic-toxicity-calculator.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canmypethave.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://canmypethave.com/index.html#tools"},{"@type":"ListItem","position":3,"name":"Onion & garlic toxicity calculator","item":"https://canmypethave.com/tools/onion-garlic-toxicity-calculator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much onion or garlic is toxic to a dog?","acceptedAnswer":{"@type":"Answer","text":"Toxic effects on red blood cells generally begin when a dog eats about 5 grams of onion per kilogram of body weight (roughly 0.5% of its weight). Garlic is several times more potent, and dried powders are far more concentrated than fresh. Cats are even more sensitive than dogs."}},{"@type":"Question","name":"What are the signs of onion or garlic poisoning?","acceptedAnswer":{"@type":"Answer","text":"Onion and garlic damage red blood cells, causing anemia. Signs include weakness, lethargy, pale gums, reddish or brown urine, and a fast heart rate — and they can be delayed for several days."}},{"@type":"Question","name":"My pet ate onion or garlic — what should I do?","acceptedAnswer":{"@type":"Answer","text":"Call your veterinarian or a pet poison helpline (ASPCA 888-426-4435 or Pet Poison Helpline 855-764-7661). Note the type and amount eaten. Because signs can be delayed, do not wait to see how your pet feels."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="../foods/index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="btn btn-primary" href="../index.html#search"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#tools">Tools</a> · Onion &amp; garlic toxicity calculator</div>
+  <div style="max-width:720px;margin:18px 0 22px">
+    <span class="eyebrow">Free tool · dogs &amp; cats</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">Onion &amp; garlic toxicity calculator</h1>
+    <p class="muted" style="font-size:18px">Your pet ate onion or garlic? Estimate the risk by species, weight, type and amount. Onion and garlic damage red blood cells — and the signs can be delayed for days.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="emergency" style="max-width:1160px">
+    <h3>⚠ Signs can be delayed — don't wait to see how your pet feels</h3>
+    <p style="margin-bottom:10px">This tool is a guide, not a diagnosis. If your pet ate onion or garlic, call a professional:</p>
+    <ul style="margin-bottom:0">
+      <li><strong>ASPCA Animal Poison Control:</strong> (888) 426-4435</li>
+      <li><strong>Pet Poison Helpline:</strong> (855) 764-7661</li>
+      <li>Or call your own veterinarian. (Helplines may charge a consultation fee.)</li>
+    </ul>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div class="calc-wrap">
+    <div class="calc">
+      <div class="field">
+        <label>Species</label>
+        <div class="seg">
+          <button type="button" data-sp="dog" class="active">🐶 Dog</button>
+          <button type="button" data-sp="cat">🐱 Cat</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Pet's weight</label>
+        <div style="display:flex;gap:10px">
+          <input type="number" id="weight" value="20" min="0.5" step="0.5" style="flex:1">
+          <div class="seg" style="flex:none;width:120px">
+            <button type="button" data-wunit="lb" class="active">lb</button>
+            <button type="button" data-wunit="kg">kg</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>What did your pet eat?</label>
+        <select id="source">
+          <option value="1" data-unit="grams" selected>Onion (raw or cooked) — grams</option>
+          <option value="20" data-unit="teaspoons">Onion powder — teaspoons</option>
+          <option value="15" data-unit="cloves">Garlic — cloves</option>
+          <option value="70" data-unit="teaspoons">Garlic powder — teaspoons</option>
+        </select>
+        <p class="muted" style="font-size:13px;margin-top:8px">Tip: a medium onion is about 110 g; one garlic clove is about 3 g. Dried powders are far more concentrated, so small amounts count.</p>
+      </div>
+
+      <div class="field" style="margin-bottom:6px">
+        <label>How much / how many <span id="unitlbl">grams</span>?</label>
+        <input type="number" id="amount" value="30" min="0" step="1">
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="muted" style="color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Estimated risk</div>
+      <div class="big" id="risk">—</div>
+      <div class="unit" id="risksub">enter the details</div>
+      <div class="row"><span>Onion-equivalent</span><strong id="eq">—</strong></div>
+      <div class="row"><span>Dose for this pet</span><strong id="dose">—</strong></div>
+      <p class="note" id="advice">This is an estimate only, not a diagnosis. Because signs can be delayed for days, when in doubt call your vet or a pet poison helpline.</p>
+    </div>
+  </div>
+
+  <div class="aff-card" style="max-width:1160px"><div class="ai">🛡️</div><div><h4>Talk to a vet now — from home</h4><p>Onion and garlic damage builds over days, so early advice helps. An online vet can triage quickly, and pet insurance can cover the visit.</p></div><a class="btn btn-dark" rel="sponsored nofollow" href="#">See options</a></div>
+  <div class="ad-slot" style="max-width:1160px">Ad placement</div>
+
+  <div class="article" style="max-width:760px;margin-top:10px">
+    <h2>Why onion and garlic are toxic to pets</h2>
+    <p>Onions, garlic, leeks, chives and shallots (the <em>Allium</em> family) contain compounds that damage red blood cells, leading to a type of anemia. All forms count — raw, cooked, fried, dried and powdered — and powders are the most concentrated. Cats are more sensitive than dogs, and the worrying part is that <strong>symptoms can be delayed by several days.</strong></p>
+    <p>As a rough veterinary guide, measured as grams of onion-equivalent per kilogram of body weight:</p>
+    <ul>
+      <li><strong>Under ~5 g/kg</strong> — lower risk, but worth a call, especially for cats.</li>
+      <li><strong>~5–15 g/kg</strong> — red-blood-cell damage becomes likely — call your vet.</li>
+      <li><strong>Over ~15 g/kg</strong> — significant risk of anemia — treat as an emergency.</li>
+    </ul>
+    <p>Garlic and dried powders are far stronger by weight than fresh onion, so this tool converts everything into an "onion-equivalent" and applies an extra margin for cats. Treat the result as a <strong>cautious estimate</strong>, not a verdict.</p>
+    <h2>What to do if your pet ate onion or garlic</h2>
+    <ul>
+      <li>Call your vet or a pet poison helpline — don't wait for symptoms, which can take days.</li>
+      <li>Note the <strong>type</strong> (fresh, cooked, powder) and <strong>amount</strong> eaten, and <strong>when</strong>.</li>
+      <li>Watch for weakness, pale gums, lethargy, and reddish or brown urine.</li>
+    </ul>
+    <p>For full guides, see <a href="../foods/can-dogs-eat-onion.html" style="color:var(--pine);font-weight:600">Can dogs eat onion?</a> and <a href="../foods/can-dogs-eat-garlic.html" style="color:var(--pine);font-weight:600">Can dogs eat garlic?</a></p>
+    <div class="disclaimer">This calculator provides a general estimate based on typical toxicity thresholds. It is not a diagnosis or a substitute for professional veterinary care. If your pet has eaten onion or garlic, contact your veterinarian or a pet poison helpline.</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="dog-feeding-calculator.html">Feeding calculator</a><a href="pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../foods/can-cats-eat-milk.html">Cats &amp; milk</a></div>
+      <div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+    </div>
+    <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p>
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made by Muellers Media Works (MMW) 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var wunit='lb', sp='dog';
+  var w=document.getElementById('weight'), s=document.getElementById('source'), a=document.getElementById('amount');
+  var COL={safe:getComputedStyle(document.documentElement).getPropertyValue('--safe')||'#3FA66A',
+           caution:getComputedStyle(document.documentElement).getPropertyValue('--caution')||'#E8A53D',
+           danger:getComputedStyle(document.documentElement).getPropertyValue('--danger')||'#FF6B5E'};
+  function calc(){
+    var opt=s.options[s.selectedIndex];
+    document.getElementById('unitlbl').textContent=opt.getAttribute('data-unit')||'units';
+    var wv=parseFloat(w.value)||0, av=parseFloat(a.value)||0, per=parseFloat(s.value)||0;
+    var kg = wunit==='kg'? wv : wv*0.453592;
+    var risk=document.getElementById('risk'), sub=document.getElementById('risksub'), adv=document.getElementById('advice');
+    if(kg<=0||av<=0){ risk.textContent='—'; risk.style.color='#fff'; sub.textContent='enter the details';
+      document.getElementById('eq').textContent='—'; document.getElementById('dose').textContent='—';
+      adv.textContent='This is an estimate only, not a diagnosis. Because signs can be delayed, when in doubt call your vet.'; return; }
+    var eq = av*per;                       // onion-equivalent grams
+    var dose = (eq/kg) * (sp==='cat'?2:1); // cats ~2x more sensitive (margin)
+    document.getElementById('eq').textContent = Math.round(eq)+' g';
+    document.getElementById('dose').textContent = dose.toFixed(1)+' g/kg';
+    var label, cls, sline, aline;
+    if(dose<5){ label='Lower risk'; cls='caution'; sline='but call to be safe';
+      aline='This estimate is on the lower side, but onion and garlic damage builds over days and cats are very sensitive. Call your vet or a poison helpline to be safe.'; }
+    else if(dose<15){ label='Anemia risk'; cls='danger'; sline='call your vet now';
+      aline='At this level, red-blood-cell damage becomes likely. Call your veterinarian or a pet poison helpline now — and remember signs can be delayed for days.'; }
+    else { label='High risk'; cls='danger'; sline='emergency';
+      aline='This is a significant dose with a real risk of anemia. Treat it as an emergency and contact your vet or an emergency animal hospital.'; }
+    risk.textContent=label; risk.style.color=(COL[cls]||'#fff').trim();
+    sub.textContent=sline; adv.textContent=aline;
+  }
+  document.querySelectorAll('.seg button[data-sp]').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.seg button[data-sp]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); sp=b.dataset.sp; calc(); });
+  });
+  document.querySelectorAll('.seg button[data-wunit]').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.seg button[data-wunit]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); wunit=b.dataset.wunit; calc(); });
+  });
+  [w,s,a].forEach(function(el){el.addEventListener('input',calc); el.addEventListener('change',calc);});
+  calc();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>
