@@ -10,7 +10,7 @@
       background-color: #FAF7F0;
       color: #16241F;
       padding: 40px;
-      max-width: 1200px;
+      max-width: 1250px;
       margin: 0 auto;
     }
     h1 {
@@ -47,17 +47,16 @@
     }
     .pin-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 30px;
       justify-items: center;
     }
     .pin-card {
       text-align: center;
       width: 100%;
-      max-width: 450px;
+      max-width: 380px;
     }
     .pin-card h3 {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 12px;
       color: #2FBF87;
       text-transform: uppercase;
@@ -80,79 +79,88 @@
   <p class="subtitle">Visualização dos Pins gerados para os 5 alimentos de teste em proporção 2:3 (1000x1500px).</p>
   
   
-  <div class="food-section">
-    <div class="food-title">🍫 Chocolate</div>
-    <div class="pin-grid">
-      <div class="pin-card">
-        <h3>Estilo A (Tipografia)</h3>
-        <img class="pin-img" src="chocolate-style-a.png" alt="Chocolate Pin Estilo A">
-      </div>
-      <div class="pin-card">
-        <h3>Estilo B (Com Placeholder Foto)</h3>
-        <img class="pin-img" src="chocolate-style-b.png" alt="Chocolate Pin Estilo B">
+    <div class="food-section">
+      <div class="food-title">🍫 Chocolate</div>
+      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+        <div class="pin-card">
+          <h3>Estilo A (Tipografia)</h3>
+          <img class="pin-img" src="chocolate-style-a.png" alt="Chocolate Pin Estilo A">
+        </div>
+        <div class="pin-card">
+          <h3>Estilo B (Evoluído - Fallback)</h3>
+          <img class="pin-img" src="chocolate-style-b.png" alt="Chocolate Pin Estilo B">
+        </div>
+        
       </div>
     </div>
-  </div>
-  
+    
 
-  <div class="food-section">
-    <div class="food-title">🍇 Grapes</div>
-    <div class="pin-grid">
-      <div class="pin-card">
-        <h3>Estilo A (Tipografia)</h3>
-        <img class="pin-img" src="grapes-style-a.png" alt="Grapes Pin Estilo A">
-      </div>
-      <div class="pin-card">
-        <h3>Estilo B (Com Placeholder Foto)</h3>
-        <img class="pin-img" src="grapes-style-b.png" alt="Grapes Pin Estilo B">
+    <div class="food-section">
+      <div class="food-title">🍇 Grapes</div>
+      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+        <div class="pin-card">
+          <h3>Estilo A (Tipografia)</h3>
+          <img class="pin-img" src="grapes-style-a.png" alt="Grapes Pin Estilo A">
+        </div>
+        <div class="pin-card">
+          <h3>Estilo B (Evoluído - Fallback)</h3>
+          <img class="pin-img" src="grapes-style-b.png" alt="Grapes Pin Estilo B">
+        </div>
+        
       </div>
     </div>
-  </div>
-  
+    
 
-  <div class="food-section">
-    <div class="food-title">🍌 Banana</div>
-    <div class="pin-grid">
+    <div class="food-section">
+      <div class="food-title">🍌 Banana</div>
+      <div class="pin-grid" style="grid-template-columns: 1fr 1fr 1fr">
+        <div class="pin-card">
+          <h3>Estilo A (Tipografia)</h3>
+          <img class="pin-img" src="banana-style-a.png" alt="Banana Pin Estilo A">
+        </div>
+        <div class="pin-card">
+          <h3>Estilo B (Evoluído - Foto)</h3>
+          <img class="pin-img" src="banana-style-b.png" alt="Banana Pin Estilo B">
+        </div>
+        
       <div class="pin-card">
-        <h3>Estilo A (Tipografia)</h3>
-        <img class="pin-img" src="banana-style-a.png" alt="Banana Pin Estilo A">
+        <h3 style="color:#FF6B5E">Estilo B (Foto Real Teste)</h3>
+        <img class="pin-img" src="banana-photo-test.png" alt="Banana Pin Foto Real">
       </div>
-      <div class="pin-card">
-        <h3>Estilo B (Com Placeholder Foto)</h3>
-        <img class="pin-img" src="banana-style-b.png" alt="Banana Pin Estilo B">
       </div>
     </div>
-  </div>
-  
+    
 
-  <div class="food-section">
-    <div class="food-title">💊 Acetaminophen (Tylenol)</div>
-    <div class="pin-grid">
-      <div class="pin-card">
-        <h3>Estilo A (Tipografia)</h3>
-        <img class="pin-img" src="acetaminophen-style-a.png" alt="Acetaminophen (Tylenol) Pin Estilo A">
-      </div>
-      <div class="pin-card">
-        <h3>Estilo B (Com Placeholder Foto)</h3>
-        <img class="pin-img" src="acetaminophen-style-b.png" alt="Acetaminophen (Tylenol) Pin Estilo B">
+    <div class="food-section">
+      <div class="food-title">💊 Acetaminophen (Tylenol)</div>
+      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+        <div class="pin-card">
+          <h3>Estilo A (Tipografia)</h3>
+          <img class="pin-img" src="acetaminophen-style-a.png" alt="Acetaminophen (Tylenol) Pin Estilo A">
+        </div>
+        <div class="pin-card">
+          <h3>Estilo B (Evoluído - Fallback)</h3>
+          <img class="pin-img" src="acetaminophen-style-b.png" alt="Acetaminophen (Tylenol) Pin Estilo B">
+        </div>
+        
       </div>
     </div>
-  </div>
-  
+    
 
-  <div class="food-section">
-    <div class="food-title">🪳 Cockroaches</div>
-    <div class="pin-grid">
-      <div class="pin-card">
-        <h3>Estilo A (Tipografia)</h3>
-        <img class="pin-img" src="cockroach-style-a.png" alt="Cockroaches Pin Estilo A">
-      </div>
-      <div class="pin-card">
-        <h3>Estilo B (Com Placeholder Foto)</h3>
-        <img class="pin-img" src="cockroach-style-b.png" alt="Cockroaches Pin Estilo B">
+    <div class="food-section">
+      <div class="food-title">🪳 Cockroaches</div>
+      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+        <div class="pin-card">
+          <h3>Estilo A (Tipografia)</h3>
+          <img class="pin-img" src="cockroach-style-a.png" alt="Cockroaches Pin Estilo A">
+        </div>
+        <div class="pin-card">
+          <h3>Estilo B (Evoluído - Fallback)</h3>
+          <img class="pin-img" src="cockroach-style-b.png" alt="Cockroaches Pin Estilo B">
+        </div>
+        
       </div>
     </div>
-  </div>
-  
+    
 </body>
 </html>
