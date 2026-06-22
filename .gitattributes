@@ -1,0 +1,2 @@
+# Normalize line endings — store LF in the repo (best for the Linux web server)
+* text=auto eol=lf

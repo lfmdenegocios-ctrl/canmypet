@@ -1,0 +1,11 @@
+# CanMyPet — keep dev/build files out of the deployed site
+build.js
+*.md
+foods_full.js
+*_sync.js
+*_sync.svg
+*_sync.html
+_*.txt
+*.zip
+.DS_Store
+Thumbs.db

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Age Calculator — Dog &amp; Cat Years to Human Years | CanMyPet</title>
+<meta name="description" content="Free pet age calculator. Convert your dog or cat's age into human years — adjusted by size and species, using modern veterinary aging charts.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/pet-age-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet Age Calculator — Dog &amp; Cat Years to Human Years | CanMyPet">
+<meta property="og:description" content="Convert your dog or cat's age into human years — adjusted by species and size.">
+<meta property="og:url" content="https://canmypethave.com/tools/pet-age-calculator.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="../foods/index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../index.html#trust">About</a>
+    </nav>
+    <a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#tools">Tools</a> · Pet age calculator</div>
+  <div style="max-width:700px;margin:18px 0 30px">
+    <span class="eyebrow">Free tool · dogs &amp; cats</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">How old is my pet in human years?</h1>
+    <p class="muted" style="font-size:18px">Convert your dog or cat's age into human years — adjusted by species and size, based on modern veterinary aging charts.</p>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div class="calc-wrap">
+    <div class="calc">
+      <div class="field">
+        <label>Species</label>
+        <div class="seg" id="species">
+          <button type="button" data-sp="dog" class="active">🐶 Dog</button>
+          <button type="button" data-sp="cat">🐱 Cat</button>
+        </div>
+      </div>
+
+      <div class="field" id="size-field">
+        <label>Dog size (adult weight)</label>
+        <select id="size">
+          <option value="small">Small — up to 9 kg / 20 lb</option>
+          <option value="medium" selected>Medium — 9–23 kg / 20–50 lb</option>
+          <option value="large">Large — 23–40 kg / 50–90 lb</option>
+          <option value="giant">Giant — over 40 kg / 90 lb</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:6px">
+        <label>Pet's age <span class="muted" style="font-weight:400">(in years — decimals ok)</span></label>
+        <input type="number" id="age" value="3" min="0" max="30" step="0.5">
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="muted" style="color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Human-age equivalent</div>
+      <div class="big" id="human">—</div>
+      <div class="unit">human years</div>
+      <div class="row"><span>Life stage</span><strong id="stage">—</strong></div>
+      <div class="row"><span>Your pet</span><strong id="petline">—</strong></div>
+      <p class="note">An estimate based on average aging. Breed, health and lifestyle all play a part — your vet knows best.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="max-width:1160px">Ad placement</div>
+
+  <div class="aff-card" style="max-width:1160px">
+    <div class="ai">🛡️</div>
+    <div>
+      <h4>Senior pet? Vet visits add up.</h4>
+      <p>As pets age, check-ups and treatments get more frequent. Compare pet insurance plans before the bills do.</p>
+    </div>
+    <a class="btn btn-dark" href="#">Compare plans</a>
+  </div>
+
+  <div class="article" style="max-width:760px;margin-top:10px">
+    <h2>How pet years really work</h2>
+    <p>The old “multiply by 7” rule is a myth. Pets age fast early in life, then slow down — and larger dogs age quicker than small ones. CanMyPet uses a more accurate model:</p>
+    <ul>
+      <li><strong>Year 1</strong> ≈ 15 human years</li>
+      <li><strong>Year 2</strong> adds about 9 more (≈ 24 human years)</li>
+      <li><strong>Each year after</strong> adds 4 (cats &amp; small dogs) up to 7 (giant breeds)</li>
+    </ul>
+    <p>That's why a 10-year-old Great Dane is "older" in human terms than a 10-year-old Chihuahua.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="dog-feeding-calculator.html">Feeding calculator</a><a href="pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/result.html?food=grapes">Dogs &amp; grapes</a><a href="../foods/index.html">Browse all foods</a></div>
+      <div><h5>Company</h5><a href="#">About</a><a href="#">Sources &amp; method</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made for pet parents worldwide 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var species='dog';
+  var sizeField=document.getElementById('size-field');
+  var ageEl=document.getElementById('age'), sizeEl=document.getElementById('size');
+
+  function perYear(){
+    if(species==='cat') return 4;
+    return {small:4, medium:5, large:6, giant:7}[sizeEl.value] || 5;
+  }
+  function lifeStage(human){
+    if(human<20) return 'Puppy / kitten';
+    if(human<45) return 'Young adult';
+    if(human<65) return 'Adult';
+    if(human<80) return 'Mature / senior';
+    return 'Senior / geriatric';
+  }
+  function calc(){
+    var a=parseFloat(ageEl.value); if(isNaN(a)||a<0){ a=0; }
+    var human;
+    if(a<=0) human=0;
+    else if(a<=1) human = a*15;
+    else if(a<=2) human = 15 + (a-1)*9;
+    else human = 24 + (a-2)*perYear();
+    human=Math.round(human);
+    document.getElementById('human').textContent = human;
+    document.getElementById('stage').textContent = lifeStage(human);
+    var label = species==='dog' ? (sizeEl.options[sizeEl.selectedIndex].text.split('—')[0].trim()+' dog') : 'cat';
+    document.getElementById('petline').textContent = (a%1===0?a:a.toFixed(1))+' yr '+label;
+  }
+  document.querySelectorAll('#species button').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('#species button').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active'); species=b.dataset.sp;
+      sizeField.style.display = species==='dog' ? '' : 'none';
+      calc();
+    };
+  });
+  [ageEl,sizeEl].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
+  calc();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>

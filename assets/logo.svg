@@ -1,0 +1,10 @@
+<svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Can My Pet">
+  <g fill="#2FBF87">
+    <ellipse cx="22" cy="44" rx="8.5" ry="11.5" transform="rotate(-22 22 44)"/>
+    <ellipse cx="40" cy="31" rx="9" ry="12.5" transform="rotate(-8 40 31)"/>
+    <ellipse cx="60" cy="31" rx="9" ry="12.5" transform="rotate(8 60 31)"/>
+    <ellipse cx="78" cy="44" rx="8.5" ry="11.5" transform="rotate(22 78 44)"/>
+  </g>
+  <path d="M50 52 C 33 52 24 64 28 76 C 31 86 42 92 50 95 C 58 92 69 86 72 76 C 76 64 67 52 50 52 Z" fill="none" stroke="#2FBF87" stroke-width="6" stroke-linejoin="round"/>
+  <text x="50" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="34" fill="#2FBF87">?</text>
+</svg>

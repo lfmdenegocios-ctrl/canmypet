@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Feeding Calculator — How Much Should My Dog Eat? | CanMyPet</title>
+<meta name="description" content="Free dog feeding calculator. Find out how many calories and how much food your dog needs per day based on weight, life stage and activity level.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/dog-feeding-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dog Feeding Calculator — How Much Should My Dog Eat? | CanMyPet">
+<meta property="og:description" content="Find out how much food your dog needs per day by weight, life stage and activity.">
+<meta property="og:url" content="https://canmypethave.com/tools/dog-feeding-calculator.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="../foods/index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../index.html#trust">About</a>
+    </nav>
+    <a class="btn btn-primary" href="../index.html#search"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#tools">Tools</a> · Feeding calculator</div>
+  <div style="max-width:680px;margin:18px 0 30px">
+    <span class="eyebrow">Free tool · dogs</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">How much should my dog eat?</h1>
+    <p class="muted" style="font-size:18px">Enter your dog's details for a daily calorie and portion estimate, based on standard veterinary energy formulas.</p>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div class="calc-wrap">
+    <div class="calc">
+      <div class="field">
+        <label>Dog's weight</label>
+        <div style="display:flex;gap:10px">
+          <input type="number" id="weight" value="12" min="0.5" step="0.5" style="flex:1">
+          <div class="seg" style="flex:none;width:120px">
+            <button type="button" data-unit="kg" class="active">kg</button>
+            <button type="button" data-unit="lb">lb</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Life stage &amp; activity</label>
+        <select id="stage">
+          <option value="1.6">Adult — neutered / typical</option>
+          <option value="1.8">Adult — intact / active</option>
+          <option value="1.0">Adult — weight loss</option>
+          <option value="1.4">Adult — overweight / less active</option>
+          <option value="2.5">Puppy (under 4 months)</option>
+          <option value="2.0">Puppy (4–12 months)</option>
+          <option value="3.0">Working / very active</option>
+          <option value="1.6" >Senior</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:6px">
+        <label>Food energy <span class="muted" style="font-weight:400">(kcal per 100 g — see the bag)</span></label>
+        <input type="number" id="density" value="350" min="200" max="600" step="10">
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="muted" style="color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Daily food</div>
+      <div class="big" id="grams">—</div>
+      <div class="unit">grams per day</div>
+      <div class="row"><span>Daily calories</span><strong id="kcal">—</strong></div>
+      <div class="row"><span>Resting need (RER)</span><strong id="rer">—</strong></div>
+      <div class="row"><span>Approx. cups (dry)</span><strong id="cups">—</strong></div>
+      <p class="note">Estimate only. Split into 2 meals a day. Puppies and pregnant dogs vary — always confirm with your vet.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="max-width:1160px">Ad placement</div>
+
+  <div class="article" style="max-width:760px;margin-top:10px">
+    <h2>How the calculation works</h2>
+    <p>The calculator uses the standard veterinary energy formula. First it finds your dog's <strong>Resting Energy Requirement (RER)</strong> — the calories needed at rest — then multiplies it by an activity factor to get the <strong>daily energy need</strong>:</p>
+    <ul>
+      <li><strong>RER</strong> = 70 × (body weight in kg)<sup>0.75</sup></li>
+      <li><strong>Daily calories</strong> = RER × activity factor</li>
+      <li><strong>Food grams</strong> = daily calories ÷ food energy density</li>
+    </ul>
+    <p>Because every dog and every food is different, treat the result as a starting point. Monitor your dog's body condition and adjust over a few weeks.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="dog-feeding-calculator.html">Feeding calculator</a><a href="pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/result.html?food=grapes">Dogs &amp; grapes</a><a href="../foods/result.html?food=milk&species=cat">Cats &amp; milk</a></div>
+      <div><h5>Company</h5><a href="#">About</a><a href="#">Sources &amp; method</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made for pet parents worldwide 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var unit='kg';
+  var w=document.getElementById('weight'), stage=document.getElementById('stage'), dens=document.getElementById('density');
+  function calc(){
+    var wv=parseFloat(w.value)||0;
+    var kg = unit==='kg'? wv : wv*0.453592;
+    if(kg<=0){return;}
+    var rer = 70*Math.pow(kg,0.75);
+    var factor=parseFloat(stage.value)||1.6;
+    var kcal = rer*factor;
+    var d=parseFloat(dens.value)||350;       // kcal per 100 g
+    var grams = kcal/(d/100);
+    var cups = grams/100;                     // ~100 g per cup of dry food
+    document.getElementById('grams').textContent=Math.round(grams);
+    document.getElementById('kcal').textContent=Math.round(kcal)+' kcal';
+    document.getElementById('rer').textContent=Math.round(rer)+' kcal';
+    document.getElementById('cups').textContent=cups.toFixed(1)+' cups';
+  }
+  document.querySelectorAll('.seg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.seg button').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); unit=b.dataset.unit; calc();
+    });
+  });
+  [w,stage,dens].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>

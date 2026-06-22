@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Safety Checker — Can My Dog or Cat Eat That? | CanMyPet</title>
+<meta name="description" content="Browse vet-sourced verdicts on which human foods are safe, risky or toxic for dogs and cats. Search any food for an instant answer.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/foods/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Food Safety Checker — Can My Dog or Cat Eat That? | CanMyPet">
+<meta property="og:description" content="Browse vet-sourced verdicts on which foods are safe, risky or toxic for dogs and cats.">
+<meta property="og:url" content="https://canmypethave.com/foods/">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../index.html#trust">About</a>
+    </nav>
+    <a class="btn btn-primary" href="#search"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · Food checker</div>
+  <div style="max-width:720px;margin:18px 0 8px">
+    <span class="eyebrow">Food safety checker · dogs &amp; cats</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">Can my pet eat that?</h1>
+    <p class="muted" style="font-size:18px">Search any food for an instant, vet-sourced verdict — or browse the full list below.</p>
+  </div>
+</div>
+
+<main class="container" id="search" style="padding-bottom:40px">
+  <form class="searchbar" id="food-search" autocomplete="off" style="margin:18px 0 8px">
+    <i>⌕</i>
+    <input type="text" id="food-input" placeholder="Try “chocolate”, “grapes”, “banana”, “salmon”…" aria-label="Search a food">
+    <button class="btn btn-primary" type="submit">Check</button>
+  </form>
+
+  <div class="filters">
+    <div class="seg" id="species-seg" style="max-width:240px">
+      <button type="button" data-sp="dog" class="active">🐶 Dogs</button>
+      <button type="button" data-sp="cat">🐱 Cats</button>
+    </div>
+    <div class="legend" style="margin:0">
+      <span class="chip safe" data-v="safe"><span class="swatch"></span> Safe</span>
+      <span class="chip caution" data-v="caution"><span class="swatch"></span> Moderation</span>
+      <span class="chip danger" data-v="danger"><span class="swatch"></span> Never</span>
+      <span class="chip" data-v="all" style="background:#eee;color:#444"><span class="swatch" style="background:#999"></span> All</span>
+    </div>
+  </div>
+
+  <div class="food-grid" id="grid"></div>
+  <p class="muted" id="empty" style="display:none;text-align:center;padding:30px">No foods match that filter.</p>
+
+  <div class="ad-slot" style="max-width:1160px;margin-top:36px">Ad placement</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="result.html?food=grapes">Dogs &amp; grapes</a><a href="result.html?food=cheese&species=cat">Cats &amp; cheese</a></div>
+      <div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made for pet parents worldwide 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/foods.js"></script>
+<script>
+window.__PETIBLE_CUSTOM_SEARCH = true; // this page handles its own search/filtering
+(function(){
+  var species='dog', vfilter='all', q='';
+  var grid=document.getElementById('grid'), empty=document.getElementById('empty');
+  var VWORD={safe:'Yes',caution:'Moderation',danger:'No'};
+
+  function hrefFor(f){ return (f.rich && species==='dog') ? f.rich : 'result.html?food='+f.slug+'&species='+species; }
+
+  function render(){
+    grid.innerHTML='';
+    var list=window.PETIBLE.all().filter(function(f){
+      var sp=f[species]; if(!sp) return false;
+      if(vfilter!=='all' && sp.v!==vfilter) return false;
+      if(q && f.name.toLowerCase().indexOf(q)===-1) return false;
+      return true;
+    });
+    empty.style.display = list.length ? 'none' : 'block';
+    list.forEach(function(f){
+      var sp=f[species];
+      var a=document.createElement('a'); a.className='fcard '+sp.v; a.href=hrefFor(f);
+      a.innerHTML='<span class="femoji">'+f.emoji+'</span>'+
+        '<span class="fname">'+f.name+'</span>'+
+        '<span class="fverdict '+sp.v+'">'+VWORD[sp.v]+'</span>';
+      grid.appendChild(a);
+    });
+  }
+
+  document.querySelectorAll('#species-seg button').forEach(function(b){
+    b.onclick=function(){ document.querySelectorAll('#species-seg button').forEach(function(x){x.classList.remove('active')}); b.classList.add('active'); species=b.dataset.sp; render(); };
+  });
+  document.querySelectorAll('.legend .chip').forEach(function(c){
+    c.onclick=function(){ document.querySelectorAll('.legend .chip').forEach(function(x){x.style.outline='none'}); c.style.outline='2px solid var(--pine)'; c.style.outlineOffset='2px'; vfilter=c.dataset.v; render(); };
+  });
+  var input=document.getElementById('food-input');
+  input.addEventListener('input',function(){ q=input.value.toLowerCase().trim(); render(); });
+  document.getElementById('food-search').addEventListener('submit',function(e){
+    e.preventDefault();
+    var hits=window.PETIBLE.search(input.value);
+    if(hits.length){ location.href=hrefFor(hits[0]); }
+  });
+  render();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>

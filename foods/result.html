@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food checker | CanMyPet</title>
+<meta name="description" content="Can my dog or cat eat this? Instant, vet-sourced verdicts with safe amounts and warning signs.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script id="ld" type="application/ld+json"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../index.html#trust">About</a>
+    </nav>
+    <a class="btn btn-primary" href="index.html"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="index.html">Food checker</a> · <span id="crumb">Result</span></div>
+</div>
+
+<main class="container" id="app"><!-- rendered by JS --></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="index.html">Browse all foods</a><a href="can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="result.html?food=grapes">Dogs &amp; grapes</a></div>
+      <div><h5>Company</h5><a href="#">About</a><a href="#">Sources &amp; method</a><a href="#">Contact</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made for pet parents worldwide 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/foods.js"></script>
+<script>
+(function(){
+  function qp(k){ return new URLSearchParams(location.search).get(k); }
+  var slug = qp('food') || '';
+  var species = (qp('species')==='cat') ? 'cat' : 'dog';
+  var food = window.PETIBLE.find(slug);
+  var app = document.getElementById('app');
+
+  var VLABEL = { safe:'Safe to feed', caution:'In moderation', danger:'Never feed' };
+  var VICON  = { safe:'✓', caution:'!', danger:'✕' };
+  var VWORD  = { safe:'Yes', caution:'In moderation', danger:'No' };
+
+  // Chocolate has a hand-crafted premium page — send dog traffic there.
+  if(food && food.rich && species==='dog'){ location.replace(food.rich); return; }
+
+  if(!food){
+    document.getElementById('crumb').textContent = 'Not found';
+    app.innerHTML =
+      '<div class="verdict caution" style="margin-top:22px"><div class="badge">?</div><div>'+
+      '<h1>We haven’t added that food yet</h1>'+
+      '<p class="answer">It’s on our list.</p>'+
+      '<p class="muted">CanMyPet is growing every week. In the meantime, never feed your pet anything you’re unsure about, and ask your vet.</p>'+
+      '</div></div>'+
+      '<div class="article"><h2>Try one of these</h2></div><div class="related" id="sugg"></div>';
+    renderRelated('sugg', '', 9);
+    return;
+  }
+
+  var sp = food[species];
+  var other = species==='dog' ? 'cat' : 'dog';
+  var spName = species==='dog' ? 'dogs' : 'cats';
+  var title = 'Can '+spName+' eat '+food.name.toLowerCase()+'?';
+  document.title = title.charAt(0).toUpperCase()+title.slice(1)+' | CanMyPet';
+  document.getElementById('crumb').textContent = (species==='dog'?'Dogs':'Cats')+' & '+food.name.toLowerCase();
+
+  var facts = '<div class="fact"><div class="k">Verdict</div><div class="val" style="color:var(--'+sp.v+')">'+VLABEL[sp.v]+'</div></div>';
+  if(sp.toxic) facts += '<div class="fact"><div class="k">Key concern</div><div class="val">'+sp.toxic+'</div></div>';
+  if(sp.amount) facts += '<div class="fact"><div class="k">Safe amount</div><div class="val" style="font-size:18px">'+sp.amount+'</div></div>';
+  facts += '<div class="fact"><div class="k">Species</div><div class="val">'+(species==='dog'?'🐶 Dogs':'🐱 Cats')+'</div></div>';
+
+  var emergency = '';
+  if(sp.v==='danger'){
+    emergency = '<div class="emergency"><h3>⚠ If your '+(species)+' ate '+food.name.toLowerCase()+'</h3>'+
+      '<p style="margin-bottom:10px">Act immediately — don’t wait for symptoms.</p><ul style="margin-bottom:0">'+
+      '<li>Call your vet or a pet poison helpline right away.</li>'+
+      '<li>Note <strong>how much</strong> was eaten and <strong>when</strong>.</li>'+
+      '<li>Do not induce vomiting unless a professional tells you to.</li></ul></div>';
+  }
+  var signs = '';
+  if(sp.signs && sp.signs.length){
+    signs = '<h3>Warning signs to watch for</h3><ul>'+ sp.signs.map(function(s){return '<li>'+s+'</li>';}).join('') +'</ul>';
+  }
+
+  var affTitle = sp.v==='danger' ? 'Poisoning emergencies are expensive' : 'Be ready for the unexpected';
+  var affText  = sp.v==='danger'
+    ? 'A single toxicity visit can cost hundreds. Compare pet insurance plans that cover accidents and poisoning.'
+    : 'Compare top-rated pet insurance plans covering accidents, illness and emergencies.';
+
+  app.innerHTML =
+    '<div class="verdict '+sp.v+'" style="margin-top:22px">'+
+      '<div class="badge">'+VICON[sp.v]+'</div>'+
+      '<div><h1>'+cap(title)+'</h1>'+
+        '<p class="answer">'+VWORD[sp.v]+' — '+VLABEL[sp.v].toLowerCase()+(species==='dog'?' to dogs.':' to cats.')+'</p>'+
+        '<p class="muted">'+sp.why+'</p>'+
+        '<div class="seg" style="max-width:240px;margin-top:16px">'+
+          '<button type="button" id="tg-dog" class="'+(species==='dog'?'active':'')+'">🐶 Dogs</button>'+
+          '<button type="button" id="tg-cat" class="'+(species==='cat'?'active':'')+'">🐱 Cats</button>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="article">'+
+      '<div class="fact-grid">'+facts+'</div>'+
+      '<h2>Why this verdict for '+spName+'</h2><p>'+sp.why+'</p>'+
+      signs + emergency +
+      '<div class="aff-card"><div class="ai">🛡️</div><div><h4>'+affTitle+'</h4><p>'+affText+'</p></div><a class="btn btn-dark" href="#">Compare plans</a></div>'+
+      '<div class="ad-slot">Ad placement</div>'+
+      '<h2>Frequently asked questions</h2><div class="faq">'+
+        '<details open><summary>Can '+spName+' eat '+food.name.toLowerCase()+'?</summary><p>'+VWORD[sp.v]+'. '+sp.why+'</p></details>'+
+        '<details><summary>How much '+food.name.toLowerCase()+' is okay'+(sp.v==='danger'?'':' for '+spName)+'?</summary><p>'+(sp.amount?('Recommended: '+sp.amount+'.'):'None — this food is not safe and should be avoided entirely.')+' When in doubt, ask your vet.</p></details>'+
+        '<details><summary>Is it the same for '+(other==='dog'?'dogs':'cats')+'?</summary><p>Verdicts can differ between species. <a href="result.html?food='+food.slug+'&species='+other+'" style="color:var(--pine);font-weight:600">See the '+(other==='dog'?'dog':'cat')+' answer for '+food.name.toLowerCase()+' →</a></p></details>'+
+      '</div>'+
+      '<h2>Related foods</h2><div class="related" id="rel"></div>'+
+      '<div class="disclaimer">CanMyPet provides general information reviewed against trusted sources (ASPCA, AKC, Pet Poison Helpline). It is not a substitute for professional veterinary advice. When in doubt, always contact your veterinarian.</div>'+
+    '</div>';
+
+  document.getElementById('tg-dog').onclick=function(){ location.href='result.html?food='+food.slug+'&species=dog'; };
+  document.getElementById('tg-cat').onclick=function(){ location.href='result.html?food='+food.slug+'&species=cat'; };
+
+  renderRelated('rel', food.slug, 6);
+
+  // dynamic FAQ schema
+  var ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":cap(title),"acceptedAnswer":{"@type":"Answer","text":VWORD[sp.v]+'. '+sp.why}}
+  ]};
+  document.getElementById('ld').textContent = JSON.stringify(ld);
+
+  function renderRelated(id, exclude, n){
+    var box=document.getElementById(id); if(!box) return;
+    window.PETIBLE.related(exclude, n).forEach(function(f){
+      var v=f[species] ? f[species].v : 'caution';
+      var a=document.createElement('a'); a.className='rel';
+      a.href = (f.rich && species==='dog') ? f.rich : 'result.html?food='+f.slug+'&species='+species;
+      a.innerHTML='<span class="v" style="background:var(--'+v+')"></span>'+f.emoji+' '+f.name;
+      box.appendChild(a);
+    });
+  }
+  function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>
