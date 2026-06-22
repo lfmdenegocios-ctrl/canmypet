@@ -9,3 +9,5 @@ _*.txt
 *.zip
 .DS_Store
 Thumbs.db
+pin-engine/
+

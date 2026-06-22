@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CanMyPet - Pinterest Pins Preview Gallery</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #FAF7F0;
+      color: #16241F;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #0E5A41;
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    p.subtitle {
+      color: #5d6b63;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+    .food-section {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 15px rgba(14,90,65,0.05);
+      border: 1px solid rgba(14,90,65,0.08);
+    }
+    .food-title {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #0E5A41;
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E4F6EC;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      justify-items: center;
+    }
+    .pin-card {
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+    }
+    .pin-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #2FBF87;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .pin-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .pin-img:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <h1>Pinterest Pins Preview Gallery 🐾</h1>
+  <p class="subtitle">Visualização dos Pins gerados para os 5 alimentos de teste em proporção 2:3 (1000x1500px).</p>
+  
+  
+  <div class="food-section">
+    <div class="food-title">🍫 Chocolate</div>
+    <div class="pin-grid">
+      <div class="pin-card">
+        <h3>Estilo A (Tipografia)</h3>
+        <img class="pin-img" src="chocolate-style-a.png" alt="Chocolate Pin Estilo A">
+      </div>
+      <div class="pin-card">
+        <h3>Estilo B (Com Placeholder Foto)</h3>
+        <img class="pin-img" src="chocolate-style-b.png" alt="Chocolate Pin Estilo B">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="food-section">
+    <div class="food-title">🍇 Grapes</div>
+    <div class="pin-grid">
+      <div class="pin-card">
+        <h3>Estilo A (Tipografia)</h3>
+        <img class="pin-img" src="grapes-style-a.png" alt="Grapes Pin Estilo A">
+      </div>
+      <div class="pin-card">
+        <h3>Estilo B (Com Placeholder Foto)</h3>
+        <img class="pin-img" src="grapes-style-b.png" alt="Grapes Pin Estilo B">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="food-section">
+    <div class="food-title">🍌 Banana</div>
+    <div class="pin-grid">
+      <div class="pin-card">
+        <h3>Estilo A (Tipografia)</h3>
+        <img class="pin-img" src="banana-style-a.png" alt="Banana Pin Estilo A">
+      </div>
+      <div class="pin-card">
+        <h3>Estilo B (Com Placeholder Foto)</h3>
+        <img class="pin-img" src="banana-style-b.png" alt="Banana Pin Estilo B">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="food-section">
+    <div class="food-title">💊 Acetaminophen (Tylenol)</div>
+    <div class="pin-grid">
+      <div class="pin-card">
+        <h3>Estilo A (Tipografia)</h3>
+        <img class="pin-img" src="acetaminophen-style-a.png" alt="Acetaminophen (Tylenol) Pin Estilo A">
+      </div>
+      <div class="pin-card">
+        <h3>Estilo B (Com Placeholder Foto)</h3>
+        <img class="pin-img" src="acetaminophen-style-b.png" alt="Acetaminophen (Tylenol) Pin Estilo B">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="food-section">
+    <div class="food-title">🪳 Cockroaches</div>
+    <div class="pin-grid">
+      <div class="pin-card">
+        <h3>Estilo A (Tipografia)</h3>
+        <img class="pin-img" src="cockroach-style-a.png" alt="Cockroaches Pin Estilo A">
+      </div>
+      <div class="pin-card">
+        <h3>Estilo B (Com Placeholder Foto)</h3>
+        <img class="pin-img" src="cockroach-style-b.png" alt="Cockroaches Pin Estilo B">
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
