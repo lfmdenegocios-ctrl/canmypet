@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Chocolate Toxicity Calculator — Is It an Emergency? | CanMyPet</title>
+<meta name="description" content="Free dog chocolate toxicity calculator. Enter your dog's weight, the chocolate type and amount eaten to estimate the risk level — and know whether to call your vet now.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/chocolate-toxicity-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dog Chocolate Toxicity Calculator — Is It an Emergency? | CanMyPet">
+<meta property="og:description" content="Estimate how dangerous the chocolate your dog ate is, by weight, type and amount — and whether to call your vet now.">
+<meta property="og:url" content="https://canmypethave.com/tools/chocolate-toxicity-calculator.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canmypethave.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://canmypethave.com/index.html#tools"},{"@type":"ListItem","position":3,"name":"Chocolate toxicity calculator","item":"https://canmypethave.com/tools/chocolate-toxicity-calculator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much chocolate is toxic to a dog?","acceptedAnswer":{"@type":"Answer","text":"Toxicity depends on the dog's weight and the type of chocolate. Signs often begin around 20 mg of theobromine per kg of body weight; 40–60 mg/kg can cause heart problems, and over about 60 mg/kg can cause seizures. Darker chocolate is far more dangerous than milk chocolate."}},{"@type":"Question","name":"What should I do if my dog ate chocolate?","acceptedAnswer":{"@type":"Answer","text":"Call your veterinarian or a pet poison helpline right away (ASPCA Animal Poison Control 888-426-4435 or Pet Poison Helpline 855-764-7661). Note how much and what type was eaten and when. Do not wait for symptoms and do not induce vomiting unless a professional tells you to."}},{"@type":"Question","name":"Is white chocolate dangerous to dogs?","acceptedAnswer":{"@type":"Answer","text":"White chocolate contains very little theobromine, so true theobromine poisoning is unlikely, but it is high in fat and sugar and can still cause stomach upset or pancreatitis."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+    <nav class="nav-links">
+      <a href="../index.html#tools">Tools</a>
+      <a href="../foods/index.html">Food checker</a>
+      <a href="../index.html#how">How it works</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <a class="btn btn-primary" href="../index.html#search"><i style="font-style:normal">⌕</i> Check a food</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#tools">Tools</a> · Chocolate toxicity calculator</div>
+  <div style="max-width:720px;margin:18px 0 22px">
+    <span class="eyebrow">Free tool · dogs</span>
+    <h1 style="font-size:clamp(32px,5vw,52px);margin:10px 0 12px">Dog chocolate toxicity calculator</h1>
+    <p class="muted" style="font-size:18px">Your dog ate chocolate? Enter the details below for an instant risk estimate based on theobromine — the toxin in chocolate — and find out whether to call your vet now.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="emergency" style="max-width:1160px">
+    <h3>⚠ If your dog ate chocolate, don't wait for symptoms</h3>
+    <p style="margin-bottom:10px">This tool is a guide, not a diagnosis. If in any doubt, call a professional right now:</p>
+    <ul style="margin-bottom:0">
+      <li><strong>ASPCA Animal Poison Control:</strong> (888) 426-4435</li>
+      <li><strong>Pet Poison Helpline:</strong> (855) 764-7661</li>
+      <li>Or call your own veterinarian. (Helplines may charge a consultation fee.)</li>
+    </ul>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div class="calc-wrap">
+    <div class="calc">
+      <div class="field">
+        <label>Dog's weight</label>
+        <div style="display:flex;gap:10px">
+          <input type="number" id="weight" value="20" min="0.5" step="0.5" style="flex:1">
+          <div class="seg" style="flex:none;width:120px">
+            <button type="button" data-wunit="lb" class="active">lb</button>
+            <button type="button" data-wunit="kg">kg</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Type of chocolate</label>
+        <select id="ctype">
+          <option value="0.25">White chocolate</option>
+          <option value="2" selected>Milk chocolate</option>
+          <option value="5.5">Semi-sweet chocolate chips</option>
+          <option value="10">Dark chocolate (70%+)</option>
+          <option value="15">Baking / unsweetened chocolate</option>
+          <option value="22">Cocoa powder</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:6px">
+        <label>Amount eaten</label>
+        <div style="display:flex;gap:10px">
+          <input type="number" id="amount" value="2" min="0" step="0.5" style="flex:1">
+          <div class="seg" style="flex:none;width:120px">
+            <button type="button" data-aunit="oz" class="active">oz</button>
+            <button type="button" data-aunit="g">g</button>
+          </div>
+        </div>
+        <p class="muted" style="font-size:13px;margin-top:8px">Tip: a standard milk chocolate bar is about 1.5 oz (43 g). When unsure, estimate high.</p>
+      </div>
+    </div>
+
+    <div class="result">
+      <div class="muted" style="color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase">Estimated risk</div>
+      <div class="big" id="risk">—</div>
+      <div class="unit" id="risksub">enter the details</div>
+      <div class="row"><span>Theobromine eaten</span><strong id="mg">—</strong></div>
+      <div class="row"><span>Dose for this dog</span><strong id="dose">—</strong></div>
+      <p class="note" id="advice">This is an estimate only, not a diagnosis. When in doubt, always call your vet or a pet poison helpline.</p>
+    </div>
+  </div>
+
+  <div class="aff-card" style="max-width:1160px"><div class="ai">🛡️</div><div><h4>Talk to a vet now — from home</h4><p>An online vet can tell you in minutes whether this is an emergency. Pet insurance can also cover poisoning visits, which often cost hundreds.</p></div><a class="btn btn-dark" rel="sponsored nofollow" href="#">See options</a></div>
+  <div class="ad-slot" style="max-width:1160px">Ad placement</div>
+
+  <div class="article" style="max-width:760px;margin-top:10px">
+    <h2>How chocolate poisoning works in dogs</h2>
+    <p>Chocolate contains <strong>theobromine</strong> (and some caffeine), stimulants that dogs break down much more slowly than people. The danger depends on three things: <strong>how much</strong> was eaten, <strong>what type</strong> of chocolate, and <strong>how big</strong> your dog is. Darker, more bitter chocolate has far more theobromine than milk chocolate.</p>
+    <p>As a rough guide used by veterinarians, problems are measured in milligrams of theobromine per kilogram of body weight:</p>
+    <ul>
+      <li><strong>Under 20 mg/kg</strong> — mild or no signs likely, but still worth a call.</li>
+      <li><strong>20–40 mg/kg</strong> — stomach upset, restlessness and a racing heart can appear.</li>
+      <li><strong>40–60 mg/kg</strong> — heart-rhythm problems become a real risk; call your vet now.</li>
+      <li><strong>Over 60 mg/kg</strong> — tremors and seizures are possible; treat as an emergency.</li>
+    </ul>
+    <p>Because chocolate recipes vary and every dog is different, this calculator gives a <strong>cautious estimate</strong>, not a verdict. Puppies, seniors and dogs with heart conditions are more vulnerable. When you're unsure of the amount, assume the worst and call.</p>
+    <h2>What to do if your dog ate chocolate</h2>
+    <ul>
+      <li>Call your vet or a pet poison helpline right away — don't wait for symptoms.</li>
+      <li>Note <strong>how much</strong> and <strong>what type</strong> was eaten, and <strong>when</strong>.</li>
+      <li>Do not induce vomiting unless a professional tells you to.</li>
+      <li>Watch for vomiting, restlessness, a racing heart, tremors or seizures.</li>
+    </ul>
+    <p>For the full guide, see <a href="../foods/can-dogs-eat-chocolate.html" style="color:var(--pine);font-weight:600">Can dogs eat chocolate?</a></p>
+    <div class="disclaimer">This calculator provides a general estimate based on typical theobromine levels and standard veterinary thresholds. It is not a diagnosis or a substitute for professional veterinary care. If your dog has eaten chocolate, contact your veterinarian or a pet poison helpline.</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+        <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p>
+      </div>
+      <div><h5>Tools</h5><a href="chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="dog-feeding-calculator.html">Feeding calculator</a><a href="pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+      <div><h5>Foods</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../foods/can-cats-eat-milk.html">Cats &amp; milk</a></div>
+      <div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div>
+    </div>
+    <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p>
+      <span>© 2026 CanMyPet. For information only — not veterinary advice.</span>
+      <span>Made by Muellers Media Works (MMW) 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var wunit='lb', aunit='oz';
+  var w=document.getElementById('weight'), t=document.getElementById('ctype'), a=document.getElementById('amount');
+  var COL={safe:getComputedStyle(document.documentElement).getPropertyValue('--safe')||'#3FA66A',
+           caution:getComputedStyle(document.documentElement).getPropertyValue('--caution')||'#E8A53D',
+           danger:getComputedStyle(document.documentElement).getPropertyValue('--danger')||'#FF6B5E'};
+  function calc(){
+    var wv=parseFloat(w.value)||0, av=parseFloat(a.value)||0, per=parseFloat(t.value)||0;
+    var kg = wunit==='kg'? wv : wv*0.453592;
+    var g  = aunit==='g'? av : av*28.3495;
+    var risk=document.getElementById('risk'), sub=document.getElementById('risksub'),
+        adv=document.getElementById('advice');
+    if(kg<=0||g<=0){ risk.textContent='—'; risk.style.color='#fff'; sub.textContent='enter the details';
+      document.getElementById('mg').textContent='—'; document.getElementById('dose').textContent='—';
+      adv.textContent='This is an estimate only, not a diagnosis. When in doubt, always call your vet or a pet poison helpline.'; return; }
+    var mg = g*per;                 // total theobromine mg
+    var dose = mg/kg;               // mg per kg
+    document.getElementById('mg').textContent = Math.round(mg)+' mg';
+    document.getElementById('dose').textContent = dose.toFixed(0)+' mg/kg';
+    var label, cls, sline, aline;
+    if(dose<20){ label='Low risk'; cls='safe'; sline='likely mild or no signs';
+      aline='Probably a low dose, but stomach upset is still possible — and white/milk chocolate is fatty. Watch your dog and call your vet or a poison helpline if you are unsure of the amount, or if your dog is a puppy, senior or has health issues.'; }
+    else if(dose<40){ label='Mild toxicity'; cls='caution'; sline='call your vet for advice';
+      aline='At this dose, vomiting, diarrhea, restlessness and a faster heart rate can appear. Call your vet or a pet poison helpline now to be safe.'; }
+    else if(dose<60){ label='Moderate — call now'; cls='caution'; sline='heart-rhythm risk';
+      aline='This dose can cause heart-rhythm problems. Call your veterinarian or a pet poison helpline right away — do not wait for symptoms.'; }
+    else { label='Severe — emergency'; cls='danger'; sline='go to a vet immediately';
+      aline='This is a potentially dangerous dose — tremors and seizures are possible. Treat this as an emergency: contact your vet or an emergency animal hospital immediately.'; }
+    risk.textContent=label; risk.style.color=(COL[cls]||'#fff').trim();
+    sub.textContent=sline; adv.textContent=aline;
+  }
+  document.querySelectorAll('.seg button[data-wunit]').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.seg button[data-wunit]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); wunit=b.dataset.wunit; calc(); });
+  });
+  document.querySelectorAll('.seg button[data-aunit]').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.seg button[data-aunit]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); aunit=b.dataset.aunit; calc(); });
+  });
+  [w,t,a].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+<script src="../assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="../assets/anim.js"></script>
+</body>
+</html>
