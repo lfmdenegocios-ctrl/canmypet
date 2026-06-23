@@ -10,7 +10,7 @@
       background-color: #FAF7F0;
       color: #16241F;
       padding: 40px;
-      max-width: 1250px;
+      max-width: 1320px;
       margin: 0 auto;
     }
     h1 {
@@ -47,20 +47,17 @@
     }
     .pin-grid {
       display: grid;
-      gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
       justify-items: center;
     }
-    .pin-card {
-      text-align: center;
-      width: 100%;
-      max-width: 380px;
-    }
+    .pin-card { text-align: center; width: 100%; }
     .pin-card h3 {
-      font-size: 16px;
-      margin-bottom: 12px;
+      font-size: 14px;
+      margin-bottom: 10px;
       color: #2FBF87;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
     }
     .pin-img {
       width: 100%;
@@ -69,98 +66,4147 @@
       border: 1px solid rgba(0,0,0,0.05);
       transition: transform 0.2s;
     }
-    .pin-img:hover {
-      transform: scale(1.02);
-    }
+    .pin-img:hover { transform: scale(1.03); }
+    @media (max-width: 900px){ .pin-grid{ grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
   <h1>Pinterest Pins Preview Gallery 🐾</h1>
-  <p class="subtitle">Visualização dos Pins gerados para os 5 alimentos de teste em proporção 2:3 (1000x1500px).</p>
+  <p class="subtitle">Teste A/B: Estilo A (tipografia) × Estilo B (foto) × Copy Gancho × Copy Pergunta — 2:3 (1000×1500px).</p>
+
   
-  
     <div class="food-section">
-      <div class="food-title">🍫 Chocolate</div>
-      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+      <div class="food-title">🍫 Chocolate — 🐶 Dog</div>
+      <div class="pin-grid">
+        
         <div class="pin-card">
-          <h3>Estilo A (Tipografia)</h3>
-          <img class="pin-img" src="chocolate-style-a.png" alt="Chocolate Pin Estilo A">
-        </div>
-        <div class="pin-card">
-          <h3>Estilo B (Evoluído - Fallback)</h3>
-          <img class="pin-img" src="chocolate-style-b.png" alt="Chocolate Pin Estilo B">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="chocolate-dog-a-hook.jpg" alt="Chocolate — A · Gancho">
         </div>
         
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="chocolate-dog-a-question.jpg" alt="Chocolate — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="chocolate-dog-b-hook.jpg" alt="Chocolate — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="chocolate-dog-b-question.jpg" alt="Chocolate — B · Pergunta">
+        </div>
       </div>
     </div>
-    
 
     <div class="food-section">
-      <div class="food-title">🍇 Grapes</div>
-      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+      <div class="food-title">🍫 Chocolate — 🐱 Cat</div>
+      <div class="pin-grid">
+        
         <div class="pin-card">
-          <h3>Estilo A (Tipografia)</h3>
-          <img class="pin-img" src="grapes-style-a.png" alt="Grapes Pin Estilo A">
-        </div>
-        <div class="pin-card">
-          <h3>Estilo B (Evoluído - Fallback)</h3>
-          <img class="pin-img" src="grapes-style-b.png" alt="Grapes Pin Estilo B">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="chocolate-cat-a-hook.jpg" alt="Chocolate — A · Gancho">
         </div>
         
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="chocolate-cat-a-question.jpg" alt="Chocolate — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="chocolate-cat-b-hook.jpg" alt="Chocolate — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="chocolate-cat-b-question.jpg" alt="Chocolate — B · Pergunta">
+        </div>
       </div>
     </div>
-    
 
     <div class="food-section">
-      <div class="food-title">🍌 Banana</div>
-      <div class="pin-grid" style="grid-template-columns: 1fr 1fr 1fr">
+      <div class="food-title">🍇 Grapes — 🐶 Dog</div>
+      <div class="pin-grid">
+        
         <div class="pin-card">
-          <h3>Estilo A (Tipografia)</h3>
-          <img class="pin-img" src="banana-style-a.png" alt="Banana Pin Estilo A">
-        </div>
-        <div class="pin-card">
-          <h3>Estilo B (Evoluído - Foto)</h3>
-          <img class="pin-img" src="banana-style-b.png" alt="Banana Pin Estilo B">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="grapes-dog-a-hook.jpg" alt="Grapes — A · Gancho">
         </div>
         
-      <div class="pin-card">
-        <h3 style="color:#FF6B5E">Estilo B (Foto Real Teste)</h3>
-        <img class="pin-img" src="banana-photo-test.png" alt="Banana Pin Foto Real">
-      </div>
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="grapes-dog-a-question.jpg" alt="Grapes — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="grapes-dog-b-hook.jpg" alt="Grapes — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="grapes-dog-b-question.jpg" alt="Grapes — B · Pergunta">
+        </div>
       </div>
     </div>
-    
 
     <div class="food-section">
-      <div class="food-title">💊 Acetaminophen (Tylenol)</div>
-      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+      <div class="food-title">🍇 Grapes — 🐱 Cat</div>
+      <div class="pin-grid">
+        
         <div class="pin-card">
-          <h3>Estilo A (Tipografia)</h3>
-          <img class="pin-img" src="acetaminophen-style-a.png" alt="Acetaminophen (Tylenol) Pin Estilo A">
-        </div>
-        <div class="pin-card">
-          <h3>Estilo B (Evoluído - Fallback)</h3>
-          <img class="pin-img" src="acetaminophen-style-b.png" alt="Acetaminophen (Tylenol) Pin Estilo B">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="grapes-cat-a-hook.jpg" alt="Grapes — A · Gancho">
         </div>
         
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="grapes-cat-a-question.jpg" alt="Grapes — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="grapes-cat-b-hook.jpg" alt="Grapes — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="grapes-cat-b-question.jpg" alt="Grapes — B · Pergunta">
+        </div>
       </div>
     </div>
-    
 
     <div class="food-section">
-      <div class="food-title">🪳 Cockroaches</div>
-      <div class="pin-grid" style="grid-template-columns: 1fr 1fr">
+      <div class="food-title">🍇 Raisins — 🐶 Dog</div>
+      <div class="pin-grid">
+        
         <div class="pin-card">
-          <h3>Estilo A (Tipografia)</h3>
-          <img class="pin-img" src="cockroach-style-a.png" alt="Cockroaches Pin Estilo A">
-        </div>
-        <div class="pin-card">
-          <h3>Estilo B (Evoluído - Fallback)</h3>
-          <img class="pin-img" src="cockroach-style-b.png" alt="Cockroaches Pin Estilo B">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="raisins-dog-a-hook.jpg" alt="Raisins — A · Gancho">
         </div>
         
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="raisins-dog-a-question.jpg" alt="Raisins — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="raisins-dog-b-hook.jpg" alt="Raisins — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="raisins-dog-b-question.jpg" alt="Raisins — B · Pergunta">
+        </div>
       </div>
     </div>
-    
+
+    <div class="food-section">
+      <div class="food-title">🍇 Raisins — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="raisins-cat-a-hook.jpg" alt="Raisins — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="raisins-cat-a-question.jpg" alt="Raisins — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="raisins-cat-b-hook.jpg" alt="Raisins — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="raisins-cat-b-question.jpg" alt="Raisins — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧅 Onion — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="onion-dog-a-hook.jpg" alt="Onion — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="onion-dog-a-question.jpg" alt="Onion — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="onion-dog-b-hook.jpg" alt="Onion — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="onion-dog-b-question.jpg" alt="Onion — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧅 Onion — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="onion-cat-a-hook.jpg" alt="Onion — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="onion-cat-a-question.jpg" alt="Onion — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="onion-cat-b-hook.jpg" alt="Onion — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="onion-cat-b-question.jpg" alt="Onion — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧄 Garlic — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="garlic-dog-a-hook.jpg" alt="Garlic — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="garlic-dog-a-question.jpg" alt="Garlic — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="garlic-dog-b-hook.jpg" alt="Garlic — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="garlic-dog-b-question.jpg" alt="Garlic — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧄 Garlic — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="garlic-cat-a-hook.jpg" alt="Garlic — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="garlic-cat-a-question.jpg" alt="Garlic — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="garlic-cat-b-hook.jpg" alt="Garlic — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="garlic-cat-b-question.jpg" alt="Garlic — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍬 Xylitol — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="xylitol-dog-a-hook.jpg" alt="Xylitol — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="xylitol-dog-a-question.jpg" alt="Xylitol — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="xylitol-dog-b-hook.jpg" alt="Xylitol — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="xylitol-dog-b-question.jpg" alt="Xylitol — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍬 Xylitol — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="xylitol-cat-a-hook.jpg" alt="Xylitol — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="xylitol-cat-a-question.jpg" alt="Xylitol — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="xylitol-cat-b-hook.jpg" alt="Xylitol — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="xylitol-cat-b-question.jpg" alt="Xylitol — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">☕ Coffee & caffeine — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="caffeine-dog-a-hook.jpg" alt="Coffee & caffeine — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="caffeine-dog-a-question.jpg" alt="Coffee & caffeine — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="caffeine-dog-b-hook.jpg" alt="Coffee & caffeine — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="caffeine-dog-b-question.jpg" alt="Coffee & caffeine — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">☕ Coffee & caffeine — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="caffeine-cat-a-hook.jpg" alt="Coffee & caffeine — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="caffeine-cat-a-question.jpg" alt="Coffee & caffeine — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="caffeine-cat-b-hook.jpg" alt="Coffee & caffeine — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="caffeine-cat-b-question.jpg" alt="Coffee & caffeine — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍺 Alcohol — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="alcohol-dog-a-hook.jpg" alt="Alcohol — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="alcohol-dog-a-question.jpg" alt="Alcohol — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="alcohol-dog-b-hook.jpg" alt="Alcohol — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="alcohol-dog-b-question.jpg" alt="Alcohol — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍺 Alcohol — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="alcohol-cat-a-hook.jpg" alt="Alcohol — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="alcohol-cat-a-question.jpg" alt="Alcohol — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="alcohol-cat-b-hook.jpg" alt="Alcohol — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="alcohol-cat-b-question.jpg" alt="Alcohol — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Macadamia nuts — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="macadamia-nuts-dog-a-hook.jpg" alt="Macadamia nuts — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="macadamia-nuts-dog-a-question.jpg" alt="Macadamia nuts — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="macadamia-nuts-dog-b-hook.jpg" alt="Macadamia nuts — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="macadamia-nuts-dog-b-question.jpg" alt="Macadamia nuts — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Macadamia nuts — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="macadamia-nuts-cat-a-hook.jpg" alt="Macadamia nuts — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="macadamia-nuts-cat-a-question.jpg" alt="Macadamia nuts — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="macadamia-nuts-cat-b-hook.jpg" alt="Macadamia nuts — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="macadamia-nuts-cat-b-question.jpg" alt="Macadamia nuts — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥑 Avocado — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="avocado-dog-a-hook.jpg" alt="Avocado — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="avocado-dog-a-question.jpg" alt="Avocado — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="avocado-dog-b-hook.jpg" alt="Avocado — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="avocado-dog-b-question.jpg" alt="Avocado — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥑 Avocado — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="avocado-cat-a-hook.jpg" alt="Avocado — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="avocado-cat-a-question.jpg" alt="Avocado — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="avocado-cat-b-hook.jpg" alt="Avocado — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="avocado-cat-b-question.jpg" alt="Avocado — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍌 Banana — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="banana-dog-a-hook.jpg" alt="Banana — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="banana-dog-a-question.jpg" alt="Banana — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="banana-dog-b-hook.jpg" alt="Banana — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="banana-dog-b-question.jpg" alt="Banana — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍌 Banana — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="banana-cat-a-hook.jpg" alt="Banana — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="banana-cat-a-question.jpg" alt="Banana — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="banana-cat-b-hook.jpg" alt="Banana — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="banana-cat-b-question.jpg" alt="Banana — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍎 Apple — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="apple-dog-a-hook.jpg" alt="Apple — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="apple-dog-a-question.jpg" alt="Apple — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="apple-dog-b-hook.jpg" alt="Apple — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="apple-dog-b-question.jpg" alt="Apple — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍎 Apple — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="apple-cat-a-hook.jpg" alt="Apple — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="apple-cat-a-question.jpg" alt="Apple — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="apple-cat-b-hook.jpg" alt="Apple — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="apple-cat-b-question.jpg" alt="Apple — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥕 Carrot — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="carrot-dog-a-hook.jpg" alt="Carrot — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="carrot-dog-a-question.jpg" alt="Carrot — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="carrot-dog-b-hook.jpg" alt="Carrot — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="carrot-dog-b-question.jpg" alt="Carrot — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥕 Carrot — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="carrot-cat-a-hook.jpg" alt="Carrot — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="carrot-cat-a-question.jpg" alt="Carrot — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="carrot-cat-b-hook.jpg" alt="Carrot — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="carrot-cat-b-question.jpg" alt="Carrot — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫐 Blueberries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="blueberries-dog-a-hook.jpg" alt="Blueberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="blueberries-dog-a-question.jpg" alt="Blueberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="blueberries-dog-b-hook.jpg" alt="Blueberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="blueberries-dog-b-question.jpg" alt="Blueberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫐 Blueberries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="blueberries-cat-a-hook.jpg" alt="Blueberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="blueberries-cat-a-question.jpg" alt="Blueberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="blueberries-cat-b-hook.jpg" alt="Blueberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="blueberries-cat-b-question.jpg" alt="Blueberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍓 Strawberries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="strawberries-dog-a-hook.jpg" alt="Strawberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="strawberries-dog-a-question.jpg" alt="Strawberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="strawberries-dog-b-hook.jpg" alt="Strawberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="strawberries-dog-b-question.jpg" alt="Strawberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍓 Strawberries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="strawberries-cat-a-hook.jpg" alt="Strawberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="strawberries-cat-a-question.jpg" alt="Strawberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="strawberries-cat-b-hook.jpg" alt="Strawberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="strawberries-cat-b-question.jpg" alt="Strawberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍉 Watermelon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="watermelon-dog-a-hook.jpg" alt="Watermelon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="watermelon-dog-a-question.jpg" alt="Watermelon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="watermelon-dog-b-hook.jpg" alt="Watermelon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="watermelon-dog-b-question.jpg" alt="Watermelon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍉 Watermelon — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="watermelon-cat-a-hook.jpg" alt="Watermelon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="watermelon-cat-a-question.jpg" alt="Watermelon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="watermelon-cat-b-hook.jpg" alt="Watermelon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="watermelon-cat-b-question.jpg" alt="Watermelon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥜 Peanut butter — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peanut-butter-dog-a-hook.jpg" alt="Peanut butter — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peanut-butter-dog-a-question.jpg" alt="Peanut butter — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peanut-butter-dog-b-hook.jpg" alt="Peanut butter — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peanut-butter-dog-b-question.jpg" alt="Peanut butter — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥜 Peanut butter — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peanut-butter-cat-a-hook.jpg" alt="Peanut butter — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peanut-butter-cat-a-question.jpg" alt="Peanut butter — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peanut-butter-cat-b-hook.jpg" alt="Peanut butter — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peanut-butter-cat-b-question.jpg" alt="Peanut butter — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧀 Cheese — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cheese-dog-a-hook.jpg" alt="Cheese — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cheese-dog-a-question.jpg" alt="Cheese — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cheese-dog-b-hook.jpg" alt="Cheese — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cheese-dog-b-question.jpg" alt="Cheese — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧀 Cheese — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cheese-cat-a-hook.jpg" alt="Cheese — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cheese-cat-a-question.jpg" alt="Cheese — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cheese-cat-b-hook.jpg" alt="Cheese — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cheese-cat-b-question.jpg" alt="Cheese — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥛 Milk — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="milk-dog-a-hook.jpg" alt="Milk — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="milk-dog-a-question.jpg" alt="Milk — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="milk-dog-b-hook.jpg" alt="Milk — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="milk-dog-b-question.jpg" alt="Milk — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥛 Milk — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="milk-cat-a-hook.jpg" alt="Milk — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="milk-cat-a-question.jpg" alt="Milk — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="milk-cat-b-hook.jpg" alt="Milk — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="milk-cat-b-question.jpg" alt="Milk — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥣 Plain yogurt — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="yogurt-dog-a-hook.jpg" alt="Plain yogurt — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="yogurt-dog-a-question.jpg" alt="Plain yogurt — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="yogurt-dog-b-hook.jpg" alt="Plain yogurt — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="yogurt-dog-b-question.jpg" alt="Plain yogurt — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥣 Plain yogurt — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="yogurt-cat-a-hook.jpg" alt="Plain yogurt — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="yogurt-cat-a-question.jpg" alt="Plain yogurt — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="yogurt-cat-b-hook.jpg" alt="Plain yogurt — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="yogurt-cat-b-question.jpg" alt="Plain yogurt — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐟 Salmon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="salmon-dog-a-hook.jpg" alt="Salmon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="salmon-dog-a-question.jpg" alt="Salmon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="salmon-dog-b-hook.jpg" alt="Salmon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="salmon-dog-b-question.jpg" alt="Salmon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐟 Salmon — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="salmon-cat-a-hook.jpg" alt="Salmon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="salmon-cat-a-question.jpg" alt="Salmon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="salmon-cat-b-hook.jpg" alt="Salmon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="salmon-cat-b-question.jpg" alt="Salmon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐟 Tuna — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="tuna-dog-a-hook.jpg" alt="Tuna — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="tuna-dog-a-question.jpg" alt="Tuna — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="tuna-dog-b-hook.jpg" alt="Tuna — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="tuna-dog-b-question.jpg" alt="Tuna — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐟 Tuna — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="tuna-cat-a-hook.jpg" alt="Tuna — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="tuna-cat-a-question.jpg" alt="Tuna — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="tuna-cat-b-hook.jpg" alt="Tuna — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="tuna-cat-b-question.jpg" alt="Tuna — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍗 Cooked chicken — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="chicken-dog-a-hook.jpg" alt="Cooked chicken — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="chicken-dog-a-question.jpg" alt="Cooked chicken — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="chicken-dog-b-hook.jpg" alt="Cooked chicken — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="chicken-dog-b-question.jpg" alt="Cooked chicken — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍗 Cooked chicken — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="chicken-cat-a-hook.jpg" alt="Cooked chicken — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="chicken-cat-a-question.jpg" alt="Cooked chicken — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="chicken-cat-b-hook.jpg" alt="Cooked chicken — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="chicken-cat-b-question.jpg" alt="Cooked chicken — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥚 Cooked egg — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="egg-dog-a-hook.jpg" alt="Cooked egg — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="egg-dog-a-question.jpg" alt="Cooked egg — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="egg-dog-b-hook.jpg" alt="Cooked egg — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="egg-dog-b-question.jpg" alt="Cooked egg — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥚 Cooked egg — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="egg-cat-a-hook.jpg" alt="Cooked egg — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="egg-cat-a-question.jpg" alt="Cooked egg — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="egg-cat-b-hook.jpg" alt="Cooked egg — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="egg-cat-b-question.jpg" alt="Cooked egg — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍚 White rice — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="white-rice-dog-a-hook.jpg" alt="White rice — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="white-rice-dog-a-question.jpg" alt="White rice — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="white-rice-dog-b-hook.jpg" alt="White rice — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="white-rice-dog-b-question.jpg" alt="White rice — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍚 White rice — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="white-rice-cat-a-hook.jpg" alt="White rice — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="white-rice-cat-a-question.jpg" alt="White rice — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="white-rice-cat-b-hook.jpg" alt="White rice — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="white-rice-cat-b-question.jpg" alt="White rice — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🎃 Pumpkin — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pumpkin-dog-a-hook.jpg" alt="Pumpkin — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pumpkin-dog-a-question.jpg" alt="Pumpkin — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pumpkin-dog-b-hook.jpg" alt="Pumpkin — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pumpkin-dog-b-question.jpg" alt="Pumpkin — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🎃 Pumpkin — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pumpkin-cat-a-hook.jpg" alt="Pumpkin — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pumpkin-cat-a-question.jpg" alt="Pumpkin — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pumpkin-cat-b-hook.jpg" alt="Pumpkin — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pumpkin-cat-b-question.jpg" alt="Pumpkin — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍠 Sweet potato — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="sweet-potato-dog-a-hook.jpg" alt="Sweet potato — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="sweet-potato-dog-a-question.jpg" alt="Sweet potato — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="sweet-potato-dog-b-hook.jpg" alt="Sweet potato — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="sweet-potato-dog-b-question.jpg" alt="Sweet potato — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍠 Sweet potato — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="sweet-potato-cat-a-hook.jpg" alt="Sweet potato — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="sweet-potato-cat-a-question.jpg" alt="Sweet potato — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="sweet-potato-cat-b-hook.jpg" alt="Sweet potato — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="sweet-potato-cat-b-question.jpg" alt="Sweet potato — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥒 Cucumber — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cucumber-dog-a-hook.jpg" alt="Cucumber — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cucumber-dog-a-question.jpg" alt="Cucumber — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cucumber-dog-b-hook.jpg" alt="Cucumber — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cucumber-dog-b-question.jpg" alt="Cucumber — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥒 Cucumber — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cucumber-cat-a-hook.jpg" alt="Cucumber — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cucumber-cat-a-question.jpg" alt="Cucumber — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cucumber-cat-b-hook.jpg" alt="Cucumber — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cucumber-cat-b-question.jpg" alt="Cucumber — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥦 Broccoli — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="broccoli-dog-a-hook.jpg" alt="Broccoli — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="broccoli-dog-a-question.jpg" alt="Broccoli — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="broccoli-dog-b-hook.jpg" alt="Broccoli — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="broccoli-dog-b-question.jpg" alt="Broccoli — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥦 Broccoli — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="broccoli-cat-a-hook.jpg" alt="Broccoli — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="broccoli-cat-a-question.jpg" alt="Broccoli — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="broccoli-cat-b-hook.jpg" alt="Broccoli — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="broccoli-cat-b-question.jpg" alt="Broccoli — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫛 Green beans — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="green-beans-dog-a-hook.jpg" alt="Green beans — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="green-beans-dog-a-question.jpg" alt="Green beans — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="green-beans-dog-b-hook.jpg" alt="Green beans — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="green-beans-dog-b-question.jpg" alt="Green beans — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫛 Green beans — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="green-beans-cat-a-hook.jpg" alt="Green beans — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="green-beans-cat-a-question.jpg" alt="Green beans — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="green-beans-cat-b-hook.jpg" alt="Green beans — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="green-beans-cat-b-question.jpg" alt="Green beans — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍅 Tomato — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="tomato-dog-a-hook.jpg" alt="Tomato — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="tomato-dog-a-question.jpg" alt="Tomato — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="tomato-dog-b-hook.jpg" alt="Tomato — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="tomato-dog-b-question.jpg" alt="Tomato — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍅 Tomato — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="tomato-cat-a-hook.jpg" alt="Tomato — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="tomato-cat-a-question.jpg" alt="Tomato — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="tomato-cat-b-hook.jpg" alt="Tomato — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="tomato-cat-b-question.jpg" alt="Tomato — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍖 Ham — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="ham-dog-a-hook.jpg" alt="Ham — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="ham-dog-a-question.jpg" alt="Ham — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="ham-dog-b-hook.jpg" alt="Ham — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="ham-dog-b-question.jpg" alt="Ham — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍖 Ham — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="ham-cat-a-hook.jpg" alt="Ham — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="ham-cat-a-question.jpg" alt="Ham — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="ham-cat-b-hook.jpg" alt="Ham — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="ham-cat-b-question.jpg" alt="Ham — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍿 Popcorn — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="popcorn-dog-a-hook.jpg" alt="Popcorn — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="popcorn-dog-a-question.jpg" alt="Popcorn — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="popcorn-dog-b-hook.jpg" alt="Popcorn — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="popcorn-dog-b-question.jpg" alt="Popcorn — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍿 Popcorn — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="popcorn-cat-a-hook.jpg" alt="Popcorn — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="popcorn-cat-a-question.jpg" alt="Popcorn — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="popcorn-cat-b-hook.jpg" alt="Popcorn — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="popcorn-cat-b-question.jpg" alt="Popcorn — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Almonds — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="almonds-dog-a-hook.jpg" alt="Almonds — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="almonds-dog-a-question.jpg" alt="Almonds — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="almonds-dog-b-hook.jpg" alt="Almonds — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="almonds-dog-b-question.jpg" alt="Almonds — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Almonds — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="almonds-cat-a-hook.jpg" alt="Almonds — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="almonds-cat-a-question.jpg" alt="Almonds — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="almonds-cat-b-hook.jpg" alt="Almonds — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="almonds-cat-b-question.jpg" alt="Almonds — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍯 Honey — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="honey-dog-a-hook.jpg" alt="Honey — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="honey-dog-a-question.jpg" alt="Honey — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="honey-dog-b-hook.jpg" alt="Honey — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="honey-dog-b-question.jpg" alt="Honey — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍯 Honey — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="honey-cat-a-hook.jpg" alt="Honey — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="honey-cat-a-question.jpg" alt="Honey — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="honey-cat-b-hook.jpg" alt="Honey — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="honey-cat-b-question.jpg" alt="Honey — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍍 Pineapple — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pineapple-dog-a-hook.jpg" alt="Pineapple — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pineapple-dog-a-question.jpg" alt="Pineapple — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pineapple-dog-b-hook.jpg" alt="Pineapple — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pineapple-dog-b-question.jpg" alt="Pineapple — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍍 Pineapple — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pineapple-cat-a-hook.jpg" alt="Pineapple — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pineapple-cat-a-question.jpg" alt="Pineapple — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pineapple-cat-b-hook.jpg" alt="Pineapple — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pineapple-cat-b-question.jpg" alt="Pineapple — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥭 Mango — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="mango-dog-a-hook.jpg" alt="Mango — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="mango-dog-a-question.jpg" alt="Mango — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="mango-dog-b-hook.jpg" alt="Mango — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="mango-dog-b-question.jpg" alt="Mango — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥭 Mango — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="mango-cat-a-hook.jpg" alt="Mango — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="mango-cat-a-question.jpg" alt="Mango — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="mango-cat-b-hook.jpg" alt="Mango — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="mango-cat-b-question.jpg" alt="Mango — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Spinach — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="spinach-dog-a-hook.jpg" alt="Spinach — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="spinach-dog-a-question.jpg" alt="Spinach — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="spinach-dog-b-hook.jpg" alt="Spinach — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="spinach-dog-b-question.jpg" alt="Spinach — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Spinach — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="spinach-cat-a-hook.jpg" alt="Spinach — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="spinach-cat-a-question.jpg" alt="Spinach — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="spinach-cat-b-hook.jpg" alt="Spinach — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="spinach-cat-b-question.jpg" alt="Spinach — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍞 Bread — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="bread-dog-a-hook.jpg" alt="Bread — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="bread-dog-a-question.jpg" alt="Bread — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="bread-dog-b-hook.jpg" alt="Bread — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="bread-dog-b-question.jpg" alt="Bread — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍞 Bread — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="bread-cat-a-hook.jpg" alt="Bread — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="bread-cat-a-question.jpg" alt="Bread — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="bread-cat-b-hook.jpg" alt="Bread — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="bread-cat-b-question.jpg" alt="Bread — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌽 Corn — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="corn-dog-a-hook.jpg" alt="Corn — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="corn-dog-a-question.jpg" alt="Corn — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="corn-dog-b-hook.jpg" alt="Corn — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="corn-dog-b-question.jpg" alt="Corn — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌽 Corn — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="corn-cat-a-hook.jpg" alt="Corn — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="corn-cat-a-question.jpg" alt="Corn — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="corn-cat-b-hook.jpg" alt="Corn — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="corn-cat-b-question.jpg" alt="Corn — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍊 Orange — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="orange-dog-a-hook.jpg" alt="Orange — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="orange-dog-a-question.jpg" alt="Orange — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="orange-dog-b-hook.jpg" alt="Orange — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="orange-dog-b-question.jpg" alt="Orange — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍊 Orange — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="orange-cat-a-hook.jpg" alt="Orange — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="orange-cat-a-question.jpg" alt="Orange — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="orange-cat-b-hook.jpg" alt="Orange — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="orange-cat-b-question.jpg" alt="Orange — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍋 Lemon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lemon-dog-a-hook.jpg" alt="Lemon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lemon-dog-a-question.jpg" alt="Lemon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lemon-dog-b-hook.jpg" alt="Lemon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lemon-dog-b-question.jpg" alt="Lemon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍋 Lemon — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lemon-cat-a-hook.jpg" alt="Lemon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lemon-cat-a-question.jpg" alt="Lemon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lemon-cat-b-hook.jpg" alt="Lemon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lemon-cat-b-question.jpg" alt="Lemon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟢 Lime — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lime-dog-a-hook.jpg" alt="Lime — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lime-dog-a-question.jpg" alt="Lime — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lime-dog-b-hook.jpg" alt="Lime — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lime-dog-b-question.jpg" alt="Lime — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟢 Lime — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lime-cat-a-hook.jpg" alt="Lime — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lime-cat-a-question.jpg" alt="Lime — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lime-cat-b-hook.jpg" alt="Lime — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lime-cat-b-question.jpg" alt="Lime — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍒 Cherries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cherries-dog-a-hook.jpg" alt="Cherries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cherries-dog-a-question.jpg" alt="Cherries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cherries-dog-b-hook.jpg" alt="Cherries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cherries-dog-b-question.jpg" alt="Cherries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍒 Cherries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cherries-cat-a-hook.jpg" alt="Cherries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cherries-cat-a-question.jpg" alt="Cherries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cherries-cat-b-hook.jpg" alt="Cherries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cherries-cat-b-question.jpg" alt="Cherries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍑 Peach — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peach-dog-a-hook.jpg" alt="Peach — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peach-dog-a-question.jpg" alt="Peach — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peach-dog-b-hook.jpg" alt="Peach — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peach-dog-b-question.jpg" alt="Peach — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍑 Peach — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peach-cat-a-hook.jpg" alt="Peach — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peach-cat-a-question.jpg" alt="Peach — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peach-cat-b-hook.jpg" alt="Peach — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peach-cat-b-question.jpg" alt="Peach — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟣 Plum — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="plum-dog-a-hook.jpg" alt="Plum — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="plum-dog-a-question.jpg" alt="Plum — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="plum-dog-b-hook.jpg" alt="Plum — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="plum-dog-b-question.jpg" alt="Plum — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟣 Plum — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="plum-cat-a-hook.jpg" alt="Plum — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="plum-cat-a-question.jpg" alt="Plum — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="plum-cat-b-hook.jpg" alt="Plum — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="plum-cat-b-question.jpg" alt="Plum — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟠 Apricot — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="apricot-dog-a-hook.jpg" alt="Apricot — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="apricot-dog-a-question.jpg" alt="Apricot — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="apricot-dog-b-hook.jpg" alt="Apricot — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="apricot-dog-b-question.jpg" alt="Apricot — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟠 Apricot — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="apricot-cat-a-hook.jpg" alt="Apricot — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="apricot-cat-a-question.jpg" alt="Apricot — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="apricot-cat-b-hook.jpg" alt="Apricot — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="apricot-cat-b-question.jpg" alt="Apricot — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍐 Pear — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pear-dog-a-hook.jpg" alt="Pear — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pear-dog-a-question.jpg" alt="Pear — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pear-dog-b-hook.jpg" alt="Pear — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pear-dog-b-question.jpg" alt="Pear — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍐 Pear — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pear-cat-a-hook.jpg" alt="Pear — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pear-cat-a-question.jpg" alt="Pear — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pear-cat-b-hook.jpg" alt="Pear — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pear-cat-b-question.jpg" alt="Pear — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Raspberries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="raspberries-dog-a-hook.jpg" alt="Raspberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="raspberries-dog-a-question.jpg" alt="Raspberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="raspberries-dog-b-hook.jpg" alt="Raspberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="raspberries-dog-b-question.jpg" alt="Raspberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Raspberries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="raspberries-cat-a-hook.jpg" alt="Raspberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="raspberries-cat-a-question.jpg" alt="Raspberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="raspberries-cat-b-hook.jpg" alt="Raspberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="raspberries-cat-b-question.jpg" alt="Raspberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">⚫ Blackberries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="blackberries-dog-a-hook.jpg" alt="Blackberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="blackberries-dog-a-question.jpg" alt="Blackberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="blackberries-dog-b-hook.jpg" alt="Blackberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="blackberries-dog-b-question.jpg" alt="Blackberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">⚫ Blackberries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="blackberries-cat-a-hook.jpg" alt="Blackberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="blackberries-cat-a-question.jpg" alt="Blackberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="blackberries-cat-b-hook.jpg" alt="Blackberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="blackberries-cat-b-question.jpg" alt="Blackberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Cranberries — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cranberries-dog-a-hook.jpg" alt="Cranberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cranberries-dog-a-question.jpg" alt="Cranberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cranberries-dog-b-hook.jpg" alt="Cranberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cranberries-dog-b-question.jpg" alt="Cranberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Cranberries — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cranberries-cat-a-hook.jpg" alt="Cranberries — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cranberries-cat-a-question.jpg" alt="Cranberries — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cranberries-cat-b-hook.jpg" alt="Cranberries — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cranberries-cat-b-question.jpg" alt="Cranberries — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Pomegranate — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pomegranate-dog-a-hook.jpg" alt="Pomegranate — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pomegranate-dog-a-question.jpg" alt="Pomegranate — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pomegranate-dog-b-hook.jpg" alt="Pomegranate — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pomegranate-dog-b-question.jpg" alt="Pomegranate — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Pomegranate — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pomegranate-cat-a-hook.jpg" alt="Pomegranate — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pomegranate-cat-a-question.jpg" alt="Pomegranate — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pomegranate-cat-b-hook.jpg" alt="Pomegranate — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pomegranate-cat-b-question.jpg" alt="Pomegranate — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥝 Kiwi — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="kiwi-dog-a-hook.jpg" alt="Kiwi — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="kiwi-dog-a-question.jpg" alt="Kiwi — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="kiwi-dog-b-hook.jpg" alt="Kiwi — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="kiwi-dog-b-question.jpg" alt="Kiwi — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥝 Kiwi — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="kiwi-cat-a-hook.jpg" alt="Kiwi — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="kiwi-cat-a-question.jpg" alt="Kiwi — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="kiwi-cat-b-hook.jpg" alt="Kiwi — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="kiwi-cat-b-question.jpg" alt="Kiwi — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍈 Cantaloupe — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cantaloupe-dog-a-hook.jpg" alt="Cantaloupe — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cantaloupe-dog-a-question.jpg" alt="Cantaloupe — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cantaloupe-dog-b-hook.jpg" alt="Cantaloupe — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cantaloupe-dog-b-question.jpg" alt="Cantaloupe — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍈 Cantaloupe — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cantaloupe-cat-a-hook.jpg" alt="Cantaloupe — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cantaloupe-cat-a-question.jpg" alt="Cantaloupe — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cantaloupe-cat-b-hook.jpg" alt="Cantaloupe — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cantaloupe-cat-b-question.jpg" alt="Cantaloupe — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥥 Coconut — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="coconut-dog-a-hook.jpg" alt="Coconut — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="coconut-dog-a-question.jpg" alt="Coconut — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="coconut-dog-b-hook.jpg" alt="Coconut — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="coconut-dog-b-question.jpg" alt="Coconut — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥥 Coconut — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="coconut-cat-a-hook.jpg" alt="Coconut — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="coconut-cat-a-question.jpg" alt="Coconut — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="coconut-cat-b-hook.jpg" alt="Coconut — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="coconut-cat-b-question.jpg" alt="Coconut — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐉 Dragon fruit — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="dragon-fruit-dog-a-hook.jpg" alt="Dragon fruit — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="dragon-fruit-dog-a-question.jpg" alt="Dragon fruit — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="dragon-fruit-dog-b-hook.jpg" alt="Dragon fruit — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="dragon-fruit-dog-b-question.jpg" alt="Dragon fruit — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🐉 Dragon fruit — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="dragon-fruit-cat-a-hook.jpg" alt="Dragon fruit — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="dragon-fruit-cat-a-question.jpg" alt="Dragon fruit — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="dragon-fruit-cat-b-hook.jpg" alt="Dragon fruit — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="dragon-fruit-cat-b-question.jpg" alt="Dragon fruit — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Lychee — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lychee-dog-a-hook.jpg" alt="Lychee — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lychee-dog-a-question.jpg" alt="Lychee — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lychee-dog-b-hook.jpg" alt="Lychee — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lychee-dog-b-question.jpg" alt="Lychee — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🔴 Lychee — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lychee-cat-a-hook.jpg" alt="Lychee — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lychee-cat-a-question.jpg" alt="Lychee — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lychee-cat-b-hook.jpg" alt="Lychee — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lychee-cat-b-question.jpg" alt="Lychee — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">⭐ Star fruit — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="star-fruit-dog-a-hook.jpg" alt="Star fruit — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="star-fruit-dog-a-question.jpg" alt="Star fruit — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="star-fruit-dog-b-hook.jpg" alt="Star fruit — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="star-fruit-dog-b-question.jpg" alt="Star fruit — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">⭐ Star fruit — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="star-fruit-cat-a-hook.jpg" alt="Star fruit — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="star-fruit-cat-a-question.jpg" alt="Star fruit — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="star-fruit-cat-b-hook.jpg" alt="Star fruit — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="star-fruit-cat-b-question.jpg" alt="Star fruit — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟠 Persimmon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="persimmon-dog-a-hook.jpg" alt="Persimmon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="persimmon-dog-a-question.jpg" alt="Persimmon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="persimmon-dog-b-hook.jpg" alt="Persimmon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="persimmon-dog-b-question.jpg" alt="Persimmon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟠 Persimmon — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="persimmon-cat-a-hook.jpg" alt="Persimmon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="persimmon-cat-a-question.jpg" alt="Persimmon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="persimmon-cat-b-hook.jpg" alt="Persimmon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="persimmon-cat-b-question.jpg" alt="Persimmon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟣 Fig — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="fig-dog-a-hook.jpg" alt="Fig — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="fig-dog-a-question.jpg" alt="Fig — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="fig-dog-b-hook.jpg" alt="Fig — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="fig-dog-b-question.jpg" alt="Fig — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟣 Fig — 🐱 Cat</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="fig-cat-a-hook.jpg" alt="Fig — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="fig-cat-a-question.jpg" alt="Fig — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="fig-cat-b-hook.jpg" alt="Fig — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="fig-cat-b-question.jpg" alt="Fig — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟤 Dates — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="dates-dog-a-hook.jpg" alt="Dates — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="dates-dog-a-question.jpg" alt="Dates — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="dates-dog-b-hook.jpg" alt="Dates — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="dates-dog-b-question.jpg" alt="Dates — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟠 Papaya — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="papaya-dog-a-hook.jpg" alt="Papaya — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="papaya-dog-a-question.jpg" alt="Papaya — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="papaya-dog-b-hook.jpg" alt="Papaya — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="papaya-dog-b-question.jpg" alt="Papaya — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Celery — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="celery-dog-a-hook.jpg" alt="Celery — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="celery-dog-a-question.jpg" alt="Celery — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="celery-dog-b-hook.jpg" alt="Celery — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="celery-dog-b-question.jpg" alt="Celery — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Lettuce — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="lettuce-dog-a-hook.jpg" alt="Lettuce — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="lettuce-dog-a-question.jpg" alt="Lettuce — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="lettuce-dog-b-hook.jpg" alt="Lettuce — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="lettuce-dog-b-question.jpg" alt="Lettuce — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Cabbage — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cabbage-dog-a-hook.jpg" alt="Cabbage — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cabbage-dog-a-question.jpg" alt="Cabbage — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cabbage-dog-b-hook.jpg" alt="Cabbage — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cabbage-dog-b-question.jpg" alt="Cabbage — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥦 Cauliflower — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cauliflower-dog-a-hook.jpg" alt="Cauliflower — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cauliflower-dog-a-question.jpg" alt="Cauliflower — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cauliflower-dog-b-hook.jpg" alt="Cauliflower — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cauliflower-dog-b-question.jpg" alt="Cauliflower — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟢 Peas — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peas-dog-a-hook.jpg" alt="Peas — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peas-dog-a-question.jpg" alt="Peas — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peas-dog-b-hook.jpg" alt="Peas — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peas-dog-b-question.jpg" alt="Peas — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥔 Potato — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="potato-dog-a-hook.jpg" alt="Potato — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="potato-dog-a-question.jpg" alt="Potato — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="potato-dog-b-hook.jpg" alt="Potato — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="potato-dog-b-question.jpg" alt="Potato — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍄 Mushroom — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="mushroom-dog-a-hook.jpg" alt="Mushroom — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="mushroom-dog-a-question.jpg" alt="Mushroom — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="mushroom-dog-b-hook.jpg" alt="Mushroom — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="mushroom-dog-b-question.jpg" alt="Mushroom — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥬 Asparagus — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="asparagus-dog-a-hook.jpg" alt="Asparagus — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="asparagus-dog-a-question.jpg" alt="Asparagus — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="asparagus-dog-b-hook.jpg" alt="Asparagus — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="asparagus-dog-b-question.jpg" alt="Asparagus — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥒 Zucchini — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="zucchini-dog-a-hook.jpg" alt="Zucchini — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="zucchini-dog-a-question.jpg" alt="Zucchini — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="zucchini-dog-b-hook.jpg" alt="Zucchini — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="zucchini-dog-b-question.jpg" alt="Zucchini — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫑 Bell pepper — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="bell-pepper-dog-a-hook.jpg" alt="Bell pepper — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="bell-pepper-dog-a-question.jpg" alt="Bell pepper — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="bell-pepper-dog-b-hook.jpg" alt="Bell pepper — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="bell-pepper-dog-b-question.jpg" alt="Bell pepper — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟣 Beetroot — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="beetroot-dog-a-hook.jpg" alt="Beetroot — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="beetroot-dog-a-question.jpg" alt="Beetroot — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="beetroot-dog-b-hook.jpg" alt="Beetroot — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="beetroot-dog-b-question.jpg" alt="Beetroot — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🫚 Ginger — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="ginger-dog-a-hook.jpg" alt="Ginger — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="ginger-dog-a-question.jpg" alt="Ginger — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="ginger-dog-b-hook.jpg" alt="Ginger — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="ginger-dog-b-question.jpg" alt="Ginger — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟤 Cinnamon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cinnamon-dog-a-hook.jpg" alt="Cinnamon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cinnamon-dog-a-question.jpg" alt="Cinnamon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cinnamon-dog-b-hook.jpg" alt="Cinnamon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cinnamon-dog-b-question.jpg" alt="Cinnamon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🟤 Nutmeg — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="nutmeg-dog-a-hook.jpg" alt="Nutmeg — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="nutmeg-dog-a-question.jpg" alt="Nutmeg — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="nutmeg-dog-b-hook.jpg" alt="Nutmeg — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="nutmeg-dog-b-question.jpg" alt="Nutmeg — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌿 Mint — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="mint-dog-a-hook.jpg" alt="Mint — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="mint-dog-a-question.jpg" alt="Mint — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="mint-dog-b-hook.jpg" alt="Mint — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="mint-dog-b-question.jpg" alt="Mint — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌿 Basil — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="basil-dog-a-hook.jpg" alt="Basil — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="basil-dog-a-question.jpg" alt="Basil — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="basil-dog-b-hook.jpg" alt="Basil — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="basil-dog-b-question.jpg" alt="Basil — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌿 Parsley — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="parsley-dog-a-hook.jpg" alt="Parsley — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="parsley-dog-a-question.jpg" alt="Parsley — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="parsley-dog-b-hook.jpg" alt="Parsley — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="parsley-dog-b-question.jpg" alt="Parsley — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌿 Cilantro — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cilantro-dog-a-hook.jpg" alt="Cilantro — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cilantro-dog-a-question.jpg" alt="Cilantro — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cilantro-dog-b-hook.jpg" alt="Cilantro — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cilantro-dog-b-question.jpg" alt="Cilantro — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌿 Oregano — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="oregano-dog-a-hook.jpg" alt="Oregano — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="oregano-dog-a-question.jpg" alt="Oregano — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="oregano-dog-b-hook.jpg" alt="Oregano — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="oregano-dog-b-question.jpg" alt="Oregano — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🧂 Salt — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="salt-dog-a-hook.jpg" alt="Salt — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="salt-dog-a-question.jpg" alt="Salt — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="salt-dog-b-hook.jpg" alt="Salt — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="salt-dog-b-question.jpg" alt="Salt — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍬 Sugar — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="sugar-dog-a-hook.jpg" alt="Sugar — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="sugar-dog-a-question.jpg" alt="Sugar — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="sugar-dog-b-hook.jpg" alt="Sugar — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="sugar-dog-b-question.jpg" alt="Sugar — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥓 Bacon — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="bacon-dog-a-hook.jpg" alt="Bacon — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="bacon-dog-a-question.jpg" alt="Bacon — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="bacon-dog-b-hook.jpg" alt="Bacon — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="bacon-dog-b-question.jpg" alt="Bacon — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌭 Sausage — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="sausage-dog-a-hook.jpg" alt="Sausage — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="sausage-dog-a-question.jpg" alt="Sausage — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="sausage-dog-b-hook.jpg" alt="Sausage — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="sausage-dog-b-question.jpg" alt="Sausage — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🦃 Cooked turkey — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="turkey-dog-a-hook.jpg" alt="Cooked turkey — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="turkey-dog-a-question.jpg" alt="Cooked turkey — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="turkey-dog-b-hook.jpg" alt="Cooked turkey — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="turkey-dog-b-question.jpg" alt="Cooked turkey — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥩 Cooked beef — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="beef-dog-a-hook.jpg" alt="Cooked beef — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="beef-dog-a-question.jpg" alt="Cooked beef — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="beef-dog-b-hook.jpg" alt="Cooked beef — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="beef-dog-b-question.jpg" alt="Cooked beef — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥩 Cooked pork — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pork-dog-a-hook.jpg" alt="Cooked pork — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pork-dog-a-question.jpg" alt="Cooked pork — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pork-dog-b-hook.jpg" alt="Cooked pork — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pork-dog-b-question.jpg" alt="Cooked pork — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🦐 Shrimp — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="shrimp-dog-a-hook.jpg" alt="Shrimp — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="shrimp-dog-a-question.jpg" alt="Shrimp — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="shrimp-dog-b-hook.jpg" alt="Shrimp — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="shrimp-dog-b-question.jpg" alt="Shrimp — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🦴 Cooked bones — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cooked-bones-dog-a-hook.jpg" alt="Cooked bones — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cooked-bones-dog-a-question.jpg" alt="Cooked bones — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cooked-bones-dog-b-hook.jpg" alt="Cooked bones — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cooked-bones-dog-b-question.jpg" alt="Cooked bones — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍦 Ice cream — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="ice-cream-dog-a-hook.jpg" alt="Ice cream — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="ice-cream-dog-a-question.jpg" alt="Ice cream — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="ice-cream-dog-b-hook.jpg" alt="Ice cream — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="ice-cream-dog-b-question.jpg" alt="Ice cream — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥜 Peanuts — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="peanuts-dog-a-hook.jpg" alt="Peanuts — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="peanuts-dog-a-question.jpg" alt="Peanuts — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="peanuts-dog-b-hook.jpg" alt="Peanuts — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="peanuts-dog-b-question.jpg" alt="Peanuts — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Walnuts — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="walnuts-dog-a-hook.jpg" alt="Walnuts — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="walnuts-dog-a-question.jpg" alt="Walnuts — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="walnuts-dog-b-hook.jpg" alt="Walnuts — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="walnuts-dog-b-question.jpg" alt="Walnuts — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Cashews — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="cashews-dog-a-hook.jpg" alt="Cashews — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="cashews-dog-a-question.jpg" alt="Cashews — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="cashews-dog-b-hook.jpg" alt="Cashews — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="cashews-dog-b-question.jpg" alt="Cashews — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Pistachios — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pistachios-dog-a-hook.jpg" alt="Pistachios — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pistachios-dog-a-question.jpg" alt="Pistachios — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pistachios-dog-b-hook.jpg" alt="Pistachios — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pistachios-dog-b-question.jpg" alt="Pistachios — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🌰 Pecans — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pecans-dog-a-hook.jpg" alt="Pecans — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pecans-dog-a-question.jpg" alt="Pecans — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pecans-dog-b-hook.jpg" alt="Pecans — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pecans-dog-b-question.jpg" alt="Pecans — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍞 Raw bread dough — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="raw-bread-dough-dog-a-hook.jpg" alt="Raw bread dough — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="raw-bread-dough-dog-a-question.jpg" alt="Raw bread dough — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="raw-bread-dough-dog-b-hook.jpg" alt="Raw bread dough — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="raw-bread-dough-dog-b-question.jpg" alt="Raw bread dough — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🥣 Oatmeal — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="oatmeal-dog-a-hook.jpg" alt="Oatmeal — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="oatmeal-dog-a-question.jpg" alt="Oatmeal — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="oatmeal-dog-b-hook.jpg" alt="Oatmeal — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="oatmeal-dog-b-question.jpg" alt="Oatmeal — B · Pergunta">
+        </div>
+      </div>
+    </div>
+
+    <div class="food-section">
+      <div class="food-title">🍝 Pasta — 🐶 Dog</div>
+      <div class="pin-grid">
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">A · Gancho</h3>
+          <img class="pin-img" src="pasta-dog-a-hook.jpg" alt="Pasta — A · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#8a6210">A · Pergunta</h3>
+          <img class="pin-img" src="pasta-dog-a-question.jpg" alt="Pasta — A · Pergunta">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#0E5A41">B · Gancho</h3>
+          <img class="pin-img" src="pasta-dog-b-hook.jpg" alt="Pasta — B · Gancho">
+        </div>
+        
+        <div class="pin-card">
+          <h3 style="color:#FF6B5E">B · Pergunta</h3>
+          <img class="pin-img" src="pasta-dog-b-question.jpg" alt="Pasta — B · Pergunta">
+        </div>
+      </div>
+    </div>
 </body>
 </html>
