@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spot the Toxic Food — Pet Food Game (10 Levels) | CanMyPet</title>
+<meta name="description" content="Tap every food that's toxic to your dog or cat before the timer runs out. 10 levels of increasing challenge. A fast, vet-sourced reflex game. Free.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/spot-the-toxic.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spot the Toxic Food — Pet Food Game">
+<meta property="og:description" content="Tap every toxic food before time runs out. 10 levels. A fast, vet-sourced reflex game for dog and cat parents.">
+<meta property="og:url" content="https://canmypethave.com/tools/spot-the-toxic.html">
+<meta property="og:image" content="https://canmypethave.com/assets/guide/hero-foods-toxic-to-dogs.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="323e8ff52b8df3df0adf26caaeae963b"/>
+<style>
+#g-card{max-width:560px;margin:20px auto;text-align:center}
+.g-hud{display:flex;justify-content:space-between;align-items:center;max-width:480px;margin:0 auto 8px;font-weight:700;color:#16241F}
+.g-hud .lab{font-size:12px;color:#9fb0a7;font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:block}
+.g-hud .val{font-size:21px;line-height:1}
+.st-prompt{font-weight:800;color:#9c2a22;font-size:16px;margin:0 0 8px}
+.st-barwrap{max-width:480px;height:9px;border-radius:6px;background:rgba(14,90,65,.1);overflow:hidden;margin:0 auto 14px}
+.st-bar{height:100%;width:100%;background:#E2483D;border-radius:6px}
+.st-grid{display:grid;gap:10px;max-width:480px;margin:0 auto}
+.st-tile{position:relative;aspect-ratio:1/1;background:#fff;border:2px solid rgba(14,90,65,.12);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .1s,border-color .15s,background .15s;user-select:none}
+.st-tile:hover{transform:translateY(-2px);border-color:#2FBF87}
+.st-tile .e{font-size:38px;line-height:1}
+.st-tile .n{font-size:12px;font-weight:700;color:#3a4944;margin-top:4px;padding:0 4px;line-height:1.1}
+.st-tile .mark{position:absolute;top:5px;right:7px;font-size:18px}
+.st-hit{background:#FCE7E5;border-color:#E2483D;cursor:default}
+.st-miss{background:#E4F6EC;border-color:#1FA463;cursor:default}
+.st-missed{background:#FBF1DA;border-color:#E0A93B;cursor:default;opacity:.85}
+.st-flash{font-weight:800;font-size:18px;margin:14px 0 0;animation:tin .3s ease}
+.lv-head{font-size:13px;font-weight:800;color:#0E5A41;text-transform:uppercase;letter-spacing:.05em;margin:0 0 2px}
+.lv-map{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:420px;margin:12px auto 0}
+.lv-cell{position:relative;aspect-ratio:1/1;border-radius:14px;border:2px solid rgba(14,90,65,.16);background:#FAF7F0;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font-weight:800;color:#16241F;transition:transform .12s,border-color .15s}
+.lv-cell:hover{transform:translateY(-2px);border-color:#2FBF87}
+.lv-num{font-size:19px;line-height:1}
+.lv-name{font-size:8.5px;color:#9fb0a7;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-top:1px}
+.lv-stars{font-size:11px;color:#E0A93B;letter-spacing:1px;height:13px;margin-top:1px}
+.lv-cell.locked{opacity:.5;cursor:not-allowed;background:#efeae2;border-color:#e2dccf;color:#b3a89a}
+.lv-cell.cleared{background:#E4F6EC;border-color:#1FA463}
+.g-pick{display:flex;gap:10px;max-width:360px;margin:10px auto 0}
+.g-pick button{flex:1;padding:11px 8px;border-radius:12px;border:2px solid rgba(14,90,65,.15);background:#FAF7F0;color:#16241F;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:border-color .15s,transform .12s}
+.g-pick button:hover{border-color:#2FBF87;transform:translateY(-1px)}
+.g-pick button.sel{border-color:#0E5A41;background:#E4F6EC}
+.g-big{display:block;width:100%;max-width:430px;margin:10px auto 0;padding:15px;border-radius:16px;border:none;background:#0E5A41;color:#fff;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit}
+.g-big:hover{background:#0c4d37}
+.g-ghost{background:#fff;color:#0E5A41;border:2px solid rgba(14,90,65,.2)}
+.g-ghost:hover{background:#FAF7F0}
+.g-row{display:flex;gap:10px;max-width:430px;margin:10px auto 0}
+.g-row .g-big{margin:0}
+.g-final{font-size:56px;line-height:1;margin:6px 0}
+.g-stars-big{font-size:40px;color:#E0A93B;letter-spacing:4px}
+@keyframes tin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../foods/index.html">Food checker</a><a href="../about.html">About</a><a href="../sources.html">Sources</a></nav>
+<a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">&#8980;</i> Check a food</a>
+<button class="menu-btn" aria-label="Menu">&#9776;</button></div></header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> &middot; Tools &middot; Spot the Toxic</div>
+  <div style="max-width:620px;margin:16px 0 0">
+    <span class="eyebrow">Free game &middot; 10 levels &middot; dogs &amp; cats</span>
+    <h1 style="font-size:clamp(30px,5vw,46px);margin:10px 0 10px">Spot the toxic food</h1>
+    <p class="muted" style="font-size:18px">A grid of foods appears &mdash; tap every one that's <strong>dangerous</strong> before the timer runs out. Clear all 10 levels: the grids grow and the clock shrinks. Vet-sourced.</p>
+  </div>
+</div>
+
+<main class="container">
+  <div id="g-card"><div id="gameApp" style="padding:40px 0;color:#5d6b63">Loading the game…</div></div>
+  <div class="ad-slot" style="max-width:560px;margin:0 auto 30px">Ad placement</div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="foot-grid">
+<div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
+<div><h5>Tools</h5><a href="../tools/quiz.html">Pet food quiz</a><a href="../tools/safe-or-toxic.html">Safe or Toxic? game</a><a href="../tools/spot-the-toxic.html">Spot the Toxic</a><a href="../tools/memory-match.html">Match the Bowl</a><a href="../tools/kitchen-hunt.html">Kitchen Hunt</a><a href="../tools/chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+<div><h5>Foods &amp; guides</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../guides/foods-toxic-to-dogs.html">Foods toxic to dogs</a><a href="../guides/safe-fruits-veggies-for-dogs.html">Safe foods for dogs</a><a href="../guides/foods-cats-should-never-eat.html">Foods cats can't eat</a></div>
+<div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div></div>
+<div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
+
+<script src="../assets/foods.js"></script>
+<script>
+(function(){
+  var LEVELS=[
+    {name:"Counter",tiles:9,tox:2,time:9000},{name:"Drawer",tiles:9,tox:3,time:8500},
+    {name:"Fruit Bowl",tiles:9,tox:3,time:7500},{name:"Pantry",tiles:12,tox:3,time:8000},
+    {name:"Fridge",tiles:12,tox:4,time:7500},{name:"Spice Rack",tiles:12,tox:4,time:6500},
+    {name:"Bakery",tiles:16,tox:4,time:7000},{name:"Feast",tiles:16,tox:5,time:6000},
+    {name:"Market",tiles:16,tox:6,time:5500},{name:"Chaos",tiles:16,tox:6,time:5000}
+  ];
+  var species="dog", lvl=0, grid=[], toxicLeft=0, wrong=0, busy=false, timer=null, roundStart=0, budget=0;
+  var el=function(){return document.getElementById("gameApp");};
+  function progKey(){return "cmp_spot_prog_"+species;}
+  function loadProg(){try{return JSON.parse(localStorage.getItem(progKey())||'{"u":1,"s":{}}');}catch(e){return {u:1,s:{}};}}
+  function saveProg(p){try{localStorage.setItem(progKey(),JSON.stringify(p));}catch(e){}}
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function stars(n){return "★★★☆☆☆".slice(3-n,6-n);}
+  function colsFor(t){ return t<=9?3:4; }
+
+  function buildPool(){
+    var D=window.PETIBLE_FOODS||[], out=[], seen={};
+    for(var i=0;i<D.length;i++){var f=D[i];
+      ["dog","cat"].forEach(function(sp){
+        if((species==="both"||species===sp)&&f[sp]&&(f[sp].v==="safe"||f[sp].v==="danger")){
+          var key=f.slug+"-"+sp; if(seen[key])return; seen[key]=1;
+          out.push({n:f.name,e:f.emoji||"🍽️",v:f[sp].v,slug:f.slug});
+        }
+      });
+    }
+    return out;
+  }
+  function pickGrid(tiles,tox){
+    var pool=buildPool();
+    var dz=shuffle(pool.filter(function(x){return x.v==="danger";}));
+    var sz=shuffle(pool.filter(function(x){return x.v==="safe";}));
+    var g=[], seen={};
+    for(var i=0;i<dz.length&&g.length<tox;i++){ if(!seen[dz[i].slug]){seen[dz[i].slug]=1;g.push(dz[i]);} }
+    for(var j=0;j<sz.length&&g.length<tiles;j++){ if(!seen[sz[j].slug]){seen[sz[j].slug]=1;g.push(sz[j]);} }
+    // top up if short
+    for(var k=0;k<dz.length&&g.length<tiles;k++){ if(!seen[dz[k].slug]){seen[dz[k].slug]=1;g.push(dz[k]);} }
+    return shuffle(g);
+  }
+
+  function playLevel(i){
+    lvl=i; var L=LEVELS[i]; wrong=0; busy=false;
+    grid=pickGrid(L.tiles,L.tox);
+    toxicLeft=grid.filter(function(x){return x.v==="danger";}).length;
+    budget=L.time; roundStart=Date.now();
+    var tiles="";
+    for(var k=0;k<grid.length;k++){
+      tiles+="<div class='st-tile' data-i='"+k+"'><span class='e'>"+grid[k].e+"</span><span class='n'>"+grid[k].n+"</span><span class='mark'></span></div>";
+    }
+    el().innerHTML=
+      "<div class='g-hud'>"+
+        "<div><span class='lab'>Level</span><span class='val'>"+(i+1)+"/10</span></div>"+
+        "<div><span class='lab'>Find</span><span class='val'><span id='st-left'>"+toxicLeft+"</span> toxic</span></div>"+
+        "<div><span class='lab'>Wrong</span><span class='val' id='st-wrong'>0/3</span></div>"+
+      "</div>"+
+      "<p class='st-prompt'>⛔ Tap the "+toxicLeft+" toxic foods before time runs out!</p>"+
+      "<div class='st-barwrap'><div class='st-bar' id='st-bar'></div></div>"+
+      "<div class='st-grid' style='grid-template-columns:repeat("+colsFor(grid.length)+",1fr)' id='st-grid'>"+tiles+"</div>"+
+      "<div id='st-flash'></div>"+
+      "<button class='g-big g-ghost' id='st-quit' style='max-width:200px;margin-top:14px'>← Level map</button>";
+    el().querySelectorAll(".st-tile").forEach(function(tl){ tl.onclick=function(){ tap(parseInt(tl.getAttribute("data-i"),10),tl); }; });
+    document.getElementById("st-quit").onclick=function(){ clearTimeout(timer); renderMap(); };
+    var bar=document.getElementById("st-bar");
+    bar.style.transition="none"; bar.style.width="100%";
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.transition="width "+budget+"ms linear"; bar.style.width="0%"; }); });
+    timer=setTimeout(onTimeout,budget);
+  }
+
+  function tap(i,tl){
+    if(busy) return;
+    var t=grid[i]; if(t.done) return; t.done=true;
+    var mark=tl.querySelector(".mark");
+    if(t.v==="danger"){
+      tl.classList.add("st-hit"); mark.textContent="⛔"; toxicLeft--; document.getElementById("st-left").textContent=toxicLeft;
+      if(toxicLeft===0) levelClear();
+    } else {
+      tl.classList.add("st-miss"); mark.textContent="✅"; wrong++; document.getElementById("st-wrong").textContent=wrong+"/3";
+      if(wrong>=3){ clearTimeout(timer); busy=true; endReveal(); fail("3 wrong taps!"); }
+    }
+  }
+  function endReveal(){
+    var tEls=el().querySelectorAll(".st-tile");
+    for(var i=0;i<grid.length;i++){ if(!grid[i].done && grid[i].v==="danger"){ tEls[i].classList.add("st-missed"); tEls[i].querySelector(".mark").textContent="⛔"; } }
+  }
+  function onTimeout(){ busy=true; endReveal(); fail("⏰ Time's up!"); }
+
+  function levelClear(){
+    clearTimeout(timer); busy=true;
+    var elapsed=Date.now()-roundStart, pct=(budget-elapsed)/budget;
+    var st = (wrong===0 && pct>0.35)?3 : (wrong<=1)?2 : 1;
+    var p=loadProg(); p.s[lvl+1]=Math.max(p.s[lvl+1]||0,st);
+    if(lvl<9 && p.u<lvl+2) p.u=lvl+2; saveProg(p);
+    var last=(lvl===9);
+    var fl=document.getElementById("st-flash"); if(fl) fl.innerHTML="<p class='st-flash' style='color:#0E5A41'>✅ Level "+(lvl+1)+" clear!</p>";
+    setTimeout(function(){
+      el().innerHTML=
+        "<div style='animation:tin .3s ease'>"+
+        "<div class='g-final'>"+(last?"🏆":"🎉")+"</div>"+
+        "<h2 style='margin:2px 0 4px;font-size:23px'>"+(last?"You beat all 10 levels!":"Level "+(lvl+1)+" cleared!")+"</h2>"+
+        "<div class='g-stars-big'>"+stars(st)+"</div>"+
+        "<div class='g-row'>"+
+          (last?"":"<button class='g-big' id='g-next'>Next level →</button>")+
+          "<button class='g-big "+(last?"":"g-ghost")+"' id='g-replay'>Replay</button>"+
+        "</div>"+
+        "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "</div>";
+      if(!last) document.getElementById("g-next").onclick=function(){ playLevel(lvl+1); };
+      document.getElementById("g-replay").onclick=function(){ playLevel(lvl); };
+      document.getElementById("g-map").onclick=renderMap;
+    },760);
+  }
+  function fail(msg){
+    var fl=document.getElementById("st-flash"); if(fl) fl.innerHTML="<p class='st-flash' style='color:#9c2a22'>"+msg+"</p>";
+    setTimeout(function(){
+      el().innerHTML=
+        "<div style='animation:tin .3s ease'>"+
+        "<div class='g-final'>😿</div>"+
+        "<h2 style='margin:2px 0 4px;font-size:22px'>Level "+(lvl+1)+" — "+msg+"</h2>"+
+        "<p style='color:#5d6b63;margin:4px 0 0'>You found "+(LEVELS[lvl].tox-toxicLeft)+" of "+LEVELS[lvl].tox+" toxic foods.</p>"+
+        "<div class='g-row'>"+
+          "<button class='g-big' id='g-retry'>Try again ↻</button>"+
+          "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "</div>"+
+        "<p style='margin:14px 0 0;color:#5d6b63;font-size:14px'>Brush up in the <a href='quiz.html' style='color:#0E5A41;font-weight:700'>food quiz →</a></p>"+
+        "</div>";
+      document.getElementById("g-retry").onclick=function(){ playLevel(lvl); };
+      document.getElementById("g-map").onclick=renderMap;
+    },900);
+  }
+
+  function renderMap(){
+    clearTimeout(timer);
+    var p=loadProg(), cells="";
+    for(var i=0;i<10;i++){
+      var n=i+1, locked=n>p.u, st=p.s[n]||0;
+      cells+="<div class='lv-cell "+(locked?"locked":(st?"cleared":""))+"' data-l='"+i+"'>"+
+        "<span class='lv-num'>"+(locked?"🔒":n)+"</span>"+
+        "<span class='lv-name'>"+LEVELS[i].name+"</span>"+
+        "<span class='lv-stars'>"+(st?stars(st):"")+"</span></div>";
+    }
+    var tot=0; for(var k=1;k<=10;k++) tot+=(p.s[k]||0);
+    el().innerHTML=
+      "<div style='animation:tin .3s ease'>"+
+      "<p class='lv-head'>⛔ Spot the Toxic &middot; "+tot+"/30 ★</p>"+
+      "<h2 style='margin:2px 0 8px;font-size:22px'>Pick a level</h2>"+
+      "<div class='g-pick'>"+
+        "<button data-sp='dog' class='"+(species==='dog'?'sel':'')+"'>🐶 Dogs</button>"+
+        "<button data-sp='cat' class='"+(species==='cat'?'sel':'')+"'>🐱 Cats</button>"+
+        "<button data-sp='both' class='"+(species==='both'?'sel':'')+"'>🐾 Both</button>"+
+      "</div>"+
+      "<div class='lv-map'>"+cells+"</div>"+
+      "<p style='color:#9fb0a7;font-size:12.5px;margin:14px 0 0'>Bigger grids, less time, 3 wrong taps = retry. 3★ = no mistakes &amp; fast.</p>"+
+      "</div>";
+    el().querySelectorAll("[data-sp]").forEach(function(b){ b.onclick=function(){ species=b.getAttribute("data-sp"); renderMap(); }; });
+    el().querySelectorAll(".lv-cell").forEach(function(cd){ if(cd.classList.contains("locked"))return; cd.onclick=function(){ playLevel(parseInt(cd.getAttribute("data-l"),10)); }; });
+  }
+  if(window.PETIBLE_FOODS) renderMap();
+  else window.addEventListener("load",renderMap);
+})();
+</script>
+</body>
+</html>
