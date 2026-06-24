@@ -130,7 +130,7 @@ section.block{padding:64px 0}
 
 /* footer */
 .site-footer{background:var(--ink);color:#cdd8d1;margin-top:72px;padding:60px 0 28px}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:30px}
 .site-footer .brand{color:#fff}
 .site-footer h5{color:#fff;font-size:15px;font-weight:600;margin-bottom:14px}
 .site-footer a{display:block;color:#9fb0a7;font-size:14.5px;padding:5px 0;transition:.2s}
