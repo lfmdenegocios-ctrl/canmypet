@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Calorie Calculator — How Many Calories Does My Dog or Cat Need? | CanMyPet</title>
+<meta name="description" content="Find out how many calories your dog or cat needs per day, using the vet-standard RER/MER formula. Includes a safe daily treat budget. Free.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/pet-calorie-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet Calorie Calculator — Daily Calories for Dogs &amp; Cats">
+<meta property="og:description" content="How many calories does your pet need? Vet-standard RER/MER formula, plus a safe treat budget. Free.">
+<meta property="og:url" content="https://canmypethave.com/tools/pet-calorie-calculator.html">
+<meta property="og:image" content="https://canmypethave.com/assets/guide/hero-safe-fruits-veggies-for-dogs.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="323e8ff52b8df3df0adf26caaeae963b"/>
+<style>
+.t-wrap{max-width:560px;margin:14px auto}
+.t-card{background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:20px;padding:24px 22px;box-shadow:0 10px 30px rgba(14,90,65,.06)}
+.t-row{margin:0 0 16px}
+.t-row label{display:block;font-weight:700;color:#16241F;font-size:14.5px;margin:0 0 6px}
+.t-in,.t-sel{width:100%;padding:12px 14px;border:2px solid rgba(14,90,65,.15);border-radius:12px;font-size:16px;font-family:inherit;background:#FAF7F0;color:#16241F;box-sizing:border-box}
+.t-in:focus,.t-sel:focus{outline:none;border-color:#2FBF87}
+.t-seg{display:flex;gap:8px}
+.t-seg button{flex:1;padding:11px;border-radius:12px;border:2px solid rgba(14,90,65,.15);background:#FAF7F0;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px;color:#16241F}
+.t-seg button.sel{border-color:#0E5A41;background:#E4F6EC}
+.t-flex{display:flex;gap:10px}.t-flex>div:first-child{flex:2}.t-flex>div:last-child{flex:1}
+.t-go{width:100%;padding:15px;border:none;border-radius:14px;background:#0E5A41;color:#fff;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:4px}
+.t-go:hover{background:#0c4d37}
+.t-res{margin-top:18px;border-radius:16px;padding:20px;background:#E9F8F0;border:1px solid #1FA463;animation:tin .3s ease}
+.t-big{font-size:38px;font-weight:900;color:#0E5A41;line-height:1.05}
+.t-sub{font-size:14.5px;color:#3a4944;margin-top:4px}
+.t-mini{display:flex;gap:10px;margin-top:14px}
+.t-mini div{flex:1;background:rgba(255,255,255,.7);border-radius:12px;padding:12px;text-align:center}
+.t-mini b{display:block;font-size:20px;color:#0E5A41}
+.t-mini span{font-size:12px;color:#5d6b63}
+.t-disc{font-size:12.5px;color:#9fb0a7;margin-top:16px;line-height:1.55}
+@keyframes tin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../foods/index.html">Food checker</a><a href="../about.html">About</a><a href="../sources.html">Sources</a></nav>
+<a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">&#8980;</i> Check a food</a>
+<button class="menu-btn" aria-label="Menu">&#9776;</button></div></header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> &middot; Tools &middot; Calorie calculator</div>
+  <div style="max-width:640px;margin:16px 0 0">
+    <span class="eyebrow">Free tool &middot; dogs &amp; cats</span>
+    <h1 style="font-size:clamp(28px,5vw,44px);margin:10px 0 8px">How many calories does my pet need?</h1>
+    <p class="muted" style="font-size:17px">Get a daily calorie target using the vet-standard RER/MER formula — plus a safe treat budget so snacks don't tip the scale.</p>
+  </div>
+</div>
+
+<main class="container">
+  <div class="t-wrap">
+    <div class="t-card">
+      <div class="t-row">
+        <label>My pet is a…</label>
+        <div class="t-seg" id="t-sp"><button data-sp="dog" class="sel">🐶 Dog</button><button data-sp="cat">🐱 Cat</button></div>
+      </div>
+      <div class="t-row">
+        <label>Current weight</label>
+        <div class="t-flex">
+          <div><input class="t-in" id="t-w" type="number" min="0" step="0.1" placeholder="e.g. 12"></div>
+          <div>
+            <select class="t-sel" id="t-u"><option value="kg">kg</option><option value="lb">lb</option></select>
+          </div>
+        </div>
+      </div>
+      <div class="t-row">
+        <label>Life stage &amp; goal</label>
+        <select class="t-sel" id="t-factor"></select>
+      </div>
+      <button class="t-go" id="t-calc">Calculate calories →</button>
+      <div id="t-out"></div>
+      <p class="t-disc">Estimate based on RER = 70 × (body weight in kg)<sup>0.75</sup>, multiplied by a standard activity/life-stage factor (MER). Every pet is different — breed, metabolism and health all matter. Use this as a starting point and confirm the target with your veterinarian, especially for weight-loss plans.</p>
+    </div>
+  </div>
+  <div class="ad-slot" style="max-width:560px;margin:24px auto 30px">Ad placement</div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="foot-grid">
+<div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
+<div><h5>Tools</h5><a href="../tools/pet-emergency.html">My pet ate something</a><a href="../tools/pet-calorie-calculator.html">Calorie calculator</a><a href="../tools/pet-cost-calculator.html">Cost calculator</a><a href="../tools/pet-vaccine-schedule.html">Vaccine schedule</a><a href="../tools/pet-pregnancy-calculator.html">Pregnancy calculator</a><a href="../tools/puppy-weight-predictor.html">Puppy weight predictor</a><a href="../tools/pet-water-calculator.html">Water calculator</a><a href="../tools/pet-body-condition.html">Body condition score</a><a href="../tools/chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+<div><h5>Games</h5><a href="../tools/arcade.html">🎮 Arcade</a><a href="../tools/safe-or-toxic.html">Safe or Toxic? game</a><a href="../tools/spot-the-toxic.html">Spot the Toxic</a><a href="../tools/memory-match.html">Match the Bowl</a><a href="../tools/kitchen-hunt.html">Kitchen Hunt</a><a href="../tools/quiz.html">Pet food quiz</a></div>
+<div><h5>Foods &amp; guides</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../guides/foods-toxic-to-dogs.html">Foods toxic to dogs</a><a href="../guides/safe-fruits-veggies-for-dogs.html">Safe foods for dogs</a><a href="../guides/foods-cats-should-never-eat.html">Foods cats can't eat</a></div>
+<div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div></div>
+<div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
+
+<script>
+(function(){
+  var FACTORS={
+    dog:[
+      {l:"Weight loss",f:1.0},{l:"Neutered adult (typical)",f:1.6},{l:"Intact adult",f:1.8},
+      {l:"Senior / less active",f:1.4},{l:"Active / lots of exercise",f:2.5},
+      {l:"Puppy (0–4 months)",f:3.0},{l:"Puppy (4–12 months)",f:2.0}
+    ],
+    cat:[
+      {l:"Weight loss",f:0.8},{l:"Neutered adult (typical)",f:1.2},{l:"Intact adult",f:1.4},
+      {l:"Senior / less active",f:1.1},{l:"Active",f:1.4},{l:"Kitten (growing)",f:2.5}
+    ]
+  };
+  var species="dog";
+  var sel=document.getElementById("t-factor");
+  function fillFactors(){
+    sel.innerHTML=FACTORS[species].map(function(o,i){return "<option value=\""+o.f+"\""+(i===1?" selected":"")+">"+o.l+"</option>";}).join("");
+  }
+  fillFactors();
+  document.querySelectorAll("#t-sp button").forEach(function(b){
+    b.onclick=function(){ species=b.getAttribute("data-sp"); document.querySelectorAll("#t-sp button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); fillFactors(); };
+  });
+  function calc(){
+    var w=parseFloat(document.getElementById("t-w").value);
+    var unit=document.getElementById("t-u").value;
+    var factor=parseFloat(sel.value);
+    var out=document.getElementById("t-out");
+    if(!w||w<=0){ out.innerHTML="<div class='t-res' style='background:#FBF3DF;border-color:#E0A93B'><b style='color:#8a6210'>Enter a weight first.</b></div>"; return; }
+    var kg = unit==="lb" ? w/2.2046 : w;
+    if(kg>120){ out.innerHTML="<div class='t-res' style='background:#FBF3DF;border-color:#E0A93B'><b style='color:#8a6210'>That weight looks too high — check the unit (kg/lb).</b></div>"; return; }
+    var rer=70*Math.pow(kg,0.75);
+    var mer=rer*factor;
+    var treat=mer*0.10;
+    out.innerHTML=
+      "<div class='t-res'>"+
+        "<div class='t-big'>"+Math.round(mer)+" kcal<span style='font-size:18px;font-weight:700'> / day</span></div>"+
+        "<p class='t-sub'>Estimated daily calories to maintain this plan.</p>"+
+        "<div class='t-mini'>"+
+          "<div><b>"+Math.round(rer)+"</b><span>resting (RER)</span></div>"+
+          "<div><b>"+Math.round(treat)+"</b><span>treat budget (10%)</span></div>"+
+        "</div>"+
+        "<p class='t-sub' style='margin-top:14px'>💡 Keep treats under <strong>"+Math.round(treat)+" kcal/day</strong> (the 10% rule) so they don't unbalance the diet. Feed the rest as complete pet food, split into 2 meals.</p>"+
+      "</div>";
+  }
+  document.getElementById("t-calc").onclick=calc;
+})();
+</script>
+</body>
+</html>

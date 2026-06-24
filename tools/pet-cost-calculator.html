@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Cost Calculator — How Much Does a Dog or Cat Cost? | CanMyPet</title>
+<meta name="description" content="Estimate the real cost of owning a dog or cat — monthly, yearly and lifetime. Edit the numbers for your situation. Free pet budgeting tool.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/pet-cost-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet Cost Calculator — How Much Does a Pet Cost?">
+<meta property="og:description" content="Estimate the real monthly, yearly and lifetime cost of a dog or cat. Editable. Free.">
+<meta property="og:url" content="https://canmypethave.com/tools/pet-cost-calculator.html">
+<meta property="og:image" content="https://canmypethave.com/assets/guide/hero-safe-fruits-veggies-for-dogs.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="323e8ff52b8df3df0adf26caaeae963b"/>
+<style>
+.t-wrap{max-width:600px;margin:14px auto}
+.t-card{background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:20px;padding:24px 22px;box-shadow:0 10px 30px rgba(14,90,65,.06)}
+.t-row{margin:0 0 14px}
+.t-row label{display:block;font-weight:700;color:#16241F;font-size:14.5px;margin:0 0 6px}
+.t-sel{width:100%;padding:12px 14px;border:2px solid rgba(14,90,65,.15);border-radius:12px;font-size:16px;font-family:inherit;background:#FAF7F0;color:#16241F;box-sizing:border-box}
+.t-seg{display:flex;gap:8px}
+.t-seg button{flex:1;padding:11px;border-radius:12px;border:2px solid rgba(14,90,65,.15);background:#FAF7F0;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px;color:#16241F}
+.t-seg button.sel{border-color:#0E5A41;background:#E4F6EC}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.t-field label{display:block;font-size:12.5px;font-weight:700;color:#5d6b63;margin:0 0 4px}
+.t-money{position:relative}
+.t-money span{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:#9fb0a7;font-weight:700}
+.t-money input{width:100%;padding:11px 11px 11px 24px;border:2px solid rgba(14,90,65,.15);border-radius:11px;font-size:15px;font-family:inherit;background:#FAF7F0;color:#16241F;box-sizing:border-box}
+.t-money input:focus{outline:none;border-color:#2FBF87}
+.t-go{width:100%;padding:15px;border:none;border-radius:14px;background:#0E5A41;color:#fff;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:14px}
+.t-go:hover{background:#0c4d37}
+.t-res{margin-top:18px;border-radius:16px;padding:20px;background:#E9F8F0;border:1px solid #1FA463;animation:tin .3s ease}
+.t-big{font-size:34px;font-weight:900;color:#0E5A41;line-height:1.05}
+.t-mini{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.t-mini div{flex:1;min-width:120px;background:rgba(255,255,255,.7);border-radius:12px;padding:12px;text-align:center}
+.t-mini b{display:block;font-size:19px;color:#0E5A41}.t-mini span{font-size:12px;color:#5d6b63}
+.t-disc{font-size:12.5px;color:#9fb0a7;margin-top:16px;line-height:1.55}
+@keyframes tin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../foods/index.html">Food checker</a><a href="../about.html">About</a><a href="../sources.html">Sources</a></nav>
+<a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">&#8980;</i> Check a food</a>
+<button class="menu-btn" aria-label="Menu">&#9776;</button></div></header>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../index.html">Home</a> &middot; Tools &middot; Cost calculator</div>
+  <div style="max-width:640px;margin:16px 0 0">
+    <span class="eyebrow">Free tool &middot; dogs &amp; cats</span>
+    <h1 style="font-size:clamp(28px,5vw,44px);margin:10px 0 8px">How much does a pet really cost?</h1>
+    <p class="muted" style="font-size:17px">See the monthly, yearly and lifetime cost of a dog or cat. We pre-fill typical numbers — tweak any of them to match your situation.</p>
+  </div>
+</div>
+
+<main class="container">
+  <div class="t-wrap">
+    <div class="t-card">
+      <div class="t-row">
+        <label>Pet</label>
+        <div class="t-seg" id="t-sp"><button data-sp="dog" class="sel">🐶 Dog</button><button data-sp="cat">🐱 Cat</button></div>
+      </div>
+      <div class="t-row" id="t-sizerow">
+        <label>Dog size</label>
+        <div class="t-seg" id="t-size"><button data-sz="small">Small</button><button data-sz="medium" class="sel">Medium</button><button data-sz="large">Large</button></div>
+      </div>
+      <p style="font-weight:700;color:#16241F;font-size:14.5px;margin:4px 0 6px">Monthly costs (USD) — edit as needed</p>
+      <div class="t-grid">
+        <div class="t-field"><label>Food</label><div class="t-money"><span>$</span><input id="c-food" type="number" min="0"></div></div>
+        <div class="t-field"><label>Treats &amp; chews</label><div class="t-money"><span>$</span><input id="c-treats" type="number" min="0"></div></div>
+        <div class="t-field"><label>Vet &amp; preventive</label><div class="t-money"><span>$</span><input id="c-vet" type="number" min="0"></div></div>
+        <div class="t-field"><label>Insurance</label><div class="t-money"><span>$</span><input id="c-ins" type="number" min="0"></div></div>
+        <div class="t-field"><label>Grooming</label><div class="t-money"><span>$</span><input id="c-groom" type="number" min="0"></div></div>
+        <div class="t-field"><label>Supplies &amp; misc</label><div class="t-money"><span>$</span><input id="c-misc" type="number" min="0"></div></div>
+        <div class="t-field"><label>One-time upfront</label><div class="t-money"><span>$</span><input id="c-upfront" type="number" min="0"></div></div>
+        <div class="t-field"><label>Expected lifespan (yrs)</label><div class="t-money"><span style="color:transparent">$</span><input id="c-life" type="number" min="1" style="padding-left:11px"></div></div>
+      </div>
+      <button class="t-go" id="t-calc">Calculate cost →</button>
+      <div id="t-out"></div>
+      <p class="t-disc">Pre-filled values are rough US averages and vary a lot by location, breed and choices. Insurance is optional but can offset big vet bills. Lifetime = (yearly × lifespan) + one-time upfront. Use this to plan, not as an exact quote.</p>
+    </div>
+  </div>
+  <div class="ad-slot" style="max-width:600px;margin:24px auto 30px">Ad placement</div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="foot-grid">
+<div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
+<div><h5>Tools</h5><a href="../tools/pet-emergency.html">My pet ate something</a><a href="../tools/pet-calorie-calculator.html">Calorie calculator</a><a href="../tools/pet-cost-calculator.html">Cost calculator</a><a href="../tools/pet-vaccine-schedule.html">Vaccine schedule</a><a href="../tools/pet-pregnancy-calculator.html">Pregnancy calculator</a><a href="../tools/puppy-weight-predictor.html">Puppy weight predictor</a><a href="../tools/pet-water-calculator.html">Water calculator</a><a href="../tools/pet-body-condition.html">Body condition score</a><a href="../tools/chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="../foods/index.html">Food checker</a></div>
+<div><h5>Games</h5><a href="../tools/arcade.html">🎮 Arcade</a><a href="../tools/safe-or-toxic.html">Safe or Toxic? game</a><a href="../tools/spot-the-toxic.html">Spot the Toxic</a><a href="../tools/memory-match.html">Match the Bowl</a><a href="../tools/kitchen-hunt.html">Kitchen Hunt</a><a href="../tools/quiz.html">Pet food quiz</a></div>
+<div><h5>Foods &amp; guides</h5><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../guides/foods-toxic-to-dogs.html">Foods toxic to dogs</a><a href="../guides/safe-fruits-veggies-for-dogs.html">Safe foods for dogs</a><a href="../guides/foods-cats-should-never-eat.html">Foods cats can't eat</a></div>
+<div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div></div>
+<div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
+
+<script>
+(function(){
+  var DEF={
+    "dog-small":{food:35,treats:10,vet:45,ins:30,groom:30,misc:20,up:500,life:13},
+    "dog-medium":{food:55,treats:12,vet:55,ins:40,groom:40,misc:25,up:600,life:12},
+    "dog-large":{food:80,treats:15,vet:65,ins:55,groom:45,misc:30,up:700,life:10},
+    "cat-medium":{food:30,treats:8,vet:35,ins:20,groom:5,misc:20,up:350,life:15}
+  };
+  var species="dog", size="medium";
+  function key(){ return species==="cat" ? "cat-medium" : ("dog-"+size); }
+  function prefill(){
+    var d=DEF[key()];
+    document.getElementById("c-food").value=d.food;
+    document.getElementById("c-treats").value=d.treats;
+    document.getElementById("c-vet").value=d.vet;
+    document.getElementById("c-ins").value=d.ins;
+    document.getElementById("c-groom").value=d.groom;
+    document.getElementById("c-misc").value=d.misc;
+    document.getElementById("c-upfront").value=d.up;
+    document.getElementById("c-life").value=d.life;
+  }
+  document.querySelectorAll("#t-sp button").forEach(function(b){
+    b.onclick=function(){ species=b.getAttribute("data-sp"); document.querySelectorAll("#t-sp button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel");
+      document.getElementById("t-sizerow").style.display = species==="cat" ? "none":"block"; prefill(); };
+  });
+  document.querySelectorAll("#t-size button").forEach(function(b){
+    b.onclick=function(){ size=b.getAttribute("data-sz"); document.querySelectorAll("#t-size button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); prefill(); };
+  });
+  function num(id){ var v=parseFloat(document.getElementById(id).value); return isNaN(v)?0:v; }
+  function fmt(n){ return "$"+Math.round(n).toLocaleString(); }
+  function calc(){
+    var monthly=num("c-food")+num("c-treats")+num("c-vet")+num("c-ins")+num("c-groom")+num("c-misc");
+    var up=num("c-upfront"), life=Math.max(1,num("c-life"));
+    var yearly=monthly*12, firstYear=yearly+up, lifetime=yearly*life+up;
+    document.getElementById("t-out").innerHTML=
+      "<div class='t-res'>"+
+        "<p class='t-sub' style='margin:0 0 2px;font-weight:700;color:#0c5e38;font-size:14.5px'>Estimated cost</p>"+
+        "<div class='t-big'>"+fmt(monthly)+"<span style='font-size:17px;font-weight:700'> / month</span></div>"+
+        "<div class='t-mini'>"+
+          "<div><b>"+fmt(yearly)+"</b><span>per year</span></div>"+
+          "<div><b>"+fmt(firstYear)+"</b><span>first year</span></div>"+
+          "<div><b>"+fmt(lifetime)+"</b><span>lifetime ("+life+" yrs)</span></div>"+
+        "</div>"+
+      "</div>";
+  }
+  document.getElementById("t-calc").onclick=calc;
+  prefill();
+})();
+</script>
+</body>
+</html>
