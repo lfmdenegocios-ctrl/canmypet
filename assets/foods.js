@@ -683,7 +683,33 @@ window.PETIBLE_FOODS = [
     cat:{v:'caution', why:'Gravy is salty, fatty and often contains onion or garlic powder, which are toxic to cats. A tiny plain taste is okay; avoid the seasoned kind.', signs:['Upset stomach','Vomiting']} },
   { slug:'cat-litter', name:'Cat litter', emoji:'🧱',
     dog:{v:'caution', why:'Dogs sometimes raid the litter box. Plain litter usually just upsets the stomach, but clumping clay can swell and, in large amounts, risk a blockage.', signs:['Vomiting','Constipation or straining','Lethargy']},
-    cat:{v:'caution', why:'Eating a little litter is usually harmless for cats, but a cat eating a lot may be unwell, and clumping litter can cause a digestive blockage — mention it to your vet.', signs:['Constipation','Vomiting','Lethargy']} }
+    cat:{v:'caution', why:'Eating a little litter is usually harmless for cats, but a cat eating a lot may be unwell, and clumping litter can cause a digestive blockage — mention it to your vet.', signs:['Constipation','Vomiting','Lethargy']} },
+
+  /* --- Alcoholic drinks (all danger; verb 'drink' where it reads better) --- */
+  { slug:'beer', name:'Beer', emoji:'🍺', verb:'drink',
+    dog:{v:'danger', why:'Beer contains ethanol — and hops — both toxic to dogs. Dogs process alcohol far more slowly than people, so even a small amount can cause dangerous alcohol poisoning.', toxic:'Ethanol (and hops)', signs:['Wobbly, uncoordinated walking','Vomiting or drooling','Lethargy or collapse','Slow or labored breathing']},
+    cat:{v:'danger', why:'Cats are tiny and extremely sensitive to alcohol. A few laps of beer can be enough to cause poisoning — keep it well out of reach.', toxic:'Ethanol', signs:['Disorientation','Drooling','Collapse']} },
+  { slug:'wine', name:'Wine', emoji:'🍷', verb:'drink',
+    dog:{v:'danger', why:'Wine is a double danger: the ethanol causes alcohol poisoning, and grapes/raisins used to make it can trigger sudden kidney failure in dogs. No amount is safe.', toxic:'Ethanol + grapes', signs:['Unsteady walking','Vomiting','Lethargy','Reduced urination']},
+    cat:{v:'danger', why:'Never give a cat wine. Alcohol is highly toxic to cats even in tiny amounts.', toxic:'Ethanol', signs:['Disorientation','Drooling','Collapse']} },
+  { slug:'champagne', name:'Champagne', emoji:'🥂', verb:'drink',
+    dog:{v:'danger', why:'Champagne is still alcohol — the ethanol is rapidly absorbed and toxic to dogs. The bubbles can also cause uncomfortable bloating. Keep New Year toasts away from your dog.', toxic:'Ethanol', signs:['Wobbliness','Vomiting','Lethargy','Difficulty breathing']},
+    cat:{v:'danger', why:'Alcohol of any kind is dangerous for cats — keep champagne out of reach.', toxic:'Ethanol', signs:['Disorientation','Collapse']} },
+  { slug:'liquor', name:'Hard liquor (whiskey, vodka, rum)', emoji:'🥃', verb:'drink',
+    dog:{v:'danger', why:'Spirits have a much higher alcohol concentration than beer or wine, so even a small lick can poison a dog quickly. Treat any ingestion as an emergency.', toxic:'Ethanol (high concentration)', signs:['Rapid loss of coordination','Vomiting','Collapse','Dangerously slow breathing']},
+    cat:{v:'danger', why:'Concentrated alcohol is extremely dangerous to cats — even a small amount is an emergency.', toxic:'Ethanol', signs:['Disorientation','Collapse','Slow breathing']} },
+  { slug:'cocktails', name:'Cocktails (margarita, etc.)', emoji:'🍹', verb:'drink',
+    dog:{v:'danger', why:'Cocktails combine alcohol with other risky ingredients — a margarita adds lime and lots of sugar; others may hide chocolate or caffeine. The alcohol alone makes them unsafe.', toxic:'Ethanol (+ mixers)', signs:['Unsteady walking','Vomiting','Lethargy','Difficulty breathing']},
+    cat:{v:'danger', why:'Keep all cocktails away from cats — alcohol plus sugary/citrus mixers is a bad mix for a small animal.', toxic:'Ethanol', signs:['Disorientation','Drooling']} },
+  { slug:'eggnog', name:'Eggnog', emoji:'🥚', verb:'drink',
+    dog:{v:'danger', why:'Holiday eggnog usually contains alcohol (rum or brandy) plus heavy dairy, sugar, nutmeg and sometimes raw egg — a stack of risks. Skip it, or offer a tiny plain dog-safe treat instead.', toxic:'Ethanol + nutmeg', signs:['Wobbliness','Vomiting / diarrhea','Lethargy']},
+    cat:{v:'danger', why:'Eggnog mixes alcohol with dairy (which most cats can’t digest) and nutmeg — keep it away.', toxic:'Ethanol + nutmeg', signs:['Vomiting','Disorientation']} },
+  { slug:'liquor-chocolates', name:'Liquor chocolates & rum cake', emoji:'🍫', verb:'eat',
+    dog:{v:'danger', why:'A worst-of-both-worlds treat: alcohol AND chocolate (theobromine), both toxic to dogs in one bite. Common around the holidays — keep boxes of liqueur chocolates out of reach.', toxic:'Ethanol + theobromine', signs:['Vomiting','Restlessness, rapid heart rate','Wobbliness','Tremors or seizures']},
+    cat:{v:'danger', why:'Both the alcohol and the chocolate are toxic to cats. Treat any ingestion as an emergency.', toxic:'Ethanol + theobromine', signs:['Vomiting','Rapid breathing','Tremors']} },
+  { slug:'hops', name:'Hops (beer brewing)', emoji:'🌿', verb:'eat',
+    dog:{v:'danger', why:'Hops — fresh, pellets, or spent grains from home-brewing — can cause malignant hyperthermia in dogs: a dangerous, sometimes fatal spike in body temperature. Home brewers must keep all hops away from dogs.', toxic:'Hops compounds', signs:['Heavy panting','Rapid heart rate','High body temperature','Restlessness / anxiety','Vomiting']},
+    cat:{v:'danger', why:'Hops toxicity is best documented in dogs, but cats should never have access to brewing hops either.', toxic:'Hops compounds', signs:['Panting','Restlessness','Vomiting']} }
 ];
 
 /* tiny helpers shared by search + pages */
