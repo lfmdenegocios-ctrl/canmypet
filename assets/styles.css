@@ -403,14 +403,25 @@ html.lenis,html.lenis body{height:auto}
 @media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
 
 
-/* --- Pet Life blog carousel (home #guides only; hub stays .blog-grid) --- */
-.bcar{position:relative}
-.bcar-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px;scrollbar-width:none}
+/* --- Pet Life guides carousel — editorial 2:3 cover cards (home #guides only; hub stays .blog-grid) --- */
+.bcar{position:relative;margin-top:6px}
+.bcar-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:10px 6px 18px;scrollbar-width:none}
 .bcar-track::-webkit-scrollbar{display:none}
-.bcar-track .blog-card{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
-.bcar-arrow{position:absolute;top:38%;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-sm);cursor:pointer;font-size:22px;color:var(--pine);display:flex;align-items:center;justify-content:center;transition:.2s}
-.bcar-arrow:hover{border-color:var(--sage);transform:scale(1.06)}
-.bcar-arrow.prev{left:-10px}.bcar-arrow.next{right:-10px}
-@media(max-width:860px){.bcar-track .blog-card{flex:0 0 calc((100% - 22px)/2)}}
-@media(max-width:560px){.bcar-track .blog-card{flex:0 0 88%}.bcar-arrow{display:none}}
+.bcar-card{position:relative;flex:0 0 calc((100% - 48px)/3);aspect-ratio:2/3;border-radius:22px;overflow:hidden;scroll-snap-align:start;text-decoration:none;isolation:isolate;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
+.bcar-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.bcar-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.bcar-card:hover .bcar-img{transform:scale(1.06)}
+.bcar-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(7,28,21,.94) 0%,rgba(7,28,21,.6) 34%,rgba(7,28,21,.08) 62%,rgba(7,28,21,.2) 100%)}
+.bcar-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 22px 24px;color:#fff;display:flex;flex-direction:column;gap:9px}
+.bcar-cat{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 11px;border-radius:var(--r-pill)}
+.bcar-title{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.14;margin:0;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.bcar-exc{font-size:14px;line-height:1.5;margin:0;color:rgba(255,255,255,.85);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bcar-go{margin-top:3px;font-weight:700;font-size:13.5px;letter-spacing:.02em;color:#ffd45f}
+.bcar-go span{display:inline-block;transition:transform .25s ease}
+.bcar-card:hover .bcar-go span{transform:translateX(5px)}
+.bcar-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.97);box-shadow:0 6px 20px rgba(14,90,65,.18);cursor:pointer;font-size:24px;line-height:1;color:var(--pine);display:flex;align-items:center;justify-content:center;transition:.2s}
+.bcar-arrow:hover{border-color:var(--sage);color:var(--sage);transform:translateY(-50%) scale(1.08)}
+.bcar-arrow.prev{left:-16px}.bcar-arrow.next{right:-16px}
+@media(max-width:980px){.bcar-card{flex:0 0 calc((100% - 24px)/2)}}
+@media(max-width:560px){.bcar-card{flex:0 0 78%}.bcar-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.bcar-track{scroll-behavior:auto}}
