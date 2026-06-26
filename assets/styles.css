@@ -385,3 +385,19 @@ html.lenis,html.lenis body{height:auto}
 .exp .faq details{border-bottom:1px solid rgba(14,90,65,.1);padding:6px 0}
 .exp .faq summary{cursor:pointer;font-weight:700;color:#16241F;font-size:14.5px;padding:6px 0}
 .exp .faq p{font-size:14px;margin:4px 0 8px;color:#3a4a42;line-height:1.55}
+
+
+/* --- Pet Life blog/guides cards (data-driven; home #guides + guides hub) --- */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blog-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.blog-cover{aspect-ratio:16/10;overflow:hidden;background:#eef3f0}
+.blog-cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.blog-card:hover .blog-cover img{transform:scale(1.04)}
+.blog-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px}
+.blog-cat{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0c5e38;background:var(--safe-bg);padding:4px 10px;border-radius:var(--r-pill)}
+.blog-title{font-family:var(--serif);font-size:20px;color:var(--ink);margin:0;line-height:1.15}
+.blog-exc{color:var(--muted);font-size:14.5px;margin:0}
+.blog-go{font-weight:700;color:var(--coral);font-size:14px;margin-top:2px}
+@media(max-width:860px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
