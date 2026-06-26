@@ -211,14 +211,17 @@
   </div>
 </section>
 
-<section class="block container" id="guides">
-  <div class="section-head reveal">
-    <span class="eyebrow">Pet Life</span>
-    <h2>Guides &amp; curiosities</h2>
-    <p>Breeds, behavior and fun facts — practical, vet-sourced reads for dog and cat parents. New articles every week.</p>
-  </div>
-  <!--GUIDES:HOME-->
-<div class="blog-grid">
+<section class="block peek" id="guides">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Pet Life</span>
+      <h2>Guides &amp; curiosities</h2>
+      <p>Breeds, behavior and fun facts — practical, vet-sourced reads. New articles every week.</p>
+    </div>
+    <div class="bcar">
+      <button class="bcar-arrow prev" aria-label="Previous">&lsaquo;</button>
+      <div class="bcar-track">
+        <!--GUIDES:HOME-->
 <a class="blog-card" href="guides/best-dog-breeds-for-kids.html">
   <div class="blog-cover"><img src="assets/breeds/hero.jpg" alt="The Best Dog Breeds for Kids &amp; Families" loading="lazy"></div>
   <div class="blog-body">
@@ -246,10 +249,31 @@
     <span class="blog-go">Read &rarr;</span>
   </div>
 </a>
-</div>
+<a class="blog-card" href="guides/foods-cats-should-never-eat.html">
+  <div class="blog-cover"><img src="assets/guide/hero-foods-cats-should-never-eat.jpg" alt="Foods Cats Should Never Eat" loading="lazy"></div>
+  <div class="blog-body">
+    <span class="blog-cat">Safety</span>
+    <h3 class="blog-title">Foods Cats Should Never Eat</h3>
+    <p class="blog-exc">The kitchen items that are dangerous for cats — and the signs to watch.</p>
+    <span class="blog-go">Read &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="guides/thanksgiving-foods-dangerous-for-pets.html">
+  <div class="blog-cover"><img src="assets/guide/hero-thanksgiving-foods-dangerous-for-pets.jpg" alt="Thanksgiving Foods Dangerous for Pets" loading="lazy"></div>
+  <div class="blog-body">
+    <span class="blog-cat">Seasonal</span>
+    <h3 class="blog-title">Thanksgiving Foods Dangerous for Pets</h3>
+    <p class="blog-exc">Holiday table hazards for dogs and cats — and the safe alternatives.</p>
+    <span class="blog-go">Read &rarr;</span>
+  </div>
+</a>
 <!--/GUIDES:HOME-->
-  <div style="text-align:center;margin:26px 0 0">
-    <a class="btn" href="guides/index.html">Browse all guides &rarr;</a>
+      </div>
+      <button class="bcar-arrow next" aria-label="Next">&rsaquo;</button>
+    </div>
+    <div style="text-align:center;margin-top:18px">
+      <a class="btn btn-ghost" href="guides/index.html">Browse all guides &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -331,5 +355,29 @@
 <script src="assets/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="assets/anim.js"></script>
+<script>/* bcar */
+(function(){
+  var car=document.querySelector('.bcar'); if(!car) return;
+  var track=car.querySelector('.bcar-track');
+  var card=track.querySelector('.blog-card');
+  function step(){ return card ? card.getBoundingClientRect().width + 22 : 320; }
+  var nx=car.querySelector('.next'), pv=car.querySelector('.prev');
+  if(nx) nx.onclick=function(){ track.scrollBy({left:step(),behavior:'smooth'}); };
+  if(pv) pv.onclick=function(){ track.scrollBy({left:-step(),behavior:'smooth'}); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return; // honor reduced-motion: arrows still work, no auto-rotate
+  var t=setInterval(auto,6000);
+  function auto(){
+    if(track.scrollLeft + track.clientWidth >= track.scrollWidth - 4){ track.scrollTo({left:0,behavior:'smooth'}); }
+    else { track.scrollBy({left:step(),behavior:'smooth'}); }
+  }
+  function stop(){ clearInterval(t); }
+  function go(){ stop(); t=setInterval(auto,6000); }
+  car.addEventListener('mouseenter',stop);
+  car.addEventListener('mouseleave',go);
+  car.addEventListener('focusin',stop);
+  car.addEventListener('focusout',go);
+})();
+</script>
 </body>
 </html>

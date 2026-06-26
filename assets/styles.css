@@ -401,3 +401,16 @@ html.lenis,html.lenis body{height:auto}
 .blog-go{font-weight:700;color:var(--coral);font-size:14px;margin-top:2px}
 @media(max-width:860px){.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+
+
+/* --- Pet Life blog carousel (home #guides only; hub stays .blog-grid) --- */
+.bcar{position:relative}
+.bcar-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px;scrollbar-width:none}
+.bcar-track::-webkit-scrollbar{display:none}
+.bcar-track .blog-card{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
+.bcar-arrow{position:absolute;top:38%;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-sm);cursor:pointer;font-size:22px;color:var(--pine);display:flex;align-items:center;justify-content:center;transition:.2s}
+.bcar-arrow:hover{border-color:var(--sage);transform:scale(1.06)}
+.bcar-arrow.prev{left:-10px}.bcar-arrow.next{right:-10px}
+@media(max-width:860px){.bcar-track .blog-card{flex:0 0 calc((100% - 22px)/2)}}
+@media(max-width:560px){.bcar-track .blog-card{flex:0 0 88%}.bcar-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.bcar-track{scroll-behavior:auto}}
