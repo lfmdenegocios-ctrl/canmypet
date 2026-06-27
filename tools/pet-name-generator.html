@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(function(){try{var d=document.documentElement;var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(n&&n.type==='back_forward')d.classList.add('nav-instant');if(sessionStorage.getItem('cmp_intro'))d.classList.add('intro-seen');else sessionStorage.setItem('cmp_intro','1');}catch(e){}})();</script>
-<title>Dog &amp; Cat Name Generator — Find the Perfect Pet Name | CanMyPet</title>
-<meta name="description" content="Free dog and cat name generator — pick a vibe (cute, classic, strong, funny, food, unique) and get instant pet name ideas for boys and girls.">
+<title>Pet Name Generator — Dogs, Cats, Birds, Rabbits &amp; More | CanMyPet</title>
+<meta name="description" content="Free pet name generator for dogs, cats, birds, rabbits, hamsters, fish, reptiles and horses — pick a vibe and get instant name ideas for boys and girls.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://canmypethave.com/tools/pet-name-generator.html">
 <meta property="og:type" content="website">
@@ -55,14 +55,14 @@
   <div style="max-width:640px;margin:16px 0 0">
     <span class="eyebrow">Free tool &middot; dogs &amp; cats</span>
     <h1 style="font-size:clamp(28px,5vw,44px);margin:10px 0 8px">Pet Name Generator</h1>
-    <p class="ng-sub">Stuck on what to call your new best friend? Pick a vibe and get instant name ideas — for dogs and cats.</p>
+    <p class="ng-sub">Stuck on what to call your new best friend? Pick your pet and a vibe, and get instant name ideas — dogs, cats, birds, rabbits and more.</p>
   </div>
 </div>
 
 <main class="container">
   <div class="ng-wrap">
     <div class="ng-card">
-      <div class="ng-row"><label>My new pet is a…</label><div class="ng-seg" id="sp"><button data-v="dog" class="sel">🐶 Dog</button><button data-v="cat">🐱 Cat</button></div></div>
+      <div class="ng-row"><label>My new pet is a…</label><div class="ng-vibes" id="sp"><button data-v="dog" class="sel">🐶 Dog</button><button data-v="cat">🐱 Cat</button><button data-v="bird">🐦 Bird</button><button data-v="rabbit">🐰 Rabbit</button><button data-v="hamster">🐹 Hamster</button><button data-v="fish">🐠 Fish</button><button data-v="reptile">🦎 Reptile</button><button data-v="horse">🐴 Horse</button></div></div>
       <div class="ng-row"><label>Gender</label><div class="ng-seg" id="g"><button data-v="any" class="sel">Any</button><button data-v="m">♂ Boy</button><button data-v="f">♀ Girl</button></div></div>
       <div class="ng-row"><label>Pick a vibe</label><div class="ng-vibes" id="vibe"><button data-v="cute" class="sel">🥰 Cute</button><button data-v="classic">⭐ Classic</button><button data-v="strong">💪 Strong</button><button data-v="funny">😹 Funny</button><button data-v="food">🍪 Food</button><button data-v="unique">✨ Unique</button></div></div>
       <button class="ng-go" id="go">Generate names →</button>
@@ -111,11 +111,11 @@ const POOLS={
  food:{m:["Waffles","Biscuit","Peanut","Pepper","Nacho","Basil","Pesto","Bean","Taco","Brownie"],f:["Mochi","Cookie","Pumpkin","Mango","Olive","Cinnamon","Honey","Mocha","Sushi","Maple"],u:["Pickle","Tofu","Noodle","Latte","Oreo","Marshmallow","Mochi","Bean","Pesto"]},
  unique:{m:["Zephyr","Caspian","Loki","Nimbus","Atlas","Dune","Bowie","Sol","Koda","Onyx"],f:["Indigo","Juniper","Wren","Cleo","Saffron","Calla","Iris","Suki","Yuki","Ember"],u:["Zephyr","Indigo","Echo","Pixel","Nova","Frost","Wren","Sol","Bowie"]}
 };
-const CAT_EXTRA={cute:["Mittens","Smokey","Misty","Mochi"],classic:["Felix","Tigger","Simba","Garfield"],strong:["Salem","Jinx","Shadow","Loki"],funny:["Chairman Meow","Catrick Swayze","Meowsie","Pico de Gato"],food:["Oreo","Mochi","Sushi","Nacho"],unique:["Binx","Yuki","Nala","Cleo"]};
+const TYPE_EXTRA={dog:["Rex","Rocky","Bella","Buddy","Duke"],cat:["Mittens","Felix","Salem","Tigger","Whiskers","Simba","Cleo","Binx","Jinx","Smokey"],bird:["Kiwi","Sunny","Rio","Tweety","Mango","Sky","Blue","Pip","Echo","Skye"],rabbit:["Thumper","Clover","Cinnamon","Cotton","Hazel","Nibbles","Marshmallow","Coco","Biscuit","Maple"],hamster:["Nibbles","Peanut","Pip","Hammy","Biscuit","Mochi","Tiny","Pellet","Cookie","Bean"],fish:["Bubbles","Nemo","Finn","Splash","Coral","Goldie","Marlin","Wave","Sushi","Blu"],reptile:["Spike","Rex","Draco","Godzilla","Scales","Loki","Slinky","Yoshi","Toothless","Raptor"],horse:["Spirit","Apollo","Star","Storm","Dakota","Comet","Shadow","Willow","Blaze","Duke"]};
 let species="dog",gender="any",vibe="cute";
 function bind(id,set){document.querySelectorAll("#"+id+" button").forEach(b=>{b.onclick=()=>{document.querySelectorAll("#"+id+" button").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");set(b.getAttribute("data-v"));};});}
 bind("sp",v=>species=v);bind("g",v=>gender=v);bind("vibe",v=>vibe=v);
-function pool(){var p=POOLS[vibe],arr;if(gender==="m")arr=p.m.concat(p.u);else if(gender==="f")arr=p.f.concat(p.u);else arr=p.m.concat(p.f,p.u);if(species==="cat")arr=arr.concat(CAT_EXTRA[vibe]||[]);return arr.filter((v,i,a)=>a.indexOf(v)===i);}
+function pool(){var p=POOLS[vibe],arr;if(gender==="m")arr=p.m.concat(p.u);else if(gender==="f")arr=p.f.concat(p.u);else arr=p.m.concat(p.f,p.u);arr=arr.concat(TYPE_EXTRA[species]||[]);return arr.filter((v,i,a)=>a.indexOf(v)===i);}
 function gen(){var arr=pool().sort(function(){return Math.random()-.5;}).slice(0,8);var out=document.getElementById("out");var tag=vibe.charAt(0).toUpperCase()+vibe.slice(1);out.innerHTML=arr.map(function(n){return '<div class="ng-name" data-n="'+n+'">'+n+'<small>'+tag+'</small></div>';}).join("");document.getElementById("again").style.display="block";document.getElementById("hint").style.display="block";out.querySelectorAll(".ng-name").forEach(function(el){el.onclick=function(){if(navigator.clipboard)navigator.clipboard.writeText(el.getAttribute("data-n"));el.classList.add("copied");setTimeout(function(){el.classList.remove("copied");},900);};});}
 document.getElementById("go").onclick=gen;document.getElementById("again").onclick=gen;
 })();
