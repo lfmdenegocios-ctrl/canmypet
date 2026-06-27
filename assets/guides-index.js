@@ -3,6 +3,11 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'best-dog-breeds-for-apartments',
+    title: 'The 10 Best Dog Breeds for Apartments',
+    excerpt: 'No yard needed — 10 quiet, adaptable breeds that thrive in small spaces, the ones to avoid, and the surprising couch-potato giant.',
+    cover: 'assets/breeds/apt-hero.jpg', cat: 'Breeds', date: '2026-06-27' },
+
   { slug: 'best-dog-breeds-for-kids',
     title: 'The Best Dog Breeds for Kids & Families',
     excerpt: '10 family-friendly breeds, which to avoid with toddlers, and how to introduce a new dog.',
