@@ -127,6 +127,7 @@ section.block{padding:64px 0}
 .aff-card h4{font-family:var(--serif);font-size:20px;margin-bottom:4px}
 .aff-card p{color:var(--muted);font-size:14.5px}
 .aff-card .btn{margin-left:auto;white-space:nowrap}
+.aff-card .aff-soon{margin-left:auto;align-self:center;white-space:nowrap;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:#eef3f0;border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 14px}
 
 /* footer */
 .site-footer{background:var(--ink);color:#cdd8d1;margin-top:72px;padding:60px 0 28px}
@@ -250,10 +251,8 @@ html.lenis,html.lenis body{height:auto}
 /* custom cursor (desktop, fine pointer) */
 @media(hover:hover) and (pointer:fine){
   html.cur,html.cur *{cursor:none!important}
-  .cur-dot{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--coral);z-index:10001;pointer-events:none;transform:translate(-50%,-50%);transition:opacity .25s,width .25s,height .25s}
-  .cur-ring{position:fixed;top:0;left:0;width:40px;height:40px;border:1.5px solid rgba(14,90,65,.4);border-radius:50%;z-index:10001;pointer-events:none;transform:translate(-50%,-50%);transition:width .28s cubic-bezier(.2,.8,.2,1),height .28s,border-color .28s,background .28s,opacity .25s}
-  .cur-ring.hover{width:66px;height:66px;border-color:var(--coral);background:rgba(255,107,94,.07)}
-  .cur-dot.hover{opacity:0}
+  .cur-dot{position:fixed;top:0;left:0;width:26px;height:26px;z-index:10001;pointer-events:none;transform:translate(-50%,-50%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23FF6B5E'%3E%3Cellipse cx='32' cy='43' rx='13' ry='10'/%3E%3Ccircle cx='15' cy='28' r='5.5'/%3E%3Ccircle cx='49' cy='28' r='5.5'/%3E%3Ccircle cx='24' cy='17' r='4.7'/%3E%3Ccircle cx='40' cy='17' r='4.7'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 4px rgba(0,0,0,.18));transition:width .18s ease,height .18s ease,opacity .2s}
+  .cur-dot.hover{width:36px;height:36px}
 }
 
 /* intro preloader (homepage) — pure-CSS dismiss so it never sticks */

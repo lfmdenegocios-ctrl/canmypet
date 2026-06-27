@@ -30,28 +30,20 @@
     else t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
   });
 
-  /* ---------- custom cursor ---------- */
+  /* ---------- custom cursor (brand paw) ---------- */
   if (fine && !reduce) {
     root.classList.add('cur');
     var dot = document.createElement('div'); dot.className = 'cur-dot';
-    var ring = document.createElement('div'); ring.className = 'cur-ring';
-    document.body.appendChild(dot); document.body.appendChild(ring);
-    var mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
+    document.body.appendChild(dot);
     addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+      dot.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px) translate(-50%,-50%)';
     });
-    (function ringLoop() {
-      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
-      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-      requestAnimationFrame(ringLoop);
-    })();
     var hoverSel = 'a,button,input,select,.tag,.card,.fcard,.rel,summary,.chip';
     document.addEventListener('mouseover', function (e) {
-      if (e.target.closest && e.target.closest(hoverSel)) { ring.classList.add('hover'); dot.classList.add('hover'); }
+      if (e.target.closest && e.target.closest(hoverSel)) dot.classList.add('hover');
     });
     document.addEventListener('mouseout', function (e) {
-      if (e.target.closest && e.target.closest(hoverSel)) { ring.classList.remove('hover'); dot.classList.remove('hover'); }
+      if (e.target.closest && e.target.closest(hoverSel)) dot.classList.remove('hover');
     });
   }
 
