@@ -462,3 +462,24 @@ html.lenis,html.lenis body{height:auto}
 /* --- Nav/animation fix (Spec ANIM-FIX): instant on back/forward + intro once per session --- */
 html.nav-instant .reveal{opacity:1;transform:none;animation:none}
 html.intro-seen #intro{display:none!important}
+
+
+/* ===== Section bar (Spec NAV #34, sitewide) ===== */
+.secbar{background:rgba(250,247,240,.55);border-bottom:1px solid var(--line)}
+.secbar-in{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:11px 0}
+.secbar-in::-webkit-scrollbar{display:none}
+.secbar a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:50px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:13.5px;color:var(--ink);text-decoration:none;white-space:nowrap;transition:.15s}
+.secbar a:hover{border-color:var(--pine);color:var(--pine);transform:translateY(-1px)}
+.secbar a.active{background:var(--pine);color:#fff;border-color:var(--pine)}
+.secbar a.emerg{color:#c0392b;border-color:#f1c9c4}
+.secbar a.emerg:hover{border-color:#E2483D;color:#E2483D}
+.secbar a.emerg.active{background:#E2483D;color:#fff;border-color:#E2483D}
+
+/* ===== Back chip + breadcrumb (interior) ===== */
+.crumbrow{display:flex;align-items:center;gap:14px;margin:18px 0 2px;flex-wrap:wrap}
+.backchip{display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border-radius:50px;background:#fff;border:1.5px solid var(--pine);color:var(--pine);font-weight:800;font-size:13.5px;text-decoration:none;transition:.15s}
+.backchip:hover{background:var(--pine);color:#fff;transform:translateX(-2px)}
+.crumb{font-size:13px;color:#7d8a82}
+.crumb a{color:#7d8a82;text-decoration:none}
+.crumb a:hover{color:var(--pine);text-decoration:underline}
+.crumb b{color:var(--ink);font-weight:700}
