@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/styles.css?v=20260701">
+<link rel="stylesheet" href="../assets/styles.css?v=20260703">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
@@ -159,16 +159,30 @@
     var rer=70*Math.pow(kg,0.75);
     var mer=rer*factor;
     var treat=mer*0.10;
+    var C=2*Math.PI*54, foodLen=C*0.90, treatLen=C*0.10;
     out.innerHTML=
-      "<div class='t-res'>"+
-        "<div class='t-big'>"+Math.round(mer)+" kcal<span style='font-size:18px;font-weight:700'> / day</span></div>"+
-        "<p class='t-sub'>Estimated daily calories to maintain this plan.</p>"+
-        "<div class='t-mini'>"+
-          "<div><b>"+Math.round(rer)+"</b><span>resting (RER)</span></div>"+
-          "<div><b>"+Math.round(treat)+"</b><span>treat budget (10%)</span></div>"+
-        "</div>"+
-        "<p class='t-sub' style='margin-top:14px'>💡 Keep treats under <strong>"+Math.round(treat)+" kcal/day</strong> (the 10% rule) so they don't unbalance the diet. Feed the rest as complete pet food, split into 2 meals.</p>"+
-      "</div>";
+      '<div class="cc-res">'+
+        '<div class="cc-top">'+
+          '<div class="cc-ring">'+
+            '<svg width="150" height="150" viewBox="0 0 120 120">'+
+              '<circle cx="60" cy="60" r="54" fill="none" stroke="#EFE9DD" stroke-width="12"/>'+
+              '<circle cx="60" cy="60" r="54" fill="none" stroke="var(--safe)" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+foodLen+' '+C+'"/>'+
+              '<circle cx="60" cy="60" r="54" fill="none" stroke="var(--caution)" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+treatLen+' '+C+'" stroke-dashoffset="'+(-foodLen)+'"/>'+
+            '</svg>'+
+            '<div class="cc-center"><span class="cc-kcal">'+Math.round(mer)+'</span><span class="cc-unit">kcal / day</span></div>'+
+          '</div>'+
+          '<div class="cc-stats">'+
+            '<div class="cc-stat"><b>'+Math.round(rer)+'</b><span>Resting (RER)</span></div>'+
+            '<div class="cc-stat"><b>'+Math.round(mer)+'</b><span>Daily target (MER)</span></div>'+
+            '<div class="cc-stat treat"><b>'+Math.round(treat)+'</b><span>Treat budget (10%)</span></div>'+
+            '<div class="cc-stat"><b>'+Math.round(mer-treat)+'</b><span>From meals (90%)</span></div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="cc-bar"><i class="food" style="width:90%;background:var(--safe)"></i><i class="treat" style="width:10%;background:var(--caution)"></i></div>'+
+        '<div class="cc-barleg"><span><i style="background:var(--safe)"></i>Complete food 90%</span><span><i style="background:var(--caution)"></i>Treats 10%</span></div>'+
+        '<div class="cc-tip">💡 Keep treats under <strong>'+Math.round(treat)+' kcal/day</strong> so they don\'t unbalance the diet. Feed the rest as complete pet food, split into 2 meals.</div>'+
+        '<div class="cc-next"><a href="dog-feeding-calculator.html">🍽️ How much to feed →</a><a href="pet-body-condition.html">⚖️ Check body condition →</a></div>'+
+      '</div>';
   }
   document.getElementById("t-calc").onclick=calc;
 })();
