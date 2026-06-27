@@ -85,7 +85,7 @@
     kin.classList.add('arm');
     kin.querySelectorAll('.word').forEach(function (w, i) { w.style.transitionDelay = (i * 75) + 'ms'; });
     var hl = kin.querySelector('.hl'); if (hl) hl.classList.add('arm');
-    var hasIntro = !!document.getElementById('intro');
+    var hasIntro = !!document.getElementById('intro') && !root.classList.contains('intro-seen');
     var delay = hasIntro ? 1750 : 250;
     setTimeout(function () {
       kin.classList.add('in');
