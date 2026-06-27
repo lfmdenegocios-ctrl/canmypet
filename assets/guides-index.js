@@ -3,6 +3,11 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'do-dogs-and-cats-get-along',
+    title: 'Do Dogs and Cats Get Along?',
+    excerpt: 'The cat-and-dog rivalry is mostly a myth — what really decides whether they bond, and how to introduce them the right way.',
+    cover: 'assets/guide/hero-do-dogs-and-cats-get-along.jpg', cat: 'Living together', date: '2026-06-27' },
+
   { slug: 'best-dog-breeds-for-apartments',
     title: 'The 10 Best Dog Breeds for Apartments',
     excerpt: 'No yard needed — 10 quiet, adaptable breeds that thrive in small spaces, the ones to avoid, and the surprising couch-potato giant.',
