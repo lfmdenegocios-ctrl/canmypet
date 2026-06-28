@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260707">
+<link rel="stylesheet" href="assets/styles.css?v=20260708">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
 <script>
@@ -192,6 +192,16 @@
     <span class="eyebrow">Free tools</span>
     <h2>Everything a pet parent needs</h2>
     <p>Calculators, safety checkers and a few just-for-fun tools — all free, all instant, no account.</p>
+  </div>
+
+  <div class="ch reveal">
+    <span class="ch-eye">🏆 Daily challenge</span>
+    <h3 id="chQ">Can dogs eat grapes?</h3>
+    <div class="ch-btns" id="chBtns">
+      <button class="ch-safe" data-a="safe">✓ Safe</button>
+      <button class="ch-tox" data-a="toxic">✕ Toxic</button>
+    </div>
+    <div class="ch-res" id="chRes" hidden></div>
   </div>
 
   <h3 class="tool-cat reveal">⭐ Most popular <span class="ln"></span></h3>
@@ -537,6 +547,32 @@ var em=document.getElementById("wkMyth");
 if(em){em.href=m.h;em.innerHTML='<span class="wk-tag">💡 Myth of the week</span><h3>'+m.q+'</h3><p>'+m.a+'</p><span class="wk-go">See the truth →</span>';}
 var ed=document.getElementById("wkFact");
 if(ed){ed.href=d.h;ed.innerHTML='<span class="wk-tag">🐾 Did you know?</span><h3 style="font-size:15.5px">'+d.t+'</h3><span class="wk-go">Learn more →</span>';}
+})();
+</script>
+<script>
+(function(){
+var Q=[
+ {q:"Can dogs eat grapes?",a:"toxic",f:"Even a few can cause kidney failure."},
+ {q:"Can dogs eat watermelon?",a:"safe",f:"A hydrating treat — just lose the seeds and rind."},
+ {q:"Can dogs eat onion?",a:"toxic",f:"Onion damages a dog's red blood cells."},
+ {q:"Can dogs eat carrots?",a:"safe",f:"Low-calorie and great for the teeth."},
+ {q:"Can dogs eat chocolate?",a:"toxic",f:"Theobromine is toxic — dark and baking chocolate are the worst."},
+ {q:"Can dogs eat blueberries?",a:"safe",f:"Tiny antioxidant bombs and great training treats."},
+ {q:"Can cats drink milk?",a:"toxic",f:"Most adult cats are lactose intolerant — it upsets the stomach."},
+ {q:"Can dogs eat xylitol gum?",a:"toxic",f:"Sugar-free gum can be deadly — even a tiny amount."}
+];
+var el=document.getElementById('chQ'),b=document.getElementById('chBtns'),r=document.getElementById('chRes');
+if(!el||!b||!r)return;
+var cur=Q[Math.floor(Date.now()/86400000)%Q.length];
+el.textContent=cur.q;
+b.querySelectorAll('button').forEach(function(btn){btn.onclick=function(){
+  var ok=btn.getAttribute('data-a')===cur.a;
+  b.querySelectorAll('button').forEach(function(x){x.disabled=true;x.style.opacity=.6;});
+  btn.style.opacity=1;
+  r.hidden=false;
+  r.innerHTML=(ok?'✅ <b>Correct!</b> ':'❌ <b>Oops!</b> ')+cur.f+
+    '<br>9 out of 10 owners get the quiz wrong. <a href="tools/quiz.html">Take the full quiz →</a>';
+};});
 })();
 </script>
 </body>
