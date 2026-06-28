@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260705">
+<link rel="stylesheet" href="assets/styles.css?v=20260706">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
 <script>
@@ -326,6 +326,19 @@
   </div>
 </section>
 
+<section class="block container weekly">
+  <div class="section-head reveal">
+    <span class="eyebrow">Fresh every week</span>
+    <h2>This week on CanMyPet</h2>
+    <p>A new safe treat, a busted myth and a fun fact — updated automatically every week.</p>
+  </div>
+  <div class="wk-grid reveal">
+    <a class="wk-card wk-food" id="wkFood"></a>
+    <a class="wk-card wk-myth" id="wkMyth"></a>
+    <a class="wk-card wk-fact" id="wkFact"></a>
+  </div>
+</section>
+
 <section class="block container" id="how">
   <div class="section-head reveal">
     <span class="eyebrow">How it works</span>
@@ -477,6 +490,44 @@ function render(){var p=get();
   host.innerHTML=panelHTML(p);
   document.getElementById('pdEdit').onclick=function(){host.innerHTML=setupHTML(p);bindSetup(p);};}
 render();
+})();
+</script>
+<script>
+(function(){
+var week=Math.floor(Date.now()/86400000/7);
+var FOOD=[
+ {e:"🍉",n:"Watermelon",l:"A hydrating summer treat — just lose the seeds and rind.",s:"watermelon"},
+ {e:"🫐",n:"Blueberries",l:"Tiny antioxidant bombs and perfect training treats.",s:"blueberries"},
+ {e:"🎃",n:"Pumpkin",l:"Plain cooked pumpkin is gentle on an upset tummy.",s:"pumpkin"},
+ {e:"🥕",n:"Carrot",l:"Low-calorie crunch that's great for the teeth.",s:"carrot"},
+ {e:"🍎",n:"Apple",l:"Crunchy and vitamin-rich — skip the core and seeds.",s:"apple"},
+ {e:"🍠",n:"Sweet potato",l:"Nutritious and naturally sweet when cooked plain.",s:"sweet-potato"},
+ {e:"🫛",n:"Green beans",l:"A vet favorite for healthy weight loss.",s:"green-beans"},
+ {e:"🐟",n:"Salmon",l:"Cooked salmon is a healthy omega-3 treat.",s:"salmon"}
+];
+var MYTH=[
+ {q:'"Cats need a bowl of milk"',a:"Most adult cats are lactose intolerant — it upsets their stomach.",h:"foods/can-cats-eat-milk.html"},
+ {q:'"Bones are a natural treat"',a:"Cooked bones splinter and can cause choking or injury.",h:"foods/can-dogs-eat-cooked-bones.html"},
+ {q:'"A little garlic is healthy"',a:"Garlic damages dogs' red blood cells, even in small amounts.",h:"foods/can-dogs-eat-garlic.html"},
+ {q:'"Dogs can eat what we eat"',a:"Many everyday human foods are toxic to dogs.",h:"guides/foods-toxic-to-dogs.html"},
+ {q:'"Grapes are just fruit"',a:"Even a few can cause sudden kidney failure.",h:"foods/can-dogs-eat-grapes.html"},
+ {q:'"Chocolate only hurts in big amounts"',a:"Dark and baking chocolate are risky in small amounts.",h:"foods/can-dogs-eat-chocolate.html"}
+];
+var FACT=[
+ {t:"Cats can't taste sweetness — they're the only mammals without the receptor.",h:"guides/foods-cats-should-never-eat.html"},
+ {t:"A dog's sense of smell is up to 100,000× stronger than ours.",h:"tools/quiz.html"},
+ {t:"Chocolate's danger is theobromine — dogs clear it far more slowly than we do.",h:"foods/can-dogs-eat-chocolate.html"},
+ {t:"Xylitol can crash a dog's blood sugar within 15–60 minutes.",h:"foods/can-dogs-eat-xylitol.html"},
+ {t:"The exact toxin in grapes is still unknown to science.",h:"foods/can-dogs-eat-grapes.html"}
+];
+function pick(arr,off){return arr[(week+off)%arr.length];}
+var f=pick(FOOD,0),m=pick(MYTH,1),d=pick(FACT,2);
+var ef=document.getElementById("wkFood");
+if(ef){ef.href="foods/can-dogs-eat-"+f.s+".html";ef.innerHTML='<span class="wk-tag">🥗 Food of the week</span><h3>'+f.e+' '+f.n+'</h3><p>'+f.l+'</p><span class="wk-go">Is it safe? →</span>';}
+var em=document.getElementById("wkMyth");
+if(em){em.href=m.h;em.innerHTML='<span class="wk-tag">💡 Myth of the week</span><h3>'+m.q+'</h3><p>'+m.a+'</p><span class="wk-go">See the truth →</span>';}
+var ed=document.getElementById("wkFact");
+if(ed){ed.href=d.h;ed.innerHTML='<span class="wk-tag">🐾 Did you know?</span><h3 style="font-size:15.5px">'+d.t+'</h3><span class="wk-go">Learn more →</span>';}
 })();
 </script>
 </body>

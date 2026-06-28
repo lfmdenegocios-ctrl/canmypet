@@ -591,3 +591,15 @@ html.intro-seen #intro{display:none!important}
 .pd-c .ic{font-size:20px}
 .pd-c b{display:block;font-size:14px;margin:4px 0 2px}
 .pd-c span{font-size:12px;color:#5d6b63}
+
+
+/* ===== This week (#38) ===== */
+.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.wk-grid{grid-template-columns:1fr}}
+.wk-card{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:var(--ink);transition:.15s;border-top:4px solid var(--wkc,var(--pine))}
+.wk-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(14,90,65,.1)}
+.wk-tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--wkc,var(--pine))}
+.wk-card h3{font-size:18px;margin:8px 0 6px;line-height:1.2}
+.wk-card p{font-size:13.5px;color:#5d6b63;margin:0 0 10px;line-height:1.45}
+.wk-go{font-size:13px;font-weight:800;color:var(--wkc,var(--pine))}
+.wk-food{--wkc:#0E5A41}.wk-myth{--wkc:#E2483D}.wk-fact{--wkc:#C77F1A}
