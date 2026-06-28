@@ -1,6 +1,9 @@
 # CanMyPet — keep dev/build files out of the deployed site
 build.js
 *.md
+# ...but keep the project law (loaded automatically each session)
+!CLAUDE.md
+!AGENTS.md
 foods_full.js
 *_sync.js
 *_sync.svg
