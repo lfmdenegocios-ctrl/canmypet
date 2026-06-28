@@ -603,3 +603,23 @@ html.intro-seen #intro{display:none!important}
 .wk-card p{font-size:13.5px;color:#5d6b63;margin:0 0 10px;line-height:1.45}
 .wk-go{font-size:13px;font-weight:800;color:var(--wkc,var(--pine))}
 .wk-food{--wkc:#0E5A41}.wk-myth{--wkc:#E2483D}.wk-fact{--wkc:#C77F1A}
+
+
+/* ===== CLS: reservar espaço dos blocos preenchidos via JS (#41) ===== */
+#petDash{min-height:172px}
+@media(max-width:760px){#petDash{min-height:360px}}
+@media(max-width:420px){#petDash{min-height:430px}}
+.wk-card{min-height:148px}
+@media(max-width:760px){.wk-card{min-height:120px}}
+
+/* ===== Personality blocks — food pages (#30) ===== */
+.persona{display:flex;align-items:center;gap:10px;border-radius:12px;padding:12px 16px;margin:16px 0;font-size:14.5px;font-weight:600;line-height:1.4}
+.persona.safe{background:#E4F6EC;color:#0c5e38}
+.persona.caution{background:#FBF1DA;color:#8a6210}
+.persona.danger{background:#FCEEEC;color:#9c2a22}
+.persona a{color:inherit;font-weight:800;text-decoration:underline}
+.safer{margin:16px 0}
+.safer-h{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#0c5e38;margin-bottom:8px}
+.safer-row{display:flex;gap:8px;flex-wrap:wrap}
+.safer-row a{display:inline-flex;align-items:center;gap:7px;background:#E4F6EC;border:1px solid #1FA463;border-radius:50px;padding:8px 14px;text-decoration:none;color:#0c5e38;font-weight:700;font-size:13.5px}
+.safer-row a:hover{background:#d8f0e2}

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260706">
+<link rel="stylesheet" href="assets/styles.css?v=20260707">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
 <script>
@@ -456,25 +456,34 @@ function nextRem(){try{var a=JSON.parse(localStorage.getItem('cmp_petcal'))||[];
   var t=new Date();t.setHours(0,0,0,0);a.sort(function(x,y){return new Date(x.date)-new Date(y.date);});
   var fut=a.filter(function(r){return new Date(r.date+'T00:00:00')>=t;});var r=fut[0]||a[a.length-1];
   return {label:r.l,days:Math.round((new Date(r.date+'T00:00:00')-t)/86400000)};}catch(e){return null;}}
+function rec(p){
+  var st=p.stage||'adult', cat=p.species==='cat';
+  if(st==='puppy')return cat?{ic:'💉',t:'Kitten starter',s:'Vaccines & first weeks',h:'tools/pet-vaccine-schedule.html'}:{ic:'💉',t:'Puppy starter',s:'Vaccines & first weeks',h:'tools/pet-vaccine-schedule.html'};
+  if(st==='senior')return {ic:'⚖️',t:'Healthy weight',s:'Keep them in shape',h:'tools/pet-body-condition.html'};
+  return cat?{ic:'📖',t:'Foods to avoid',s:'Cat safety guide',h:'guides/foods-cats-should-never-eat.html'}:{ic:'🥗',t:'Safe treats guide',s:'What dogs can enjoy',h:'guides/safe-fruits-veggies-for-dogs.html'};
+}
 function setupHTML(p){
+  var st=p?(p.stage||'adult'):'adult';
+  function opt(v,l){return '<option value="'+v+'"'+(st===v?' selected':'')+'>'+l+'</option>';}
   return '<div class="pd pd-setup"><div class="pd-head"><span class="pd-emoji">🐾</span><div><h3>Make this site yours</h3><p>Tell us about your pet for personalized tips — saved only in your browser.</p></div></div>'+
   '<div class="pd-form"><input class="pd-name" id="pdName" placeholder="Pet&#39;s name" value="'+esc(p?p.name:'')+'">'+
   '<div class="pd-seg" id="pdSp"><button data-sp="dog"'+(!p||p.species==='dog'?' class="sel"':'')+'>🐶 Dog</button><button data-sp="cat"'+(p&&p.species==='cat'?' class="sel"':'')+'>🐱 Cat</button></div>'+
+  '<select id="pdStage">'+opt('puppy','Puppy / Kitten')+opt('adult','Adult')+opt('senior','Senior')+'</select>'+
   '<input id="pdW" type="number" min="0" step="0.1" placeholder="Weight" style="width:100px" value="'+(p?p.weight:'')+'">'+
   '<select id="pdU"><option value="kg"'+(!p||p.unit==='kg'?' selected':'')+'>kg</option><option value="lb"'+(p&&p.unit==='lb'?' selected':'')+'>lb</option></select>'+
   '<button class="pd-save" id="pdSave">Save</button></div></div>';
 }
 function panelHTML(p){
   var emoji=p.species==='cat'?'🐱':'🐶',plural=p.species==='cat'?'cats':'dogs',single=plural.slice(0,-1);
-  var w=water(p),rem=nextRem();
+  var st=p.stage||'adult';var w=water(p),rem=nextRem(),r=rec(p);
   var remCard=rem?('<a class="pd-c" href="tools/pet-calendar.html"><span class="ic">🔔</span><b>'+esc(rem.label)+'</b><span>'+(rem.days<0?('Overdue '+(-rem.days)+'d'):rem.days===0?'Today':('in '+rem.days+' days'))+'</span></a>')
     :('<a class="pd-c" href="tools/pet-calendar.html"><span class="ic">🔔</span><b>Add a reminder</b><span>Vaccines, meds, weigh-ins</span></a>');
-  return '<div class="pd pd-on"><div class="pd-head"><span class="pd-emoji">'+emoji+'</span><div><h3>Hi, '+esc(p.name||'friend')+'!</h3><p>Your '+single+' · '+p.weight+' '+p.unit+'</p></div><button class="pd-edit" id="pdEdit">Edit</button></div>'+
+  return '<div class="pd pd-on"><div class="pd-head"><span class="pd-emoji">'+emoji+'</span><div><h3>Hi, '+esc(p.name||'friend')+'!</h3><p>Your '+st+' '+single+' · '+p.weight+' '+p.unit+'</p></div><button class="pd-edit" id="pdEdit">Edit</button></div>'+
   '<div class="pd-cards">'+
     '<a class="pd-c" href="tools/pet-water-calculator.html"><span class="ic">💧</span><b>~'+w.toLocaleString()+' ml</b><span>Water today (est.)</span></a>'+
     '<a class="pd-c" href="foods/index.html"><span class="ic">🥦</span><b>Safe foods</b><span>for '+plural+'</span></a>'+
     remCard+
-    '<a class="pd-c" href="tools/pet-body-condition.html"><span class="ic">⚖️</span><b>Body check</b><span>Ideal weight?</span></a>'+
+    '<a class="pd-c" href="'+r.h+'"><span class="ic">'+r.ic+'</span><b>'+r.t+'</b><span>'+r.s+'</span></a>'+
   '</div></div>';
 }
 function bindSetup(p){
@@ -483,7 +492,7 @@ function bindSetup(p){
   document.getElementById('pdSave').onclick=function(){
     var w=parseFloat(document.getElementById('pdW').value);
     if(!w||w<=0){document.getElementById('pdW').focus();return;}
-    set({name:document.getElementById('pdName').value.trim(),species:sp,weight:w,unit:document.getElementById('pdU').value});render();};
+    set({name:document.getElementById('pdName').value.trim(),species:sp,stage:document.getElementById('pdStage').value,weight:w,unit:document.getElementById('pdU').value});render();};
 }
 function render(){var p=get();
   if(!p){host.innerHTML=setupHTML(null);bindSetup(null);return;}
