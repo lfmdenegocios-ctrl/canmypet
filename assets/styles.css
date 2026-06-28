@@ -567,3 +567,27 @@ html.intro-seen #intro{display:none!important}
 .tool-more{display:block;margin:24px auto 0;padding:13px 28px;border:2px solid var(--pine);background:#fff;color:var(--pine);border-radius:50px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;transition:.15s}
 .tool-more:hover{background:var(--pine);color:#fff}
 .tools-all[hidden]{display:none}
+
+
+/* ===== Pet Dashboard (#37) ===== */
+.pd{background:linear-gradient(120deg,#EAF6F0,#E4F6EC);border:1px solid rgba(14,90,65,.14);border-radius:20px;padding:18px 20px;margin:0 0 22px}
+.pd-head{display:flex;align-items:center;gap:14px}
+.pd-emoji{font-size:34px;line-height:1}
+.pd-head h3{margin:0;font-size:19px;color:var(--pine)}
+.pd-head p{margin:0;font-size:13.5px;color:#5d6b63}
+.pd-edit{margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:50px;padding:7px 14px;font-weight:700;font-size:12.5px;color:var(--pine);cursor:pointer;font-family:inherit}
+.pd-form{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pd-form input,.pd-form select{padding:10px 12px;border:1.5px solid rgba(14,90,65,.18);border-radius:11px;font-family:inherit;font-size:14px;color:var(--ink);background:#fff}
+.pd-name{flex:1;min-width:140px}
+.pd-seg{display:inline-flex;gap:6px;background:#fff;border-radius:50px;padding:4px}
+.pd-seg button{border:none;background:none;padding:8px 14px;border-radius:50px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit;color:#5d6b63}
+.pd-seg button.sel{background:var(--pine);color:#fff}
+.pd-save{background:var(--pine);color:#fff;border:none;border-radius:11px;font-weight:800;font-size:14px;padding:10px 20px;cursor:pointer;font-family:inherit}
+.pd-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media(max-width:760px){.pd-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.pd-cards{grid-template-columns:1fr}}
+.pd-c{background:#fff;border:1px solid rgba(14,90,65,.1);border-radius:14px;padding:13px;text-decoration:none;color:var(--ink);transition:.15s;display:block}
+.pd-c:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(14,90,65,.08)}
+.pd-c .ic{font-size:20px}
+.pd-c b{display:block;font-size:14px;margin:4px 0 2px}
+.pd-c span{font-size:12px;color:#5d6b63}

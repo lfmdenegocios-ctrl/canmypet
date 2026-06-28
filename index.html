@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=20260704">
+<link rel="stylesheet" href="assets/styles.css?v=20260705">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
 <script>
@@ -142,6 +142,7 @@
 </div>
 
 <section class="block container home-quick">
+  <div id="petDash"></div>
   <div class="emerg-strip">
     <span class="es-ico">🆘</span>
     <div class="es-txt"><b>Did your pet just eat something?</b><span>Don't panic — check how serious it is and who to call, in seconds.</span></div>
@@ -429,6 +430,54 @@
 </script>
 <script>
 (function(){var b=document.getElementById('toolMore'),a=document.getElementById('toolsAll');if(!b||!a)return;b.addEventListener('click',function(){var open=a.hasAttribute('hidden');if(open){a.removeAttribute('hidden');b.textContent='Show fewer tools ↑';b.setAttribute('aria-expanded','true');}else{a.setAttribute('hidden','');b.textContent='View all 18 free tools ↓';b.setAttribute('aria-expanded','false');a.scrollIntoView({behavior:'smooth',block:'nearest'});}});})();
+</script>
+<script>
+(function(){
+var K='cmp_pet';var host=document.getElementById('petDash');if(!host)return;
+function get(){try{return JSON.parse(localStorage.getItem(K));}catch(e){return null;}}
+function set(p){try{localStorage.setItem(K,JSON.stringify(p));}catch(e){}}
+function kg(p){return p.unit==='lb'?p.weight/2.2046:p.weight;}
+function water(p){var f=p.species==='cat'?50:55;return Math.round(kg(p)*f/50)*50;}
+function esc(s){return (s||'').replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+function nextRem(){try{var a=JSON.parse(localStorage.getItem('cmp_petcal'))||[];if(!a.length)return null;
+  var t=new Date();t.setHours(0,0,0,0);a.sort(function(x,y){return new Date(x.date)-new Date(y.date);});
+  var fut=a.filter(function(r){return new Date(r.date+'T00:00:00')>=t;});var r=fut[0]||a[a.length-1];
+  return {label:r.l,days:Math.round((new Date(r.date+'T00:00:00')-t)/86400000)};}catch(e){return null;}}
+function setupHTML(p){
+  return '<div class="pd pd-setup"><div class="pd-head"><span class="pd-emoji">🐾</span><div><h3>Make this site yours</h3><p>Tell us about your pet for personalized tips — saved only in your browser.</p></div></div>'+
+  '<div class="pd-form"><input class="pd-name" id="pdName" placeholder="Pet&#39;s name" value="'+esc(p?p.name:'')+'">'+
+  '<div class="pd-seg" id="pdSp"><button data-sp="dog"'+(!p||p.species==='dog'?' class="sel"':'')+'>🐶 Dog</button><button data-sp="cat"'+(p&&p.species==='cat'?' class="sel"':'')+'>🐱 Cat</button></div>'+
+  '<input id="pdW" type="number" min="0" step="0.1" placeholder="Weight" style="width:100px" value="'+(p?p.weight:'')+'">'+
+  '<select id="pdU"><option value="kg"'+(!p||p.unit==='kg'?' selected':'')+'>kg</option><option value="lb"'+(p&&p.unit==='lb'?' selected':'')+'>lb</option></select>'+
+  '<button class="pd-save" id="pdSave">Save</button></div></div>';
+}
+function panelHTML(p){
+  var emoji=p.species==='cat'?'🐱':'🐶',plural=p.species==='cat'?'cats':'dogs',single=plural.slice(0,-1);
+  var w=water(p),rem=nextRem();
+  var remCard=rem?('<a class="pd-c" href="tools/pet-calendar.html"><span class="ic">🔔</span><b>'+esc(rem.label)+'</b><span>'+(rem.days<0?('Overdue '+(-rem.days)+'d'):rem.days===0?'Today':('in '+rem.days+' days'))+'</span></a>')
+    :('<a class="pd-c" href="tools/pet-calendar.html"><span class="ic">🔔</span><b>Add a reminder</b><span>Vaccines, meds, weigh-ins</span></a>');
+  return '<div class="pd pd-on"><div class="pd-head"><span class="pd-emoji">'+emoji+'</span><div><h3>Hi, '+esc(p.name||'friend')+'!</h3><p>Your '+single+' · '+p.weight+' '+p.unit+'</p></div><button class="pd-edit" id="pdEdit">Edit</button></div>'+
+  '<div class="pd-cards">'+
+    '<a class="pd-c" href="tools/pet-water-calculator.html"><span class="ic">💧</span><b>~'+w.toLocaleString()+' ml</b><span>Water today (est.)</span></a>'+
+    '<a class="pd-c" href="foods/index.html"><span class="ic">🥦</span><b>Safe foods</b><span>for '+plural+'</span></a>'+
+    remCard+
+    '<a class="pd-c" href="tools/pet-body-condition.html"><span class="ic">⚖️</span><b>Body check</b><span>Ideal weight?</span></a>'+
+  '</div></div>';
+}
+function bindSetup(p){
+  var sp=p?p.species:'dog';
+  host.querySelectorAll('#pdSp button').forEach(function(b){b.onclick=function(){host.querySelectorAll('#pdSp button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');sp=b.getAttribute('data-sp');};});
+  document.getElementById('pdSave').onclick=function(){
+    var w=parseFloat(document.getElementById('pdW').value);
+    if(!w||w<=0){document.getElementById('pdW').focus();return;}
+    set({name:document.getElementById('pdName').value.trim(),species:sp,weight:w,unit:document.getElementById('pdU').value});render();};
+}
+function render(){var p=get();
+  if(!p){host.innerHTML=setupHTML(null);bindSetup(null);return;}
+  host.innerHTML=panelHTML(p);
+  document.getElementById('pdEdit').onclick=function(){host.innerHTML=setupHTML(p);bindSetup(p);};}
+render();
+})();
 </script>
 </body>
 </html>
