@@ -42,6 +42,7 @@
 .g-name{color:#0E5A41}
 .g-tbar{height:7px;border-radius:5px;background:rgba(14,90,65,.1);overflow:hidden;margin:12px auto 0;max-width:360px}
 .g-tfill{height:100%;width:100%;background:#E0A93B;border-radius:5px}
+.g-combo{display:inline-block;margin:10px auto 0;font-size:14px;font-weight:800;color:#9c2a22;background:#FCE7E5;border-radius:999px;padding:4px 13px;animation:pop .35s}
 .g-btns{display:flex;gap:12px;max-width:420px;margin:14px auto 0}
 .g-btn{flex:1;padding:16px 10px;border-radius:16px;border:2px solid transparent;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;transition:transform .12s,filter .15s}
 .g-btn:hover{transform:translateY(-2px)}
@@ -125,6 +126,7 @@
 <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
 
 <script src="../assets/foods.js"></script>
+<script src="../assets/arcade.js"></script>
 <script>
 (function(){
   var LEVELS=[
@@ -133,7 +135,7 @@
     {name:"Fast",cards:16,t:4000},{name:"Faster",cards:16,t:3500},{name:"Blitz",cards:18,t:3000},{name:"Lightning",cards:20,t:2500}
   ];
   var VM={safe:{l:"Safe to feed",p:"Safe",bg:"#1FA463"},danger:{l:"Never — toxic",p:"Never",bg:"#E2483D"}};
-  var species="both", lvl=0, deck=[], pos=0, lives=3, mistakes=0, cur=null, answered=false, cardTimer=null, perCard=0;
+  var species="both", lvl=0, deck=[], pos=0, lives=3, mistakes=0, cur=null, answered=false, cardTimer=null, perCard=0, score=0, combo=0, maxCombo=0, daily=false;
   var el=function(){return document.getElementById("gameApp");};
   function progKey(){return "cmp_sot_prog_"+species;}
   function loadProg(){try{return JSON.parse(localStorage.getItem(progKey())||'{"u":1,"s":{}}');}catch(e){return {u:1,s:{}};}}
@@ -161,6 +163,7 @@
 
   function playLevel(i){
     lvl=i; perCard=LEVELS[i].t; deck=buildDeck(LEVELS[i].cards); pos=0; lives=3; mistakes=0;
+    score=0; combo=0; maxCombo=0; daily=false;
     if(deck.length<LEVELS[i].cards){ /* small dataset fallback: allow repeats */ while(deck.length<LEVELS[i].cards && buildPool().length) deck=deck.concat(shuffle(buildPool())).slice(0,LEVELS[i].cards); }
     nextCard();
   }
@@ -172,6 +175,7 @@
     el().innerHTML=
       "<div class='g-hud'>"+
         "<div><span class='lab'>Level</span><span class='val'>"+(lvl+1)+"/10</span></div>"+
+        "<div><span class='lab'>Score</span><span class='val' id='g-score'>"+score+"</span></div>"+
         "<div><span class='lab'>Card</span><span class='val'>"+(pos+1)+"/"+deck.length+"</span></div>"+
         "<div class='g-lives' id='g-lives'>"+hearts()+"</div>"+
       "</div>"+
@@ -180,12 +184,13 @@
           "<span class='g-emoji' id='g-emoji'>"+cur.e+"</span>"+
           "<div><span class='g-sp'>"+(cur.sp==="dog"?"🐶 Dog":"🐱 Cat")+"</span></div>"+
           "<p class='g-q'>Can a "+plural(cur.sp)+" eat<br><span class='g-name'>"+cur.n+"</span>?</p>"+
+          (combo>=2?"<div class='g-combo'>🔥 x"+combo+"</div>":"")+
           "<div class='g-btns'>"+
             "<button class='g-btn g-safe' id='g-yes'>✅ Safe</button>"+
             "<button class='g-btn g-toxic' id='g-no'>⛔ Toxic</button>"+
           "</div>"+
           (perCard>0?"<div class='g-tbar'><div class='g-tfill' id='g-tfill'></div></div>":"")+
-          "<p class='g-hint'>← / → arrow keys work too &middot; <a href='#' id='g-quit' style='color:#9fb0a7'>level map</a></p>"+
+          "<p class='g-hint'>swipe ➡️ safe &middot; ⬅️ toxic &middot; (arrows/buttons too) &middot; <a href='#' id='g-quit' style='color:#9fb0a7'>level map</a></p>"+
         "</div>"+
       "</div>"+
       "<div id='g-rev'></div>";
@@ -198,9 +203,21 @@
       requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.transition="width "+perCard+"ms linear"; bar.style.width="0%"; }); });
       cardTimer=setTimeout(function(){ timeUp(); },perCard);
     }
+    (function(){
+      var tile=document.getElementById('g-tile'); if(!tile) return;
+      var x0=0,dx=0,drag=false;
+      function down(e){ if(answered)return; drag=true; x0=(e.touches?e.touches[0].clientX:e.clientX); tile.style.transition='none'; }
+      function move(e){ if(!drag)return; var x=(e.touches?e.touches[0].clientX:e.clientX); dx=x-x0;
+        tile.style.transform='translateX('+dx+'px) rotate('+(dx/22)+'deg)'; tile.style.opacity=Math.max(1-Math.abs(dx)/420,0.4); }
+      function up(){ if(!drag)return; drag=false; tile.style.transition='';
+        if(Math.abs(dx)>90){ answer(dx>0); } else { tile.style.transform=''; tile.style.opacity=''; } dx=0; }
+      tile.addEventListener('touchstart',down,{passive:true}); tile.addEventListener('touchmove',move,{passive:true}); tile.addEventListener('touchend',up);
+      tile.addEventListener('mousedown',down); window.addEventListener('mousemove',move); window.addEventListener('mouseup',up);
+    })();
   }
   function timeUp(){
     if(answered) return; answered=true; clearCardTimer();
+    combo=0; CMP.sfx.wrong(); CMP.flash("rgba(226,72,61,.4)");
     var tile=document.getElementById("g-tile"); if(tile){tile.classList.remove("in");tile.classList.add("shake");}
     lives--; mistakes++; var lv=document.getElementById("g-lives"); if(lv)lv.textContent=hearts();
     showReveal(false,true);
@@ -211,8 +228,18 @@
     var correct=(cur.v==="safe")===guessSafe;
     var tile=document.getElementById("g-tile"), emo=document.getElementById("g-emoji");
     tile.classList.remove("in"); tile.classList.add(guessSafe?"go-r":"go-l");
-    if(correct){ emo.classList.add("pop"); setTimeout(function(){ pos++; nextCard(); },470); }
+    if(correct){
+      combo++; if(combo>maxCombo)maxCombo=combo;
+      var add=10+(combo>=2?(combo-1)*5:0); score+=add;
+      CMP.sfx.correct(); if(combo>=2) CMP.sfx.combo(combo);
+      var r=document.getElementById('g-tile').getBoundingClientRect();
+      CMP.popup("+"+add+(combo>=3?"  🔥x"+combo:""),{x:r.left+r.width/2,y:r.top+r.height*0.35,color:"#0E5A41"});
+      var sc=document.getElementById('g-score'); if(sc)sc.textContent=score;
+      if(combo===5||combo===10) CMP.confetti({x:r.left+r.width/2,y:r.top});
+      emo.classList.add("pop"); setTimeout(function(){ pos++; nextCard(); },470);
+    }
     else{
+      combo=0; CMP.sfx.wrong(); CMP.flash("rgba(226,72,61,.4)");
       lives--; mistakes++; tile.classList.add("shake"); document.getElementById("g-lives").textContent=hearts();
       showReveal(false,false);
       if(lives<=0) setTimeout(fail,1350); else setTimeout(function(){ pos++; nextCard(); },1450);
@@ -230,40 +257,54 @@
   }
 
   function levelClear(){
+    CMP.sfx.level(); CMP.confetti();
     var st = mistakes===0?3 : mistakes===1?2 : 1;
     var p=loadProg(); p.s[lvl+1]=Math.max(p.s[lvl+1]||0,st);
     if(lvl<9 && p.u<lvl+2) p.u=lvl+2; saveProg(p);
     var last=(lvl===9);
+    var best=CMP.best("sot",score);
+    var dailyMsg=""; if(daily){ var ds=CMP.markDaily("sot",score); dailyMsg="🔥 "+ds.count+"-day streak"; }
     el().innerHTML=
       "<div style='animation:tin .3s ease'>"+
       "<div class='g-final'>"+(last?"🏆":"🎉")+"</div>"+
       "<h2 style='margin:2px 0 4px;font-size:23px'>"+(last?"You beat all 10 levels!":"Level "+(lvl+1)+" cleared!")+"</h2>"+
       "<div class='g-stars-big'>"+stars(st)+"</div>"+
       "<p style='color:#5d6b63;margin:6px 0 0'>"+(mistakes===0?"Flawless run! ✨":mistakes+" mistake"+(mistakes>1?"s":""))+"</p>"+
+      "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
+      (dailyMsg?"<p style='color:#9c2a22;font-weight:800;margin:4px 0 0'>"+dailyMsg+"</p>":"")+
       "<div class='g-row'>"+
         (last?"":"<button class='g-big' id='g-next'>Next level →</button>")+
         "<button class='g-big "+(last?"":"g-ghost")+"' id='g-replay'>Replay</button>"+
       "</div>"+
-      "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+      "<div class='g-row'>"+
+        "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
+      "</div>"+
       "</div>";
     if(!last) document.getElementById("g-next").onclick=function(){ playLevel(lvl+1); };
     document.getElementById("g-replay").onclick=function(){ playLevel(lvl); };
     document.getElementById("g-map").onclick=renderMap;
+    document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Safe or Toxic? 🐾 (level "+(lvl+1)+", best combo x"+maxCombo+") — can you beat me?"); };
   }
   function fail(){
+    CMP.sfx.over();
+    var best=CMP.best("sot",score);
     el().innerHTML=
       "<div style='animation:tin .3s ease'>"+
       "<div class='g-final'>😿</div>"+
       "<h2 style='margin:2px 0 4px;font-size:22px'>Out of lives on level "+(lvl+1)+"</h2>"+
       "<p style='color:#5d6b63;margin:4px 0 0'>You got through "+pos+" of "+deck.length+" cards.</p>"+
+      "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
       "<div class='g-row'>"+
         "<button class='g-big' id='g-retry'>Try again ↻</button>"+
         "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
       "</div>"+
+      "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
       "<p style='margin:14px 0 0;color:#5d6b63;font-size:14px'>Study up in the <a href='quiz.html' style='color:#0E5A41;font-weight:700'>food quiz →</a></p>"+
       "</div>";
     document.getElementById("g-retry").onclick=function(){ playLevel(lvl); };
     document.getElementById("g-map").onclick=renderMap;
+    document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Safe or Toxic? 🐾 (level "+(lvl+1)+", best combo x"+maxCombo+") — can you beat me?"); };
   }
 
   function renderMap(){
@@ -277,10 +318,16 @@
         "<span class='lv-stars'>"+(st?stars(st):"")+"</span></div>";
     }
     var tot=0; for(var k=1;k<=10;k++) tot+=(p.s[k]||0);
+    var dbest=CMP.best("sot"), dstreakN=CMP.streak().count;
+    var dailyHtml = CMP.dailyDone("sot")
+      ? "<div style='max-width:430px;margin:10px auto 0;padding:12px 16px;border-radius:14px;background:#E4F6EC;border:1px solid #1FA463;color:#0c5e38;font-weight:700'>✅ Daily done — scored "+CMP.dailyScore("sot")+" &middot; come back tomorrow</div>"
+      : "<button class='g-big' id='g-daily'>🔥 Play today's Daily Challenge</button>";
     el().innerHTML=
       "<div style='animation:tin .3s ease'>"+
       "<p class='lv-head'>✅⛔ Safe or Toxic &middot; "+tot+"/30 ★</p>"+
-      "<h2 style='margin:2px 0 8px;font-size:22px'>Pick a level</h2>"+
+      "<p style='color:#0E5A41;font-weight:700;font-size:13.5px;margin:0 0 6px'>🏆 Best "+dbest+" &middot; 🔥 "+dstreakN+"-day streak</p>"+
+      dailyHtml+
+      "<h2 style='margin:12px 0 8px;font-size:22px'>Pick a level</h2>"+
       "<div class='g-pick'>"+
         "<button data-sp='dog' class='"+(species==='dog'?'sel':'')+"'>🐶 Dogs</button>"+
         "<button data-sp='cat' class='"+(species==='cat'?'sel':'')+"'>🐱 Cats</button>"+
@@ -291,7 +338,10 @@
       "</div>";
     el().querySelectorAll("[data-sp]").forEach(function(b){ b.onclick=function(){ species=b.getAttribute("data-sp"); renderMap(); }; });
     el().querySelectorAll(".lv-cell").forEach(function(cd){ if(cd.classList.contains("locked"))return; cd.onclick=function(){ playLevel(parseInt(cd.getAttribute("data-l"),10)); }; });
+    var db=document.getElementById("g-daily"); if(db) db.onclick=startDaily;
   }
+  function startDaily(){ daily=true; lvl=4; perCard=4500; lives=3; mistakes=0; score=0; combo=0; maxCombo=0;
+    var pool=buildPool(); deck=CMP.seededShuffle(pool, CMP.dailySeed("sot-"+species)).slice(0,15); pos=0; nextCard(); }
 
   document.addEventListener("keydown",function(e){
     if(!cur||answered) return;
@@ -300,6 +350,7 @@
   });
   if(window.PETIBLE_FOODS) renderMap();
   else window.addEventListener("load",renderMap);
+  CMP.muteButton();
 })();
 </script>
 </body>
