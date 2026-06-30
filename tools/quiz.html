@@ -89,16 +89,25 @@
 <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
 
 <script src="../assets/foods.js"></script>
+<script src="../assets/arcade.js"></script>
 <script>
 const VM={safe:{l:"Yes — safe to feed",p:"Safe",bg:"#E4F6EC",fg:"#0c5e38"},caution:{l:"Only in moderation",p:"Moderation",bg:"#FBF1DA",fg:"#8a6210"},danger:{l:"Never — not safe",p:"Never",bg:"#FCE7E5",fg:"#9c2a22"}};
-let species="both",qcount=10,pool=[],idx=0,score=0,cur=null,answered=false,choice=null;
+let species="both",qcount=10,pool=[],idx=0,score=0,points=0,combo=0,maxCombo=0,cur=null,answered=false,choice=null;
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;}return a;}
 function build(){const q=[],D=window.PETIBLE_FOODS||[];for(const f of D){if((species==="both"||species==="dog")&&f.dog)q.push({n:f.name,e:f.emoji,sp:"dog",v:f.dog.v,w:f.dog.why,slug:f.slug,rich:f.rich});if((species==="both"||species==="cat")&&f.cat)q.push({n:f.name,e:f.emoji,sp:"cat",v:f.cat.v,w:f.cat.why,slug:f.slug});}return shuffle(q).slice(0,qcount);}
 function guideLink(c){return c.sp==="dog"?("../foods/"+(c.rich||("can-dogs-eat-"+c.slug+".html"))):("../foods/can-cats-eat-"+c.slug+".html");}
 const el=()=>document.getElementById("quizApp");
 function start(sp){species=sp;render("len");}
-function begin(n){qcount=n;pool=build();idx=0;score=0;answered=false;choice=null;cur=pool[0];render("q");}
-function pick(v){if(answered)return;answered=true;choice=v;if(v===cur.v)score++;render("f");}
+function begin(n){qcount=n;pool=build();idx=0;score=0;points=0;combo=0;maxCombo=0;answered=false;choice=null;cur=pool[0];render("q");}
+function pick(v){if(answered)return;answered=true;choice=v;
+ var pe=document.querySelector('#quizApp .q-pet'),r=pe?pe.getBoundingClientRect():null;
+ if(v===cur.v){score++;combo++;if(combo>maxCombo)maxCombo=combo;
+  var add=10+(combo>=2?(combo-1)*5:0);points+=add;
+  CMP.sfx.correct();if(combo>=2)CMP.sfx.combo(combo);
+  if(r)CMP.popup("+"+add+(combo>=3?" 🔥x"+combo:""),{x:r.left+r.width/2,y:r.top,color:"#0E5A41"});
+ }else{combo=0;CMP.sfx.wrong();CMP.flash("rgba(226,72,61,.4)");}
+ render("f");}
+function quizShare(){CMP.share("I scored "+score+"/"+pool.length+" on the Pet Food Quiz at CanMyPet 🐾 — can you beat me?");}
 function next(){idx++;if(idx>=pool.length){render("e");return;}cur=pool[idx];answered=false;choice=null;render("q");}
 function pet(sp){return sp==="dog"?"🐶":"🐱";}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
@@ -110,9 +119,11 @@ function render(m){const E=el();if(!E)return;
  if(m==="f"){const ok=choice===cur.v,v=VM[cur.v];let opts="";for(const k of ["safe","caution","danger"]){const o=VM[k],c=k===cur.v?"q-ok":(k===choice?"q-no":"");opts+='<button class="q-btn '+c+'" disabled>'+(k===cur.v?"✓ ":(k===choice?"✗ ":""))+o.l+'</button>';}
   E.innerHTML='<div style="display:flex;justify-content:space-between;font-size:13px;color:#5d6b63;font-weight:600"><span>Question '+(idx+1)+' / '+pool.length+'</span><span>Score: '+score+'</span></div><div class="q-bar"><div class="q-fill" style="width:'+Math.round((idx+1)/pool.length*100)+'%"></div></div><div class="'+(ok?"pop":"shake")+'"><div class="q-pet">'+pet(cur.sp)+'</div><p style="font-size:18px;font-weight:600;margin:6px 0 2px;color:'+(ok?"#0c5e38":"#9c2a22")+'">'+(ok?"Correct! 🎉":"Not quite 😬")+'</p></div><div style="margin:10px 0">'+opts+'</div><p style="font-size:14.5px;line-height:1.55;color:#16241F;background:'+v.bg+';border-radius:12px;padding:13px 15px;margin:6px 0 8px;text-align:left"><strong style="color:'+v.fg+'">'+esc(cur.n)+' for '+(cur.sp==="dog"?"dogs":"cats")+': '+v.p+'.</strong> '+esc(cur.w)+'</p><p style="margin:0 0 14px"><a class="q-guide" href="'+guideLink(cur)+'">Read the full guide on '+(cur.sp==="dog"?"dogs":"cats")+' &amp; '+esc(cur.n.toLowerCase())+' &rarr;</a></p>'+btn("next()",(idx+1>=pool.length?"See my score →":"Next question →"),"q-go")+'';return;}
  if(m==="e"){const pct=Math.round(score/pool.length*100);const msg=pct>=90?"Pet nutrition pro! 🏆":pct>=70?"Great instincts! 🐾":pct>=50?"Not bad — a few surprises!":"Tricky ones, right? Now you know! 📚";
-  E.innerHTML='<div class="qin"><div class="q-pet pop">'+(pct>=70?"🥳":"🐶")+'</div><h2 style="font-size:30px;margin:8px 0 2px;color:#0E5A41">'+score+' / '+pool.length+'</h2><p style="font-size:17px;font-weight:600;margin:2px 0 16px;color:#16241F">'+msg+'</p><p style="color:#5d6b63;font-size:14.5px;margin:0 0 18px">Some foods surprise everyone — when in doubt, check before you share.</p><a href="../foods/index.html" class="q-btn q-go" style="text-decoration:none">🔎 Check any food</a>'+btn("begin(qcount)","↻ Play again (same length)")+btn("render('start')","↩ New game","q-ghost")+'</div>';return;}
+  const best=CMP.best("quiz",points);if(score===pool.length){CMP.sfx.level();CMP.confetti();}
+  E.innerHTML='<div class="qin"><div class="q-pet pop">'+(pct>=70?"🥳":"🐶")+'</div><h2 style="font-size:30px;margin:8px 0 2px;color:#0E5A41">'+score+' / '+pool.length+'</h2><p style="font-size:17px;font-weight:600;margin:2px 0 10px;color:#16241F">'+msg+'</p><p style="color:#0E5A41;font-weight:800;font-size:15px;margin:0 0 14px">Score: '+points+' pts &middot; Best: '+best+' pts</p><p style="color:#5d6b63;font-size:14.5px;margin:0 0 18px">Some foods surprise everyone — when in doubt, check before you share.</p><a href="../foods/index.html" class="q-btn q-go" style="text-decoration:none">🔎 Check any food</a>'+btn("quizShare()","📣 Share my score","q-ghost")+btn("begin(qcount)","↻ Play again (same length)")+btn("render('start')","↩ New game","q-ghost")+'</div>';return;}
 }
 if(window.PETIBLE_FOODS){render("start");}else{el().textContent="Could not load the quiz data.";}
+CMP.muteButton();
 </script>
 <script defer src="../assets/app.js"></script>
 </body>

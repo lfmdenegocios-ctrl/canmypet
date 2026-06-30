@@ -111,6 +111,7 @@
 <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
 
 <script src="../assets/foods.js"></script>
+<script src="../assets/arcade.js"></script>
 <script>
 (function(){
   var LEVELS=[
@@ -120,7 +121,7 @@
     {name:"Bakery",tiles:16,tox:4,time:7000},{name:"Feast",tiles:16,tox:5,time:6000},
     {name:"Market",tiles:16,tox:6,time:5500},{name:"Chaos",tiles:16,tox:6,time:5000}
   ];
-  var species="dog", lvl=0, grid=[], toxicLeft=0, wrong=0, busy=false, timer=null, roundStart=0, budget=0;
+  var species="dog", lvl=0, grid=[], toxicLeft=0, wrong=0, busy=false, timer=null, roundStart=0, budget=0, score=0, combo=0, maxCombo=0;
   var el=function(){return document.getElementById("gameApp");};
   function progKey(){return "cmp_spot_prog_"+species;}
   function loadProg(){try{return JSON.parse(localStorage.getItem(progKey())||'{"u":1,"s":{}}');}catch(e){return {u:1,s:{}};}}
@@ -154,7 +155,7 @@
   }
 
   function playLevel(i){
-    lvl=i; var L=LEVELS[i]; wrong=0; busy=false;
+    lvl=i; var L=LEVELS[i]; wrong=0; busy=false; score=0; combo=0; maxCombo=0;
     grid=pickGrid(L.tiles,L.tox);
     toxicLeft=grid.filter(function(x){return x.v==="danger";}).length;
     budget=L.time; roundStart=Date.now();
@@ -167,6 +168,7 @@
         "<div><span class='lab'>Level</span><span class='val'>"+(i+1)+"/10</span></div>"+
         "<div><span class='lab'>Find</span><span class='val'><span id='st-left'>"+toxicLeft+"</span> toxic</span></div>"+
         "<div><span class='lab'>Wrong</span><span class='val' id='st-wrong'>0/3</span></div>"+
+        "<div><span class='lab'>Score</span><span class='val' id='st-score'>"+score+"</span></div>"+
       "</div>"+
       "<p class='st-prompt'>⛔ Tap the "+toxicLeft+" toxic foods before time runs out!</p>"+
       "<div class='st-barwrap'><div class='st-bar' id='st-bar'></div></div>"+
@@ -184,12 +186,18 @@
   function tap(i,tl){
     if(busy) return;
     var t=grid[i]; if(t.done) return; t.done=true;
-    var mark=tl.querySelector(".mark");
+    var mark=tl.querySelector(".mark"), r=tl.getBoundingClientRect();
     if(t.v==="danger"){
       tl.classList.add("st-hit"); mark.textContent="⛔"; toxicLeft--; document.getElementById("st-left").textContent=toxicLeft;
+      combo++; if(combo>maxCombo)maxCombo=combo;
+      var add=10+(combo>=2?(combo-1)*5:0); score+=add;
+      CMP.sfx.correct(); if(combo>=2) CMP.sfx.combo(combo);
+      CMP.popup("+"+add+(combo>=3?" 🔥x"+combo:""),{x:r.left+r.width/2,y:r.top,color:"#0E5A41"});
+      var sc=document.getElementById("st-score"); if(sc)sc.textContent=score;
       if(toxicLeft===0) levelClear();
     } else {
       tl.classList.add("st-miss"); mark.textContent="✅"; wrong++; document.getElementById("st-wrong").textContent=wrong+"/3";
+      combo=0; CMP.sfx.wrong(); CMP.flash("rgba(226,72,61,.4)");
       if(wrong>=3){ clearTimeout(timer); busy=true; endReveal(); fail("3 wrong taps!"); }
     }
   }
@@ -201,11 +209,12 @@
 
   function levelClear(){
     clearTimeout(timer); busy=true;
+    CMP.sfx.level(); CMP.confetti();
     var elapsed=Date.now()-roundStart, pct=(budget-elapsed)/budget;
     var st = (wrong===0 && pct>0.35)?3 : (wrong<=1)?2 : 1;
     var p=loadProg(); p.s[lvl+1]=Math.max(p.s[lvl+1]||0,st);
     if(lvl<9 && p.u<lvl+2) p.u=lvl+2; saveProg(p);
-    var last=(lvl===9);
+    var last=(lvl===9), best=CMP.best("spot",score);
     var fl=document.getElementById("st-flash"); if(fl) fl.innerHTML="<p class='st-flash' style='color:#0E5A41'>✅ Level "+(lvl+1)+" clear!</p>";
     setTimeout(function(){
       el().innerHTML=
@@ -213,18 +222,25 @@
         "<div class='g-final'>"+(last?"🏆":"🎉")+"</div>"+
         "<h2 style='margin:2px 0 4px;font-size:23px'>"+(last?"You beat all 10 levels!":"Level "+(lvl+1)+" cleared!")+"</h2>"+
         "<div class='g-stars-big'>"+stars(st)+"</div>"+
+        "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
         "<div class='g-row'>"+
           (last?"":"<button class='g-big' id='g-next'>Next level →</button>")+
           "<button class='g-big "+(last?"":"g-ghost")+"' id='g-replay'>Replay</button>"+
         "</div>"+
-        "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "<div class='g-row'>"+
+          "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+          "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
+        "</div>"+
         "</div>";
       if(!last) document.getElementById("g-next").onclick=function(){ playLevel(lvl+1); };
       document.getElementById("g-replay").onclick=function(){ playLevel(lvl); };
       document.getElementById("g-map").onclick=renderMap;
+      document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Spot the Toxic at CanMyPet 🐾 — can you beat me?"); };
     },760);
   }
   function fail(msg){
+    CMP.sfx.over();
+    var best=CMP.best("spot",score);
     var fl=document.getElementById("st-flash"); if(fl) fl.innerHTML="<p class='st-flash' style='color:#9c2a22'>"+msg+"</p>";
     setTimeout(function(){
       el().innerHTML=
@@ -232,14 +248,17 @@
         "<div class='g-final'>😿</div>"+
         "<h2 style='margin:2px 0 4px;font-size:22px'>Level "+(lvl+1)+" — "+msg+"</h2>"+
         "<p style='color:#5d6b63;margin:4px 0 0'>You found "+(LEVELS[lvl].tox-toxicLeft)+" of "+LEVELS[lvl].tox+" toxic foods.</p>"+
+        "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
         "<div class='g-row'>"+
           "<button class='g-big' id='g-retry'>Try again ↻</button>"+
           "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
         "</div>"+
+        "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
         "<p style='margin:14px 0 0;color:#5d6b63;font-size:14px'>Brush up in the <a href='quiz.html' style='color:#0E5A41;font-weight:700'>food quiz →</a></p>"+
         "</div>";
       document.getElementById("g-retry").onclick=function(){ playLevel(lvl); };
       document.getElementById("g-map").onclick=renderMap;
+      document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Spot the Toxic at CanMyPet 🐾 — can you beat me?"); };
     },900);
   }
 
@@ -271,6 +290,7 @@
   }
   if(window.PETIBLE_FOODS) renderMap();
   else window.addEventListener("load",renderMap);
+  CMP.muteButton();
 })();
 </script>
 </body>

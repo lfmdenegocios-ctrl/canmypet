@@ -115,6 +115,7 @@
 <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
 
 <script src="../assets/foods.js"></script>
+<script src="../assets/arcade.js"></script>
 <script>
 (function(){
   var LEVELS=[
@@ -123,7 +124,7 @@
     {name:"Hard",pairs:9},{name:"Hard+",pairs:10},{name:"Expert",pairs:11},{name:"Master",pairs:12}
   ];
   var VM={safe:{c:"mm-safe",b:"✅"},caution:{c:"mm-caution",b:"⚠️"},danger:{c:"mm-danger",b:"⛔"}};
-  var species="dog", lvl=0, pairs=3, cards=[], firstIdx=-1, busy=false, moves=0, matched=0, startT=0, tick=null;
+  var species="dog", lvl=0, pairs=3, cards=[], firstIdx=-1, busy=false, moves=0, matched=0, startT=0, tick=null, score=0, combo=0, maxCombo=0;
   var el=function(){return document.getElementById("gameApp");};
   function progKey(){return "cmp_mem_prog_"+species;}
   function loadProg(){try{return JSON.parse(localStorage.getItem(progKey())||'{"u":1,"s":{}}');}catch(e){return {u:1,s:{}};}}
@@ -145,7 +146,7 @@
   function stopTimer(){ if(tick){clearInterval(tick);tick=null;} }
 
   function playLevel(i){
-    lvl=i; pairs=LEVELS[i].pairs; moves=0; matched=0; firstIdx=-1; busy=false;
+    lvl=i; pairs=LEVELS[i].pairs; moves=0; matched=0; firstIdx=-1; busy=false; score=0; combo=0; maxCombo=0;
     cards=buildDeck();
     if(cards.length<pairs*2){ el().innerHTML="<p style='color:#9c2a22'>Couldn't load enough food data. Please reload.</p>"; return; }
     renderBoard(); startTimer();
@@ -160,6 +161,7 @@
         "<div><span class='lab'>Level</span><span class='val'>"+(lvl+1)+"/10</span></div>"+
         "<div><span class='lab'>Moves</span><span class='val' id='mm-moves'>0</span></div>"+
         "<div><span class='lab'>Pairs</span><span class='val'><span id='mm-pairs'>0</span>/"+pairs+"</span></div>"+
+        "<div><span class='lab'>Score</span><span class='val' id='mm-score'>0</span></div>"+
         "<div><span class='lab'>Time</span><span class='val' id='mm-time'>0:00</span></div>"+
       "</div>"+
       "<div class='mm-grid' style='grid-template-columns:repeat("+colsFor(cards.length)+",1fr)'>"+g+"</div>"+
@@ -171,7 +173,7 @@
   function flip(i){
     if(busy) return;
     var c=cards[i]; if(c.done||c.flipped) return;
-    var cd=cardNode(i); c.flipped=true; cd.classList.add("flip");
+    var cd=cardNode(i); c.flipped=true; cd.classList.add("flip"); CMP.sfx.flip();
     if(firstIdx<0){ firstIdx=i; return; }
     if(firstIdx===i) return;
     moves++; document.getElementById("mm-moves").textContent=moves;
@@ -181,19 +183,31 @@
       aEl.classList.add("done",vm.c); bEl.classList.add("done",vm.c);
       aEl.querySelector(".bdg").textContent=vm.b; bEl.querySelector(".bdg").textContent=vm.b;
       firstIdx=-1; matched++; document.getElementById("mm-pairs").textContent=matched;
+      combo++; if(combo>maxCombo)maxCombo=combo;
+      var add=20+(combo>=2?(combo-1)*10:0); score+=add;
+      CMP.sfx.correct(); if(combo>=2) CMP.sfx.combo(combo);
+      var r=bEl.getBoundingClientRect();
+      CMP.popup("+"+add+(combo>=3?" 🔥x"+combo:""),{x:r.left+r.width/2,y:r.top,color:"#0E5A41"});
+      var sc=document.getElementById("mm-score"); if(sc)sc.textContent=score;
       if(matched===pairs) win();
     } else {
+      combo=0; CMP.sfx.wrong();
       busy=true;
       setTimeout(function(){ a.flipped=false; b.flipped=false; aEl.classList.remove("flip"); bEl.classList.remove("flip"); firstIdx=-1; busy=false; },820);
     }
   }
   function win(){
     stopTimer();
+    CMP.sfx.level(); CMP.confetti();
     var secs=Math.floor((Date.now()-startT)/1000);
+    // Score = higher-is-better so CMP.best works. It accrues per match (20 + combo bonus),
+    // so fewer moves -> longer unbroken combos -> a higher base; a speed bonus then rewards
+    // a fast clear (base high, minus time). Net: few moves + fast = top score.
+    score+=Math.max(0,150-secs*3);
     var st = moves<=Math.ceil(pairs*1.4)?3 : moves<=Math.ceil(pairs*2)?2 : 1;
     var p=loadProg(); p.s[lvl+1]=Math.max(p.s[lvl+1]||0,st);
     if(lvl<9 && p.u<lvl+2) p.u=lvl+2; saveProg(p);
-    var last=(lvl===9);
+    var last=(lvl===9), best=CMP.best("match",score);
     setTimeout(function(){
       el().innerHTML=
         "<div style='animation:tin .3s ease'>"+
@@ -201,15 +215,20 @@
         "<h2 style='margin:2px 0 4px;font-size:23px'>"+(last?"You beat all 10 levels!":"Level "+(lvl+1)+" cleared!")+"</h2>"+
         "<div class='g-stars-big'>"+stars(st)+"</div>"+
         "<p style='color:#5d6b63;margin:6px 0 0'>"+moves+" moves &middot; "+fmt(secs*1000)+"</p>"+
+        "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
         "<div class='g-row'>"+
           (last?"":"<button class='g-big' id='g-next'>Next level →</button>")+
           "<button class='g-big "+(last?"":"g-ghost")+"' id='g-replay'>Replay</button>"+
         "</div>"+
-        "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "<div class='g-row'>"+
+          "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+          "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
+        "</div>"+
         "</div>";
       if(!last) document.getElementById("g-next").onclick=function(){ playLevel(lvl+1); };
       document.getElementById("g-replay").onclick=function(){ playLevel(lvl); };
       document.getElementById("g-map").onclick=renderMap;
+      document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Match the Bowl at CanMyPet 🐾 — can you beat me?"); };
     },480);
   }
   function renderMap(){
@@ -242,6 +261,7 @@
   }
   if(window.PETIBLE_FOODS) renderMap();
   else window.addEventListener("load",renderMap);
+  CMP.muteButton();
 })();
 </script>
 </body>

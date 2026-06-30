@@ -114,6 +114,7 @@
 <div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
 
 <script src="../assets/foods.js"></script>
+<script src="../assets/arcade.js"></script>
 <script>
 (function(){
   var LEVELS=[
@@ -122,7 +123,7 @@
     {name:"Baking Day",tgts:7,time:50000},{name:"Garden Harvest",tgts:8,time:45000},{name:"Party Spread",tgts:8,time:40000},{name:"The Big Feast",tgts:9,time:35000}
   ];
   var DECOR=["🍽️","🥄","🍴","🫖","🧂","🍞","🥣","🫙","🧁","🪴","🪟","🧺","🐶","🐱","🥛","🧊","🍵","🪑"];
-  var species="dog", lvl=0, targets=[], items=[], found=0, misses=0, limit=0, startT=0, clk=null;
+  var species="dog", lvl=0, targets=[], items=[], found=0, misses=0, limit=0, startT=0, clk=null, score=0, combo=0, maxCombo=0;
   var el=function(){return document.getElementById("gameApp");};
   function progKey(){return "cmp_kh_prog_"+species;}
   function loadProg(){try{return JSON.parse(localStorage.getItem(progKey())||'{"u":1,"s":{}}');}catch(e){return {u:1,s:{}};}}
@@ -169,7 +170,7 @@
   }
 
   function playLevel(i){
-    lvl=i; var L=LEVELS[i]; found=0; misses=0; limit=L.time;
+    lvl=i; var L=LEVELS[i]; found=0; misses=0; limit=L.time; score=0; combo=0; maxCombo=0;
     buildLists(L.tgts, L.tgts*2+2+i);
     if(targets.length<L.tgts){ el().innerHTML="<p style='color:#9c2a22'>Couldn't load enough food data. Please reload.</p>"; return; }
     startT=Date.now();
@@ -183,6 +184,7 @@
         "<div><span class='lab'>Level</span><span class='val'>"+(i+1)+"/10</span></div>"+
         "<div><span class='lab'>Found</span><span class='val'><span id='kh-found'>0</span>/"+targets.length+"</span></div>"+
         "<div><span class='lab'>Misses</span><span class='val' id='kh-miss'>0</span></div>"+
+        "<div><span class='lab'>Score</span><span class='val' id='kh-score'>0</span></div>"+
         "<div><span class='lab'>"+(limit>0?"Left":"Time")+"</span><span class='val' id='kh-time'>"+(limit>0?fmt(limit):"0:00")+"</span></div>"+
       "</div>"+
       "<p class='kh-prompt'>⛔ "+LEVELS[i].name+" — find the "+targets.length+" toxic foods:</p>"+
@@ -196,14 +198,21 @@
 
   function tap(i,node){
     var it=items[i]; if(it.found) return;
+    var r=node.getBoundingClientRect();
     if(it.tgt){
       it.found=true; node.classList.add("found"); found++;
       document.getElementById("kh-found").textContent=found;
       var chip=el().querySelector(".kh-chip[data-slug='"+it.slug+"']"); if(chip) chip.classList.add("got");
+      combo++; if(combo>maxCombo)maxCombo=combo;
+      var add=10+(combo>=2?(combo-1)*5:0); score+=add;
+      CMP.sfx.correct(); if(combo>=2) CMP.sfx.combo(combo);
+      CMP.popup("+"+add+(combo>=3?" 🔥x"+combo:""),{x:r.left+r.width/2,y:r.top,color:"#0E5A41"});
+      var sc=document.getElementById("kh-score"); if(sc)sc.textContent=score;
       if(found===targets.length) win();
     } else {
       misses++; document.getElementById("kh-miss").textContent=misses;
       node.classList.remove("miss"); void node.offsetWidth; node.classList.add("miss");
+      combo=0; CMP.sfx.wrong(); CMP.flash("rgba(226,72,61,.4)");
     }
   }
   function revealUnfound(){
@@ -214,12 +223,13 @@
 
   function win(){
     stopClock();
+    CMP.sfx.level(); CMP.confetti();
     var elapsed=Date.now()-startT;
     var fast = limit>0 ? ((limit-elapsed)/limit>0.4) : true;
     var st = (misses===0 && fast)?3 : (misses<=2)?2 : 1;
     var p=loadProg(); p.s[lvl+1]=Math.max(p.s[lvl+1]||0,st);
     if(lvl<9 && p.u<lvl+2) p.u=lvl+2; saveProg(p);
-    var last=(lvl===9);
+    var last=(lvl===9), best=CMP.best("kitchen",score);
     setTimeout(function(){
       el().innerHTML=
         "<div style='animation:tin .3s ease'>"+
@@ -227,32 +237,42 @@
         "<h2 style='margin:2px 0 4px;font-size:23px'>"+(last?"You beat all 10 levels!":"Level "+(lvl+1)+" — kitchen cleared!")+"</h2>"+
         "<div class='g-stars-big'>"+stars(st)+"</div>"+
         "<p style='color:#5d6b63;margin:6px 0 0'>"+fmt(elapsed)+" &middot; "+misses+" miss"+(misses===1?"":"es")+(misses===0?" — perfect! ✨":"")+"</p>"+
+        "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
         "<div class='g-row'>"+
           (last?"":"<button class='g-big' id='g-next'>Next level →</button>")+
           "<button class='g-big "+(last?"":"g-ghost")+"' id='g-replay'>Replay</button>"+
         "</div>"+
-        "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+        "<div class='g-row'>"+
+          "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
+          "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
+        "</div>"+
         "</div>";
       if(!last) document.getElementById("g-next").onclick=function(){ playLevel(lvl+1); };
       document.getElementById("g-replay").onclick=function(){ playLevel(lvl); };
       document.getElementById("g-map").onclick=renderMap;
+      document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Kitchen Hunt at CanMyPet 🐾 — can you beat me?"); };
     },560);
   }
   function fail(msg){
+    CMP.sfx.over();
+    var best=CMP.best("kitchen",score);
     setTimeout(function(){
       el().innerHTML=
         "<div style='animation:tin .3s ease'>"+
         "<div class='g-final'>😿</div>"+
         "<h2 style='margin:2px 0 4px;font-size:22px'>Level "+(lvl+1)+" — "+msg+"</h2>"+
         "<p style='color:#5d6b63;margin:4px 0 0'>You found "+found+" of "+targets.length+" toxic foods. The rest are circled in red.</p>"+
+        "<p style='color:#0E5A41;font-weight:800;margin:6px 0 0'>Score: "+score+" &middot; Best: "+best+"</p>"+
         "<div class='g-row'>"+
           "<button class='g-big' id='g-retry'>Try again ↻</button>"+
           "<button class='g-big g-ghost' id='g-map'>Level map</button>"+
         "</div>"+
+        "<button class='g-big g-ghost' id='g-share'>📣 Share</button>"+
         "<p style='margin:14px 0 0;color:#5d6b63;font-size:14px'>See them all in the <a href='../guides/foods-toxic-to-dogs.html' style='color:#0E5A41;font-weight:700'>toxic foods guide →</a></p>"+
         "</div>";
       document.getElementById("g-retry").onclick=function(){ playLevel(lvl); };
       document.getElementById("g-map").onclick=renderMap;
+      document.getElementById("g-share").onclick=function(){ CMP.share("I scored "+score+" on Kitchen Hunt at CanMyPet 🐾 — can you beat me?"); };
     },1100);
   }
 
@@ -283,6 +303,7 @@
   }
   if(window.PETIBLE_FOODS) renderMap();
   else window.addEventListener("load",renderMap);
+  CMP.muteButton();
 })();
 </script>
 </body>
