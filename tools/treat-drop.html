@@ -166,8 +166,8 @@
 
   /* controls: drag + arrows */
   function moveTo(px){ var r=cv.getBoundingClientRect(); dog.x=Math.max(48,Math.min(W-48,(px-r.left)*(W/r.width))); }
-  stage.addEventListener("pointerdown",function(e){ moveTo(e.clientX); stage.setPointerCapture&&stage.setPointerCapture(e.pointerId); });
-  stage.addEventListener("pointermove",function(e){ if(e.buttons||e.pointerType==="touch") moveTo(e.clientX); });
+  stage.addEventListener("pointerdown",function(e){ if(!playing) return; moveTo(e.clientX); stage.setPointerCapture&&stage.setPointerCapture(e.pointerId); });
+  stage.addEventListener("pointermove",function(e){ if(!playing) return; if(e.buttons||e.pointerType==="touch") moveTo(e.clientX); });
   var keys={};
   document.addEventListener("keydown",function(e){ if(e.key==="ArrowLeft"||e.key==="ArrowRight"){ keys[e.key]=1; e.preventDefault(); } });
   document.addEventListener("keyup",function(e){ delete keys[e.key]; });
