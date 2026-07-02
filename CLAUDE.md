@@ -53,4 +53,5 @@ CanMyPet é o "sistema operacional do dono de pet". O objetivo é **agregar valo
 - `defer` no `foods.js` quebra páginas com PETIBLE inline → manter síncrono nessas (08jf1495d).
 - Working tree pode divergir do commit/deploy com 2 agentes → confirmar `"type":`=N antes de cada lote.
 - `chocolate` é a única página à mão (`rich`) → incluir em toda varredura sitewide.
+- O mount do sandbox Linux pode ficar **desatualizado** após edições via ferramentas do host → preflight/greps de verificação devem rodar nas ferramentas do host (Grep/Read), não no bash do sandbox (02/jul/2026).
 - _(novas lições entram aqui, sempre.)_

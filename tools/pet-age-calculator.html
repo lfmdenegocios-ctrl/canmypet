@@ -104,6 +104,8 @@
       <div class="row"><span>Life stage</span><strong id="stage">—</strong></div>
       <div class="row"><span>Your pet</span><strong id="petline">—</strong></div>
       <p class="note">An estimate based on average aging. Breed, health and lifestyle all play a part — your vet knows best.</p>
+      <div class="shr"><button type="button" class="shr-btn" id="shrShare">📤 Share this tool</button><a class="shr-btn shr-pin" target="_blank" rel="noopener" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fcanmypethave.com%2Ftools%2Fpet-age-calculator.html&description=How%20old%20is%20your%20dog%20or%20cat%20in%20human%20years%3F%20The%20real%20answer%20isn%27t%20%22times%207%22%20%E2%80%94%20try%20the%20free%20calculator%20%E2%80%94%20CanMyPet%20%F0%9F%90%BE">📌 Pin it</a></div>
+      <style>.shr{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.shr-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.12);color:#fff;font:600 13.5px/1 'Plus Jakarta Sans',sans-serif;cursor:pointer;text-decoration:none;transition:background .15s}.shr-btn:hover{background:rgba(255,255,255,.24)}</style>
     </div>
   </div>
 
@@ -141,7 +143,7 @@
   </div>
 </main>
 
-<section class="nl-band"><div class="nl-inner"><div class="nl-copy"><h3>🧊 Get the free Pet Food Fridge Guide</h3><p>A printable checklist of 50+ foods your dog &amp; cat can and can't eat — plus seasonal pet-safety tips. No spam, unsubscribe anytime.</p></div><a class="nl-btn" href="../assets/fridge-guide.pdf" target="_blank" rel="noopener">Get the free guide &rarr;</a></div></section>
+<section class="nl-band"><div class="nl-inner"><div class="nl-copy"><h3>🧊 Get the free Pet Food Fridge Guide</h3><p>A printable checklist of 50+ foods your dog &amp; cat can and can't eat — plus seasonal pet-safety tips. No spam, unsubscribe anytime.</p></div><form class="nl-form" action="https://assets.mailerlite.com/jsonp/2485327/forms/191876818150622400/subscribe" method="post" data-pdf="../assets/fridge-guide.pdf" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><input type="email" name="fields[email]" required placeholder="Your best email" aria-label="Email" style="flex:1;min-width:210px;padding:13px 16px;border-radius:999px;border:none;font:600 15px 'Plus Jakarta Sans',sans-serif;color:#16241F"><input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true"><button type="submit" class="nl-btn" style="cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif">Get the free guide &rarr;</button></form></div></section>
 <footer class="site-footer"><div class="container"><div class="foot-grid">
 <div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
 <p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
@@ -192,6 +194,9 @@
   [ageEl,sizeEl].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
   calc();
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('shrShare');if(!b)return;var u='https://canmypethave.com/tools/pet-age-calculator.html';var t='How old is your dog or cat in human years? The real answer isn\'t "times 7" — try the free calculator — CanMyPet 🐾';b.addEventListener('click',function(){if(navigator.share){navigator.share({title:document.title,text:t,url:u}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(u);b.textContent='✅ Link copied!';setTimeout(function(){b.textContent='📤 Share this tool';},2000);}});})();
 </script>
 <script defer src="../assets/app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>

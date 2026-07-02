@@ -88,4 +88,28 @@
       links.style.borderBottom = '1px solid var(--line)'; links.style.gap = '14px';
     });
   }
+
+  // newsletter band → MailerLite (delegated: works on every page with .nl-form)
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (!f || !f.classList || !f.classList.contains('nl-form')) return;
+    e.preventDefault();
+    var btn = f.querySelector('button[type=submit]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    var fd = new FormData(f);
+    fetch(f.action, { method: 'POST', body: fd })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!(j && j.success)) throw new Error('ml');
+        var pdf = f.getAttribute('data-pdf') || 'assets/fridge-guide.pdf';
+        var inner = f.closest ? f.closest('.nl-inner') : null;
+        var html = '<div class="nl-copy"><h3>You\'re in! 🎉</h3><p style="margin-bottom:10px">Check your inbox — and here\'s your guide right away:</p>' +
+          '<a class="nl-btn" href="' + pdf + '" target="_blank" rel="noopener">⬇️ Download the Fridge Guide (PDF)</a></div>';
+        if (inner) inner.innerHTML = html; else f.outerHTML = html;
+      })
+      .catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Get the free guide →'; }
+        alert('Something went wrong — please try again in a moment.');
+      });
+  });
 })();

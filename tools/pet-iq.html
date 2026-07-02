@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var d=document.documentElement;var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(n&&n.type==='back_forward')d.classList.add('nav-instant');if(sessionStorage.getItem('cmp_intro'))d.classList.add('intro-seen');else sessionStorage.setItem('cmp_intro','1');}catch(e){}})();</script>
+<title>Pet IQ — The Endless Pet Trivia Ladder (with Ranking) | CanMyPet</title>
+<meta name="description" content="How high can your Pet IQ climb? Endless pet trivia — fun facts and food safety for dogs and cats — with 3 lives, a ticking timer, combos and a high-score ranking.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/pet-iq.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet IQ — The Endless Pet Trivia Ladder">
+<meta property="og:description" content="Endless pet trivia with lives, timer, combos and a high-score ranking. Every answer teaches a real pet fact.">
+<meta property="og:url" content="https://canmypethave.com/tools/pet-iq.html">
+<meta property="og:site_name" content="CanMyPet">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/styles.css?v=20260701">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canmypethave.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://canmypethave.com/index.html#tools"},{"@type":"ListItem","position":3,"name":"Pet IQ trivia","item":"https://canmypethave.com/tools/pet-iq.html"}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="323e8ff52b8df3df0adf26caaeae963b"/>
+<style>
+.piq-wrap{max-width:600px;margin:0 auto;padding:6px 0 28px}
+.piq-card{background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:22px;padding:24px 22px;box-shadow:0 14px 40px rgba(14,90,65,.08);text-align:center}
+.piq-hud{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.piq-pill{font:800 13px/1 'Plus Jakarta Sans',sans-serif;padding:7px 12px;border-radius:999px;background:#E4F6EC;color:#0E5A41}
+.piq-pill.lives{background:#FCE7E5;color:#9c2a22}
+.piq-pill.combo{background:#FBF1DA;color:#8a6210}
+.piq-timer{height:8px;border-radius:99px;background:#EDE7DA;overflow:hidden;margin:2px 0 16px}
+.piq-timer i{display:block;height:100%;background:linear-gradient(90deg,#2FBF87,#E7A327 70%,#E2483D);border-radius:99px;transition:width .1s linear}
+.piq-emoji{font-size:58px;line-height:1;display:block;margin:2px 0 6px}
+.piq-q{font-family:Fraunces,serif;font-size:clamp(20px,4.6vw,26px);font-weight:700;color:#16241F;margin:0 0 16px;min-height:2.4em}
+.piq-opts{display:grid;gap:10px}
+.piq-opt{border:1.5px solid rgba(14,90,65,.18);background:#FAF7F0;border-radius:14px;padding:14px;font:700 15.5px/1.3 'Plus Jakarta Sans',sans-serif;color:#16241F;cursor:pointer;transition:transform .1s,border-color .1s}
+.piq-opt:hover{transform:translateY(-2px);border-color:#0E5A41}
+.piq-opt.right{background:#E4F6EC;border-color:#1FA463;color:#0c5e38}
+.piq-opt.wrong{background:#FCE7E5;border-color:#E2483D;color:#9c2a22}
+.piq-opt:disabled{cursor:default}
+.piq-fact{border-radius:14px;padding:13px 16px;margin-top:14px;font-size:14.5px;line-height:1.5;text-align:left;background:#F0FAF5;border:1px solid #2FBF87;color:#1c4534}
+.piq-next{margin-top:12px;width:100%;border:none;cursor:pointer;border-radius:14px;padding:14px;background:#16241F;color:#fff;font:800 16px/1 'Plus Jakarta Sans',sans-serif}
+.piq-big{font-family:Fraunces,serif;font-size:34px;font-weight:700;color:#16241F;margin:4px 0 2px}
+.piq-board{margin:14px 0 4px;text-align:left}
+.piq-row{display:flex;justify-content:space-between;padding:9px 14px;border-radius:10px;font:700 15px/1 'Plus Jakarta Sans',sans-serif;color:#3a4a42}
+.piq-row:nth-child(odd){background:#FAF7F0}
+.piq-row.me{background:#E4F6EC;color:#0c5e38;border:1px solid #1FA463}
+.piq-row .pos{color:#9aa8a0;width:28px;display:inline-block}
+.piq-init{display:flex;gap:10px;justify-content:center;margin:12px 0}
+.piq-init input{width:150px;text-align:center;font:800 24px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:8px;text-transform:uppercase;padding:12px;border-radius:12px;border:2px solid rgba(14,90,65,.25)}
+.piq-acts{display:grid;gap:10px;margin-top:14px}
+.piq-share{background:#FF6B5E;color:#fff;border:none;cursor:pointer;border-radius:14px;padding:14px;font:800 16px/1 'Plus Jakarta Sans',sans-serif}
+.piq-ghost{background:#fff;border:1.5px solid rgba(14,90,65,.25);color:#0E5A41;border-radius:14px;padding:12px;font:800 15px/1 'Plus Jakarta Sans',sans-serif;text-decoration:none;display:block;cursor:pointer}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../foods/index.html">Food checker</a><a href="../guides/index.html">Guides</a><a href="../about.html">About</a><a href="../sources.html">Sources</a></nav>
+<a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">&#8980;</i> Check a food</a>
+<button class="menu-btn" aria-label="Menu">&#9776;</button></div></header>
+<div class="secbar"><div class="container secbar-in">
+  <a href="../foods/index.html">🥦 Food checker</a>
+  <a class="active" href="../index.html#tools">🧰 Tools</a>
+  <a href="../guides/index.html">📖 Guides</a>
+  <a class="emerg" href="../tools/pet-emergency.html">🆘 Emergency</a>
+  <a href="../tools/pet-name-generator.html">🐶 Name generator</a>
+</div></div>
+
+<div class="container">
+  <div class="crumbrow">
+    <a class="backchip" href="../tools/arcade.html">&larr; Arcade</a>
+    <div class="crumb"><a href="../index.html">Home</a> &rsaquo; <a href="../index.html#tools">Tools</a> &rsaquo; <b>Pet IQ</b></div>
+  </div>
+  <div style="max-width:720px;margin:16px auto 18px;text-align:center">
+    <span class="eyebrow">Free game · endless trivia · high-score ranking</span>
+    <h1 style="font-size:clamp(32px,5vw,48px);margin:8px 0 8px">Pet IQ 🧠</h1>
+    <p class="muted" style="font-size:17px;margin:0">The endless pet trivia ladder. 3 lives, a ticking timer, combo multipliers — and a real pet fact with every answer. How high can you climb?</p>
+  </div>
+</div>
+
+<main class="container">
+  <div class="piq-wrap"><div class="piq-card" id="piqApp"><p style="color:#5d6b63">Loading…</p></div></div>
+  <div class="ad-slot" style="max-width:1160px;margin-top:22px">Ad placement</div>
+</main>
+
+<section class="nl-band"><div class="nl-inner"><div class="nl-copy"><h3>🧊 Get the free Pet Food Fridge Guide</h3><p>A printable checklist of 50+ foods your dog &amp; cat can and can't eat — plus seasonal pet-safety tips. No spam, unsubscribe anytime.</p></div><form class="nl-form" action="https://assets.mailerlite.com/jsonp/2485327/forms/191876818150622400/subscribe" method="post" data-pdf="../assets/fridge-guide.pdf" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><input type="email" name="fields[email]" required placeholder="Your best email" aria-label="Email" style="flex:1;min-width:210px;padding:13px 16px;border-radius:999px;border:none;font:600 15px 'Plus Jakarta Sans',sans-serif;color:#16241F"><input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true"><button type="submit" class="nl-btn" style="cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif">Get the free guide &rarr;</button></form></div></section>
+<footer class="site-footer"><div class="container"><div class="foot-grid">
+<div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
+<div><h5>Tools</h5><a href="../tools/pet-emergency.html">My pet ate something</a><a href="../tools/pet-calorie-calculator.html">Calorie calculator</a><a href="../tools/pet-cost-calculator.html">Cost calculator</a><a href="../tools/pet-vaccine-schedule.html">Vaccine schedule</a><a href="../tools/pet-pregnancy-calculator.html">Pregnancy calculator</a><a href="../tools/puppy-weight-predictor.html">Puppy weight predictor</a><a href="../tools/pet-water-calculator.html">Water calculator</a><a href="../tools/pet-body-condition.html">Body condition score</a><a href="../tools/chocolate-toxicity-calculator.html">Chocolate calculator</a><a href="../tools/dog-feeding-calculator.html">Feeding calculator</a><a href="../tools/pet-age-calculator.html">Pet age calculator</a><a href="../tools/pet-name-generator.html">Pet name generator</a><a href="../tools/pet-food-comparator.html">Food comparator</a><a href="../tools/breed-finder.html">Breed Finder</a><a href="../tools/pet-calendar.html">Pet care calendar</a><a href="../foods/index.html">Food checker</a></div>
+<div><h5>Games</h5><a href="../tools/daily-bowl.html">🥣 The Daily Bowl</a><a href="../tools/pet-iq.html">🧠 Pet IQ</a><a href="../tools/arcade.html">🎮 Arcade</a><a href="../tools/safe-or-toxic.html">Safe or Toxic? game</a><a href="../tools/spot-the-toxic.html">Spot the Toxic</a><a href="../tools/memory-match.html">Match the Bowl</a><a href="../tools/kitchen-hunt.html">Kitchen Hunt</a><a href="../tools/quiz.html">Pet food quiz</a></div>
+<div><h5>Foods &amp; guides</h5><a href="../guides/index.html">Pet Life guides</a><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../foods/can-dogs-eat-grapes.html">Dogs &amp; grapes</a><a href="../guides/foods-toxic-to-dogs.html">Foods toxic to dogs</a><a href="../guides/safe-fruits-veggies-for-dogs.html">Safe foods for dogs</a><a href="../guides/foods-cats-should-never-eat.html">Foods cats can't eat</a></div>
+<div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div></div>
+<div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
+
+<script src="../assets/foods.js"></script>
+<script src="../assets/trivia.js"></script>
+<script src="../assets/arcade.js"></script>
+<script>
+(function(){
+  "use strict";
+  var app=document.getElementById("piqApp");
+  var deck=[], pos=0, lives=3, score=0, combo=0, maxCombo=0, timerId=null, tLeft=0, tMax=0, answered=false;
+
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+  /* deck = curated trivia (options shuffled) + endless food questions from the database */
+  function foodQ(){
+    var D=window.PETIBLE_FOODS||[], f=null, tries=0;
+    while(tries++<50){ var c=D[Math.floor(Math.random()*D.length)];
+      if(c && c.dog && c.dog.v && c.dog.why){ f=c; break; } }
+    if(!f) return null;
+    var V={safe:"Yes, it's safe",caution:"Only in moderation",danger:"Never"};
+    var o=shuffle([{t:V.safe,v:"safe"},{t:V.caution,v:"caution"},{t:V.danger,v:"danger"}]);
+    var ai=0; for(var i=0;i<3;i++) if(o[i].v===f.dog.v) ai=i;
+    return {q:"Can dogs "+(f.verb||"eat")+" "+f.name.toLowerCase()+"?",o:[o[0].t,o[1].t,o[2].t],a:ai,
+      f:f.dog.why,e:f.emoji||"🍽️"};
+  }
+  function buildDeck(){
+    deck=shuffle((window.CMP_TRIVIA||[]).slice()).map(function(t){
+      var opts=t.o.map(function(x,i){return {t:x,i:i};}); shuffle(opts);
+      var ai=0; for(var i=0;i<3;i++) if(opts[i].i===t.a) ai=i;
+      return {q:t.q,o:[opts[0].t,opts[1].t,opts[2].t],a:ai,f:t.f,e:t.e};
+    });
+  }
+  function nextQ(){ if(pos<deck.length) return deck[pos]; var f=foodQ(); return f||deck[pos%deck.length]; }
+
+  function timeFor(){ var t=12000-Math.floor(pos/5)*1500; return Math.max(t,5000); }
+  function hearts(){var s="";for(var i=0;i<3;i++)s+=(i<lives?"❤️":"🤍");return s;}
+  function multi(){ return combo>=9?4:(combo>=6?3:(combo>=3?2:1)); }
+
+  function hud(){
+    var m=multi();
+    return "<div class='piq-hud'>"+
+      "<span class='piq-pill'>⭐ "+score+"</span>"+
+      "<span class='piq-pill lives'>"+hearts()+"</span>"+
+      (m>1?"<span class='piq-pill combo'>🔥 x"+m+" combo</span>":"<span class='piq-pill combo' style='background:#EDE7DA;color:#9aa8a0'>combo x1</span>")+
+      "<span class='piq-pill' style='background:#EDE7DA;color:#5d6b63'>Q"+(pos+1)+"</span>"+
+    "</div>";
+  }
+  function render(){
+    var q=nextQ(); answered=false;
+    app.innerHTML=hud()+
+      "<div class='piq-timer'><i id='piqBar' style='width:100%'></i></div>"+
+      "<span class='piq-emoji'>"+q.e+"</span>"+
+      "<div class='piq-q'>"+esc(q.q)+"</div>"+
+      "<div class='piq-opts'>"+q.o.map(function(o,i){return "<button class='piq-opt' data-i='"+i+"'>"+esc(o)+"</button>";}).join("")+"</div>"+
+      "<div id='piqAfter'></div>";
+    Array.prototype.forEach.call(app.querySelectorAll(".piq-opt"),function(b){
+      b.addEventListener("click",function(){ answer(q,parseInt(b.dataset.i,10),b); });
+    });
+    startTimer(q);
+  }
+  function startTimer(q){
+    stopTimer(); tMax=timeFor(); tLeft=tMax;
+    timerId=setInterval(function(){
+      tLeft-=100;
+      var bar=document.getElementById("piqBar");
+      if(bar) bar.style.width=Math.max(0,(tLeft/tMax)*100)+"%";
+      if(tLeft<=3000&&tLeft%1000<100) CMP.sfx.tick();
+      if(tLeft<=0){ stopTimer(); answer(q,-1,null); }
+    },100);
+  }
+  function stopTimer(){ if(timerId){clearInterval(timerId);timerId=null;} }
+
+  function answer(q,i,btn){
+    if(answered) return; answered=true; stopTimer();
+    var right=(i===q.a);
+    var btns=app.querySelectorAll(".piq-opt");
+    Array.prototype.forEach.call(btns,function(b,k){
+      b.disabled=true;
+      if(k===q.a) b.classList.add("right");
+      else if(b===btn&&!right) b.classList.add("wrong");
+    });
+    if(right){
+      combo++; if(combo>maxCombo)maxCombo=combo;
+      var gain=(100+Math.round((tLeft/tMax)*50))*multi();
+      score+=gain; CMP.sfx.correct(); CMP.popup("+"+gain,{color:"#1FA463"});
+      if(combo===3||combo===6||combo===9){ CMP.sfx.combo(combo); CMP.toast("🔥 Combo x"+multi()+"!"); }
+      if((pos+1)%10===0) CMP.confetti({count:80});
+    } else {
+      lives--; combo=0; CMP.sfx.wrong(); CMP.flash("rgba(226,72,61,.28)");
+    }
+    document.getElementById("piqAfter").innerHTML=
+      "<div class='piq-fact'><b>"+(right?"✅ ":"💡 ")+"Did you know?</b> "+esc(q.f)+"</div>"+
+      "<button class='piq-next' id='piqNext'>"+(lives>0?"Next question →":"See my score 🏁")+"</button>";
+    document.getElementById("piqNext").addEventListener("click",function(){
+      pos++;
+      if(lives>0) render(); else gameOver();
+    });
+    document.getElementById("piqNext").focus();
+  }
+
+  /* ---- local high-score board (Supabase-ready: swap loadBoard/saveBoard later) ---- */
+  function loadBoard(){ return CMP.get("cmp_petiq_board",[]); }
+  function saveBoard(b){ CMP.set("cmp_petiq_board",b.slice(0,10)); }
+
+  function gameOver(){
+    var best=CMP.best("petiq",score);
+    var board=loadBoard();
+    var qualifies=board.length<10||score>board[board.length-1].s;
+    app.innerHTML=hud()+
+      "<div class='piq-big'>Game over! 🏁</div>"+
+      "<p style='color:#5d6b63;font-weight:700;margin:2px 0 0'>Score <b style='color:#0E5A41'>"+score+"</b> · "+(pos)+" questions · best combo x"+ (maxCombo>=9?4:(maxCombo>=6?3:(maxCombo>=3?2:1))) +"</p>"+
+      "<p style='color:#9c2a22;font-weight:800;margin:4px 0 0'>🏆 Personal best: "+best+"</p>"+
+      (qualifies&&score>0?
+        "<p style='margin:12px 0 0;font-weight:700;color:#16241F'>You made the leaderboard! Enter your initials:</p>"+
+        "<div class='piq-init'><input id='piqInit' maxlength='3' placeholder='AAA' autocomplete='off'></div>"+
+        "<button class='piq-share' id='piqSave' style='background:#0E5A41'>Save my score</button>"
+        :"")+
+      "<div id='piqBoard'>"+boardHtml(board,null)+"</div>"+
+      "<div class='piq-acts'>"+
+        "<button class='piq-share' id='piqShare'>📣 Challenge a friend</button>"+
+        "<button class='piq-ghost' id='piqAgain'>🔁 Play again</button>"+
+        "<a class='piq-ghost' href='daily-bowl.html'>🥣 Try today's Daily Bowl</a>"+
+      "</div>";
+    var sv=document.getElementById("piqSave");
+    if(sv) sv.addEventListener("click",function(){
+      var ini=(document.getElementById("piqInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"???";
+      var b=loadBoard(); b.push({n:ini,s:score}); b.sort(function(x,y){return y.s-x.s;}); saveBoard(b);
+      document.getElementById("piqBoard").innerHTML=boardHtml(loadBoard(),ini+"|"+score);
+      sv.style.display="none"; var ip=document.getElementById("piqInit"); if(ip)ip.parentNode.style.display="none";
+      CMP.confetti(); CMP.sfx.level();
+    });
+    document.getElementById("piqShare").addEventListener("click",function(){
+      CMP.share("🧠 My Pet IQ score: "+score+" ("+pos+" questions) — think you know pets better? Prove it:","https://canmypethave.com/tools/pet-iq.html");
+    });
+    document.getElementById("piqAgain").addEventListener("click",start);
+    CMP.sfx.over();
+  }
+  function boardHtml(b,me){
+    if(!b.length) return "<p style='color:#9aa8a0;font-size:14px;margin:14px 0 0'>No scores yet — yours could be #1.</p>";
+    var h="<div class='piq-board'><p style='font:800 13px/1 \"Plus Jakarta Sans\",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#5d6b63;margin:14px 0 8px'>🏆 Leaderboard (this device)</p>";
+    for(var i=0;i<Math.min(b.length,10);i++){
+      var mine=me&&(b[i].n+"|"+b[i].s)===me;
+      h+="<div class='piq-row"+(mine?" me":"")+"'><span><span class='pos'>"+(i+1)+".</span>"+esc(b[i].n)+"</span><b>"+b[i].s+"</b></div>";
+    }
+    return h+"</div>";
+  }
+
+  function start(){
+    pos=0; lives=3; score=0; combo=0; maxCombo=0;
+    buildDeck(); render();
+  }
+  function intro(){
+    var best=CMP.best("petiq"), b=loadBoard();
+    app.innerHTML=
+      "<span class='piq-emoji'>🧠</span>"+
+      "<div class='piq-big'>How high can your Pet IQ climb?</div>"+
+      "<p style='color:#5d6b63;font-size:15px;margin:6px 0 0'>Endless questions · 3 lives · timer speeds up · combos multiply your points. Every answer teaches a real pet fact.</p>"+
+      (best>0?"<p style='color:#9c2a22;font-weight:800;margin:8px 0 0'>🏆 Your best: "+best+"</p>":"")+
+      "<div class='piq-acts'><button class='piq-share' id='piqStart' style='background:#0E5A41'>▶ Start climbing</button></div>"+
+      boardHtml(b,null);
+    document.getElementById("piqStart").addEventListener("click",start);
+  }
+  intro();
+  CMP.muteButton();
+})();
+</script>
+<script defer src="../assets/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script defer src="../assets/anim.js"></script>
+</body>
+</html>
