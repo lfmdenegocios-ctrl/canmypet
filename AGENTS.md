@@ -53,4 +53,6 @@ CanMyPet é o "sistema operacional do dono de pet". O objetivo é **agregar valo
 - `defer` no `foods.js` quebra páginas com PETIBLE inline → manter síncrono nessas (08jf1495d).
 - Working tree pode divergir do commit/deploy com 2 agentes → confirmar `"type":`=N antes de cada lote.
 - `chocolate` é a única página à mão (`rich`) → incluir em toda varredura sitewide.
+- O mount do sandbox Linux pode ficar **desatualizado** após edições via ferramentas do host → preflight/greps de verificação devem rodar nas ferramentas do host (Grep/Read), não no bash do sandbox (02/jul/2026).
+- **`button.click()` sintético passa onde o clique humano falha.** `setPointerCapture` num container engole o click dos botões dentro dele (o browser compõe o click no ancestral capturado, não no botão) — foi o Start morto do Treat Drop (f2ab76e2). Capture de drag só com `if(!playing) return`. E abas automatizadas ficam `hidden`: rAF suspenso E cliques nativos CDP não chegam (`events:[]`) → botão de jogo precisa de teste com clique real em aba visível (02/jul/2026).
 - _(novas lições entram aqui, sempre.)_
