@@ -8,6 +8,26 @@ window.CMP_GUIDES = [
     excerpt: "From Brazilian churrasco to Belgian chocolate — every World Cup nation's iconic dish, and exactly what's safe to share with your dog or cat on game day.",
     cover: 'assets/guide/hero-world-cup-food-guide.webp', cat: 'Seasonal', date: '2026-07-06' },
 
+  { slug: 'why-do-cats-purr',
+    title: 'Why Do Cats Purr? The Science Behind the Rumble',
+    excerpt: "Happiness, healing, hunger — or stress? The real reasons cats purr, how the rumble actually works, and the one time it's a red flag.",
+    cover: 'assets/guide/hero-why-do-cats-purr.webp', cat: 'Behavior', date: '2026-07-06' },
+
+  { slug: 'why-does-my-dog-lick-me',
+    title: 'Why Does My Dog Lick Me? 8 Real Reasons',
+    excerpt: 'Affection, taste, attention or anxiety? The 8 real reasons dogs lick people, when it signals something’s wrong, and how to gently redirect it.',
+    cover: 'assets/guide/hero-why-does-my-dog-lick-me.webp', cat: 'Behavior', date: '2026-07-04' },
+
+  { slug: 'cat-body-language',
+    title: 'Cat Body Language & Tail Talk',
+    excerpt: "What your cat's tail, ears, eyes and whiskers are really saying — plus the truth about slow blinks and the belly trap.",
+    cover: 'assets/guide/hero-cat-body-language.webp', cat: 'Behavior', date: '2026-07-02' },
+
+  { slug: 'dog-body-language',
+    title: 'Dog Body Language Explained',
+    excerpt: 'What your dog’s tail, ears, eyes and posture really mean — read the whole dog, not just one wag. A vet-sourced guide.',
+    cover: 'assets/guide/hero-dog-body-language.webp', cat: 'Behavior', date: '2026-07-01' },
+
   { slug: 'do-dogs-and-cats-get-along',
     title: 'Do Dogs and Cats Get Along?',
     excerpt: 'The cat-and-dog rivalry is mostly a myth — what really decides whether they bond, and how to introduce them the right way.',
