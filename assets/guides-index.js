@@ -3,6 +3,11 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'world-cup-food-guide',
+    title: "World Cup Snacks & Your Pet: 16 Countries' Foods, Checked",
+    excerpt: "From Brazilian churrasco to Belgian chocolate — every World Cup nation's iconic dish, and exactly what's safe to share with your dog or cat on game day.",
+    cover: 'assets/guide/hero-world-cup-food-guide.webp', cat: 'Seasonal', date: '2026-07-06' },
+
   { slug: 'do-dogs-and-cats-get-along',
     title: 'Do Dogs and Cats Get Along?',
     excerpt: 'The cat-and-dog rivalry is mostly a myth — what really decides whether they bond, and how to introduce them the right way.',
