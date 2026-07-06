@@ -33,16 +33,28 @@
 .bwc-pill.warn{color:#9c2a22}
 .bwc-goal{height:10px;border-radius:99px;background:#EDE7DA;overflow:hidden;margin:0 0 12px}
 .bwc-goal i{display:block;height:100%;background:linear-gradient(90deg,#2FBF87,#0E5A41);border-radius:99px;transition:width .3s}
-.bwc-board{position:relative;background:#fff;border:1px solid rgba(14,90,65,.14);border-radius:20px;padding:8px;box-shadow:0 14px 40px rgba(14,90,65,.08);touch-action:none;user-select:none;-webkit-user-select:none}
-.bwc-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
-.bwc-cell{aspect-ratio:1;border:none;border-radius:12px;background:#FAF7F0;font-size:clamp(20px,5.4vw,30px);line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .12s,background .12s;padding:0}
-.bwc-cell:hover{background:#F1ECDF}
-.bwc-cell.sel{background:#E4F6EC;outline:3px solid #2FBF87;transform:scale(1.08);z-index:1}
-.bwc-cell.choc{background:#4a2c1a}
-.bwc-cell.pop{animation:bwcPop .3s ease}
-@keyframes bwcPop{0%{transform:scale(1)}50%{transform:scale(1.35)}100%{transform:scale(0)}}
-.bwc-cell.drop{animation:bwcDrop .25s ease}
-@keyframes bwcDrop{from{transform:translateY(-18px);opacity:.4}to{transform:translateY(0);opacity:1}}
+.bwc-board{position:relative;background:radial-gradient(130% 100% at 50% 0%,#fffdf9,#f1ebdb);border:1px solid rgba(14,90,65,.14);border-radius:20px;padding:9px;box-shadow:0 14px 40px rgba(14,90,65,.10),inset 0 2px 12px rgba(14,90,65,.07);touch-action:none;user-select:none;-webkit-user-select:none}
+.bwc-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
+.bwc-cell{position:relative;aspect-ratio:1;border:none;border-radius:14px;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  --c1:#fff;--c2:#e6e0d2;
+  background:radial-gradient(120% 120% at 32% 24%,var(--c1),var(--c2));
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.55),inset 0 -4px 6px rgba(0,0,0,.16),0 4px 7px rgba(14,90,65,.12);
+  transition:transform .12s,box-shadow .12s,filter .12s}
+.bwc-cell::before{content:"";position:absolute;top:8%;left:11%;width:44%;height:32%;border-radius:50%;z-index:1;pointer-events:none;background:linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,0))}
+.bwc-e{position:relative;z-index:2;font-size:clamp(20px,5.4vw,30px);line-height:1;filter:drop-shadow(0 1px 1px rgba(0,0,0,.28))}
+.bwc-t0{--c1:#ffcf9b;--c2:#ef8a26}
+.bwc-t1{--c1:#c6d1ff;--c2:#5162d8}
+.bwc-t2{--c1:#ffc2bb;--c2:#e2483d}
+.bwc-t3{--c1:#bff0cf;--c2:#33ac63}
+.bwc-t4{--c1:#ffe39c;--c2:#e39a12}
+.bwc-t5{--c1:#f3d3ab;--c2:#c1824a}
+.bwc-cell:hover{filter:brightness(1.07)}
+.bwc-cell.sel{transform:translateY(-3px) scale(1.1);z-index:3;box-shadow:0 0 0 3px #2FBF87,0 0 16px 3px rgba(47,191,135,.55),inset 0 2px 2px rgba(255,255,255,.6),inset 0 -4px 6px rgba(0,0,0,.16)}
+.bwc-cell.choc{--c1:#7a4e30;--c2:#2b1710;box-shadow:0 0 0 2px rgba(226,72,61,.42),inset 0 2px 2px rgba(255,255,255,.18),inset 0 -4px 6px rgba(0,0,0,.5),0 4px 7px rgba(0,0,0,.32)}
+.bwc-cell.pop{animation:bwcPop .32s ease forwards}
+@keyframes bwcPop{0%{transform:scale(1)}35%{transform:scale(1.28);filter:brightness(1.7)}100%{transform:scale(0);filter:brightness(2.2)}}
+.bwc-cell.drop{animation:bwcDrop .26s ease}
+@keyframes bwcDrop{from{transform:translateY(-20px);opacity:.35}to{transform:translateY(0);opacity:1}}
 .bwc-over{position:absolute;inset:0;background:rgba(250,247,240,.97);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;z-index:3}
 .bwc-big{font-family:Fraunces,serif;font-size:28px;font-weight:700;color:#16241F;margin:0 0 6px}
 .bwc-sub{font:700 15px/1.5 'Plus Jakarta Sans',sans-serif;color:#5d6b63;margin:0}
@@ -162,7 +174,9 @@
     var h="";
     for(var r=0;r<N;r++) for(var c=0;c<N;c++){
       var v=grid[r][c], choc=v===CHOC;
-      h+="<button type='button' class='bwc-cell"+(choc?" choc":"")+(anim==="drop"?" drop":"")+"' data-r='"+r+"' data-c='"+c+"' aria-label='cell'>"+(v===-1?"":(choc?"🍫":TYPES[v]))+"</button>";
+      var tcls=choc?" choc":(v===-1?"":" bwc-t"+v);
+      var em=(v===-1?"":(choc?"🍫":TYPES[v]));
+      h+="<button type='button' class='bwc-cell"+tcls+(anim==="drop"?" drop":"")+"' data-r='"+r+"' data-c='"+c+"' aria-label='cell'><span class='bwc-e'>"+em+"</span></button>";
     }
     gridEl.innerHTML=h;
     Array.prototype.forEach.call(gridEl.children,function(b){
