@@ -215,18 +215,21 @@
         "<div class='piq-init'><input id='piqInit' maxlength='3' placeholder='AAA' autocomplete='off'></div>"+
         "<button class='piq-share' id='piqSave' style='background:#0E5A41'>Save my score</button>"
         :"")+
+      "<div id='piqGlobal'></div>"+
       "<div id='piqBoard'>"+boardHtml(board,null)+"</div>"+
       "<div class='piq-acts'>"+
         "<button class='piq-share' id='piqShare'>📣 Challenge a friend</button>"+
         "<button class='piq-ghost' id='piqAgain'>🔁 Play again</button>"+
         "<a class='piq-ghost' href='daily-bowl.html'>🥣 Try today's Daily Bowl</a>"+
       "</div>";
+    CMP.globalBoard&&CMP.globalBoard("piq","",0,document.getElementById("piqGlobal"));
     var sv=document.getElementById("piqSave");
     if(sv) sv.addEventListener("click",function(){
-      var ini=(document.getElementById("piqInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"???";
+      var ini=(document.getElementById("piqInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"PUP";
       var b=loadBoard(); b.push({n:ini,s:score}); b.sort(function(x,y){return y.s-x.s;}); saveBoard(b);
       document.getElementById("piqBoard").innerHTML=boardHtml(loadBoard(),ini+"|"+score);
       sv.style.display="none"; var ip=document.getElementById("piqInit"); if(ip)ip.parentNode.style.display="none";
+      CMP.globalBoard&&CMP.globalBoard("piq",ini,score,document.getElementById("piqGlobal"));
       CMP.confetti(); CMP.sfx.level();
     });
     document.getElementById("piqShare").addEventListener("click",function(){

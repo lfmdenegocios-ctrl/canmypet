@@ -227,15 +227,18 @@
       "<p class='td-sub'>Score <b style='color:#0E5A41'>"+score+"</b> · "+caught+" treats caught · best "+best+"</p>"+
       (killer?"<div class='td-fact'><b>"+killer.e+" "+esc(killer.n)+" got you!</b> "+esc(killer.why)+" <a href='"+foodLink(killer)+"' target='_blank' rel='noopener'>Full guide →</a></div>":"")+
       (qualifies?"<input id='tdInit' maxlength='3' placeholder='AAA' autocomplete='off' style='margin-top:12px;width:130px;text-align:center;font:800 22px/1 \"Plus Jakarta Sans\",sans-serif;letter-spacing:7px;text-transform:uppercase;padding:10px;border-radius:12px;border:2px solid rgba(14,90,65,.25)'><button class='td-btn' id='tdSave' style='margin-top:10px'>Save score</button>":"")+
+      "<div id='tdGlobal'></div>"+
       "<div id='tdBoard'>"+boardHtml(b,null)+"</div>"+
       "<button class='td-btn alt' id='tdAgain'>▶ Play again</button>"+
       "<button class='td-btn' id='tdShare' style='background:#16241F'>📣 Challenge a friend</button>";
+    CMP.globalBoard&&CMP.globalBoard("td","",0,document.getElementById("tdGlobal"));
     var sv=document.getElementById("tdSave");
     if(sv) sv.addEventListener("click",function(){
-      var ini=(document.getElementById("tdInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"???";
+      var ini=(document.getElementById("tdInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"PUP";
       var bb=loadBoard(); bb.push({n:ini,s:score}); bb.sort(function(x,y){return y.s-x.s;}); saveBoard(bb);
       document.getElementById("tdBoard").innerHTML=boardHtml(loadBoard(),ini+"|"+score);
       sv.style.display="none"; document.getElementById("tdInit").style.display="none";
+      CMP.globalBoard&&CMP.globalBoard("td",ini,score,document.getElementById("tdGlobal"));
       CMP.confetti(); CMP.sfx.level();
     });
     document.getElementById("tdAgain").addEventListener("click",start);

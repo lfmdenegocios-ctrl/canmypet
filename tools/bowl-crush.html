@@ -273,15 +273,18 @@
     over.innerHTML="<div class='bwc-big'>Out of moves! 🐾</div>"+
       "<p class='bwc-sub'>Score <b style='color:#0E5A41'>"+score+"</b> · reached level "+level+" · best "+best+"</p>"+
       (qualifies?"<input id='bwcInit' maxlength='3' placeholder='AAA' autocomplete='off' style='margin-top:12px;width:130px;text-align:center;font:800 22px/1 \"Plus Jakarta Sans\",sans-serif;letter-spacing:7px;text-transform:uppercase;padding:10px;border-radius:12px;border:2px solid rgba(14,90,65,.25)'><button class='bwc-btn' id='bwcSave' style='margin-top:10px'>Save score</button>":"")+
+      "<div id='bwcGlobal'></div>"+
       "<div id='bwcBoard'>"+boardHtml(b,null)+"</div>"+
       "<button class='bwc-btn alt' id='bwcAgain'>▶ Play again</button>"+
       "<button class='bwc-btn' id='bwcShare' style='background:#16241F'>📣 Challenge a friend</button>";
+    CMP.globalBoard&&CMP.globalBoard("bowlcrush","",0,document.getElementById("bwcGlobal"));
     var sv=document.getElementById("bwcSave");
     if(sv) sv.addEventListener("click",function(){
-      var ini=(document.getElementById("bwcInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"???";
+      var ini=(document.getElementById("bwcInit").value||"???").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"PUP";
       var bb=loadBoard(); bb.push({n:ini,s:score,l:level}); bb.sort(function(x,y){return y.s-x.s;}); saveBoard(bb);
       document.getElementById("bwcBoard").innerHTML=boardHtml(loadBoard(),ini+"|"+score);
       sv.style.display="none"; document.getElementById("bwcInit").style.display="none";
+      CMP.globalBoard&&CMP.globalBoard("bowlcrush",ini,score,document.getElementById("bwcGlobal"));
       CMP.confetti(); CMP.sfx.level();
     });
     document.getElementById("bwcAgain").addEventListener("click",start);

@@ -68,7 +68,14 @@
       "@keyframes cmpFlash{from{opacity:.5}to{opacity:0}}"+
       ".cmp-flash{position:fixed;inset:0;z-index:9997;pointer-events:none;animation:cmpFlash .35s ease forwards}"+
       ".cmp-mute{position:fixed;right:14px;bottom:14px;z-index:9996;width:42px;height:42px;border-radius:50%;border:none;"+
-      "background:#fff;box-shadow:0 6px 18px rgba(14,90,65,.18);font-size:19px;cursor:pointer;line-height:42px;text-align:center}";
+      "background:#fff;box-shadow:0 6px 18px rgba(14,90,65,.18);font-size:19px;cursor:pointer;line-height:42px;text-align:center}"+
+      ".cmp-lb{margin:12px auto 0;max-width:340px;text-align:left;font-family:'Plus Jakarta Sans',system-ui,sans-serif}"+
+      ".cmp-lb-h{font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5d6b63;margin:0 0 6px;text-align:center}"+
+      ".cmp-lb-empty{font-size:13px;color:#9fb0a7;text-align:center;margin:6px 0}"+
+      ".cmp-lb-row{display:flex;justify-content:space-between;padding:6px 12px;border-radius:9px;font-weight:700;font-size:14px;color:#3a4a42}"+
+      ".cmp-lb-row:nth-child(even){background:#fff}"+
+      ".cmp-lb-row.me{background:#E4F6EC;color:#0c5e38;border:1px solid #1FA463}"+
+      ".cmp-lb-rk{color:#9fb0a7;display:inline-block;width:22px}";
     document.head.appendChild(s);
   }
   function popup(text,opts){ opts=opts||{}; injectStyle();
@@ -131,6 +138,37 @@
     var got=0,max=0,k; for(k in p.s){ if(p.s.hasOwnProperty(k)){ got+=(p.s[k]||0); } }
     return {got:got,max:30}; }
 
+  /* ---------- Global leaderboard (Supabase, "just for fun") ----------
+     Public REST via the publishable key; scores are client-submitted (spoofable),
+     table CHECK constraints bound the damage. Fails silent/offline. */
+  var SB_URL="https://rboloeewgypkabzrhvjx.supabase.co/rest/v1/cmp_scores";
+  var SB_KEY="sb_publishable_NzK-67xPbG5fJsWiHq80eA_FIKscEfN";
+  function sbH(extra){ var h={apikey:SB_KEY,Authorization:"Bearer "+SB_KEY}; if(extra){for(var k in extra)h[k]=extra[k];} return h; }
+  function cleanName(n){ return (String(n||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3))||"PUP"; }
+  function submitScore(game,name,score){
+    if(!/^[a-z0-9_-]{1,20}$/.test(game)||typeof fetch==="undefined") return Promise.resolve(null);
+    score=Math.max(0,Math.min(5000000,Math.round(+score||0)));
+    return fetch(SB_URL,{method:"POST",headers:sbH({"Content-Type":"application/json",Prefer:"return=minimal"}),
+      body:JSON.stringify({game:game,name:cleanName(name),score:score})}).catch(function(){return null;});
+  }
+  function leaderboard(game,limit){ limit=limit||10;
+    if(typeof fetch==="undefined") return Promise.resolve([]);
+    return fetch(SB_URL+"?game=eq."+encodeURIComponent(game)+"&order=score.desc,created_at.asc&limit="+limit+"&select=name,score",
+      {headers:sbH()}).then(function(r){return r.json();}).catch(function(){return [];});
+  }
+  function renderBoard(el,rows,meName,meScore){ if(!el) return; injectStyle();
+    var h="<div class='cmp-lb'><div class='cmp-lb-h'>🌍 Global top 10</div>";
+    if(!rows||!rows.length){ h+="<p class='cmp-lb-empty'>Loading… or be the first on the board!</p>"; }
+    else { var shownMe=false; rows.forEach(function(r,i){ var mine=(!shownMe && r.name===meName && +r.score===+meScore); if(mine)shownMe=true;
+      h+="<div class='cmp-lb-row"+(mine?" me":"")+"'><span><span class='cmp-lb-rk'>"+(i+1)+"</span>"+String(r.name).replace(/[<>&]/g,"")+"</span><b>"+(+r.score)+"</b></div>"; }); }
+    el.innerHTML=h+"</div>";
+  }
+  function globalBoard(game,name,score,el){
+    var clean=cleanName(name);
+    var p=(+score>0)?submitScore(game,clean,score):Promise.resolve(null);
+    return p.then(function(){ return leaderboard(game,10); }).then(function(rows){ renderBoard(el,rows,clean,Math.round(+score||0)); return rows; });
+  }
+
   window.CMP={
     get:get,set:set,
     sfx:SFX,mute:mute,isMuted:function(){return muted;},muteButton:muteButton,
@@ -138,6 +176,7 @@
     best:best,
     streak:streak,streakBump:streakBump,markDaily:markDaily,dailyDone:dailyDone,dailyScore:dailyScore,
     dailySeed:dailySeed,seededShuffle:seededShuffle,
-    share:share,starsFromProg:starsFromProg
+    share:share,starsFromProg:starsFromProg,
+    submitScore:submitScore,leaderboard:leaderboard,globalBoard:globalBoard
   };
 })();
