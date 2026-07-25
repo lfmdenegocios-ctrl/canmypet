@@ -121,7 +121,7 @@
   function lab(v){return v==='safe'?'Safe to feed':v==='caution'?'In moderation':'Never feed';}
   function rank(v){return v==='safe'?0:v==='caution'?1:2;}
   function plural(){return sp==='dog'?'dogs':'cats';}
-  function card(f){var d=f[sp];var page='../foods/can-'+plural()+'-eat-'+f.slug+'.html';
+  function card(f){var d=f[sp];var page='../foods/can-'+plural()+'-'+(f.verb||'eat')+'-'+f.slug+'.html';
     return '<div class="fc-card"><div class="fc-h"><span class="em">'+f.emoji+'</span><h3>'+f.name+'</h3></div>'+
       '<span class="fc-badge '+d.v+'">'+lab(d.v)+'</span>'+
       '<p class="fc-why">'+(d.why||'')+'</p>'+

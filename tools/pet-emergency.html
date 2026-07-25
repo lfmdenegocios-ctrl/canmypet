@@ -153,7 +153,7 @@
     b.onclick=function(){ species=b.getAttribute("data-sp"); document.querySelectorAll("#t-sp button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); };
   });
   function plural(){ return species==="dog"?"dogs":"cats"; }
-  function guideLink(f){ return species==="dog"?("../foods/"+(f.rich||("can-dogs-eat-"+f.slug+".html"))):("../foods/can-cats-eat-"+f.slug+".html"); }
+  function guideLink(f){ var vb=f.verb||"eat"; return species==="dog"?("../foods/"+(f.rich||("can-dogs-"+vb+"-"+f.slug+".html"))):("../foods/can-cats-"+vb+"-"+f.slug+".html"); }
 
   function check(){
     var q=(document.getElementById("t-food").value||"").trim().toLowerCase();

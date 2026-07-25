@@ -154,7 +154,7 @@
       '<p class="answer">'+voice+'</p>'+
       '<p class="muted">'+esc(d.why)+'</p>'+
       (d.amount?'<p class="muted" style="margin-top:6px"><strong>Safe amount:</strong> '+esc(d.amount)+'</p>':'')+
-      '<a class="btn btn-dark" style="margin-top:12px" href="../foods/can-'+pl+'-eat-'+f.slug+'.html">Read the full guide →</a>'+
+      '<a class="btn btn-dark" style="margin-top:12px" href="../foods/can-'+pl+'-'+(f.verb||'eat')+'-'+f.slug+'.html">Read the full guide →</a>'+
       '</div></div>';
     if(d.signs && d.signs.length){
       html+='<div class="article" style="max-width:760px;margin-top:18px"><h3>Warning signs to watch for</h3><ul>'+d.signs.map(function(s){return '<li>'+esc(s)+'</li>';}).join('')+'</ul></div>';

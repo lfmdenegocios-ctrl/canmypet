@@ -156,7 +156,7 @@
     return out;
   }
   function buildDeck(n){ return shuffle(buildPool()).slice(0,n); }
-  function guideLink(c){return c.sp==="dog"?("../foods/"+(c.rich||("can-dogs-eat-"+c.slug+".html"))):("../foods/can-cats-eat-"+c.slug+".html");}
+  function guideLink(c){var vb=c.verb||"eat";return c.sp==="dog"?("../foods/"+(c.rich||("can-dogs-"+vb+"-"+c.slug+".html"))):("../foods/can-cats-"+vb+"-"+c.slug+".html");}
   function hearts(){var s="";for(var i=0;i<3;i++)s+=(i<lives?"❤️":"🤍");return s;}
   function clearCardTimer(){ if(cardTimer){clearTimeout(cardTimer);cardTimer=null;} }
 

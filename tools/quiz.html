@@ -94,7 +94,7 @@ const VM={safe:{l:"Yes — safe to feed",p:"Safe",bg:"#E4F6EC",fg:"#0c5e38"},cau
 let species="both",qcount=10,pool=[],idx=0,score=0,points=0,combo=0,maxCombo=0,cur=null,answered=false,choice=null;
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;}return a;}
 function build(){const q=[],D=window.PETIBLE_FOODS||[];for(const f of D){if((species==="both"||species==="dog")&&f.dog)q.push({n:f.name,e:f.emoji,sp:"dog",v:f.dog.v,w:f.dog.why,slug:f.slug,rich:f.rich});if((species==="both"||species==="cat")&&f.cat)q.push({n:f.name,e:f.emoji,sp:"cat",v:f.cat.v,w:f.cat.why,slug:f.slug});}return shuffle(q).slice(0,qcount);}
-function guideLink(c){return c.sp==="dog"?("../foods/"+(c.rich||("can-dogs-eat-"+c.slug+".html"))):("../foods/can-cats-eat-"+c.slug+".html");}
+function guideLink(c){var vb=c.verb||"eat";return c.sp==="dog"?("../foods/"+(c.rich||("can-dogs-"+vb+"-"+c.slug+".html"))):("../foods/can-cats-"+vb+"-"+c.slug+".html");}
 const el=()=>document.getElementById("quizApp");
 function start(sp){species=sp;render("len");}
 function begin(n){qcount=n;pool=build();idx=0;score=0;points=0;combo=0;maxCombo=0;answered=false;choice=null;cur=pool[0];render("q");}
