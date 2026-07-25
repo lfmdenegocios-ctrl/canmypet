@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var d=document.documentElement;var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];if(n&&n.type==='back_forward')d.classList.add('nav-instant');if(sessionStorage.getItem('cmp_intro'))d.classList.add('intro-seen');else sessionStorage.setItem('cmp_intro','1');}catch(e){}})();</script>
+<title>Pet Breathing Rate Counter — Resting Respiratory Rate for Dogs &amp; Cats | CanMyPet</title>
+<meta name="description" content="Count your pet's resting breathing rate with a tap timer, see whether it's normal, and track the trend over time. The at-home check vets use to spot heart problems early.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://canmypethave.com/tools/pet-breathing-rate-counter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pet Breathing Rate Counter">
+<meta property="og:description" content="Tap along with your sleeping pet's breaths. Get breaths per minute, know what's normal, and track the trend — the early-warning check for heart disease.">
+<meta property="og:url" content="https://canmypethave.com/tools/pet-breathing-rate-counter.html">
+<meta property="og:image" content="https://canmypethave.com/assets/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/styles.css?v=20260706">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-956CHTHEXM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-956CHTHEXM');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2827482944428895" crossorigin="anonymous"></script>
+<meta name="p:domain_verify" content="323e8ff52b8df3df0adf26caaeae963b"/>
+<style>
+.br-wrap{max-width:600px;margin:16px auto}
+.br-card{background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:20px;padding:24px 22px;box-shadow:0 10px 30px rgba(14,90,65,.06)}
+.br-when{background:#E4F6EC;border:1px solid #1FA463;border-radius:14px;padding:14px 17px;margin:0 0 18px}
+.br-when b{color:#0c5e38;display:block;margin-bottom:4px;font-size:14.5px}
+.br-when p{margin:0;font-size:14px;line-height:1.6;color:#1c4534}
+.br-seg{display:flex;gap:8px;margin:0 0 16px}
+.br-seg button{flex:1;padding:11px 6px;border-radius:12px;border:2px solid rgba(14,90,65,.15);background:#FAF7F0;font-weight:700;cursor:pointer;font-family:inherit;font-size:14.5px;color:#16241F}
+.br-seg button.sel{border-color:#0E5A41;background:#E4F6EC}
+.br-seg button:focus-visible{outline:3px solid #2FBF87;outline-offset:2px}
+.br-lbl{display:block;font-weight:700;color:#16241F;font-size:14.5px;margin:0 0 6px}
+.br-tap{width:100%;border:none;border-radius:20px;background:linear-gradient(160deg,#0E5A41,#157a57);color:#fff;padding:36px 20px;font-family:inherit;cursor:pointer;box-shadow:0 12px 30px rgba(14,90,65,.22);transition:transform .07s}
+.br-tap:active{transform:scale(.985)}
+.br-tap:disabled{opacity:.55;cursor:default}
+.br-tap .n{display:block;font-size:62px;font-weight:900;line-height:1}
+.br-tap .t{display:block;font-size:15px;font-weight:700;margin-top:6px;color:#d7f5e8}
+.br-timer{height:10px;border-radius:99px;background:rgba(14,90,65,.12);overflow:hidden;margin:14px 0 4px}
+.br-timer i{display:block;height:100%;background:linear-gradient(90deg,#2FBF87,#0E5A41);width:0;border-radius:99px}
+.br-secs{text-align:center;font-size:13px;color:#5d6b63;font-weight:700}
+.br-row{display:flex;gap:9px;margin-top:14px}
+.br-btn{flex:1;padding:13px;border-radius:12px;border:2px solid rgba(14,90,65,.15);background:#FAF7F0;font-weight:800;cursor:pointer;font-family:inherit;font-size:15px;color:#16241F}
+.br-btn.go{background:#0E5A41;color:#fff;border-color:#0E5A41}
+.br-res{margin-top:18px;border-radius:16px;padding:22px;border:2px solid;animation:brin .3s ease}
+.br-res.ok{background:#E9F8F0;border-color:#1FA463}
+.br-res.watch{background:#FDF4E3;border-color:#E7A327}
+.br-res.high{background:#FDECEA;border-color:#E2483D}
+.br-big{font-size:46px;font-weight:900;line-height:1;color:#16241F}
+.br-big span{font-size:17px;font-weight:700;color:#5d6b63}
+.br-verdict{font-family:Fraunces,Georgia,serif;font-size:clamp(19px,3.8vw,24px);font-weight:700;margin:8px 0 5px}
+.br-res.ok .br-verdict{color:#0c5e38}.br-res.watch .br-verdict{color:#8a6210}.br-res.high .br-verdict{color:#9c2a22}
+.br-lead{font-size:14.5px;line-height:1.6;color:#3a4944;margin:0}
+.br-block{margin-top:15px;background:rgba(255,255,255,.8);border-radius:12px;padding:14px 16px}
+.br-block h3{margin:0 0 6px;font-size:14.5px;color:#16241F}
+.br-block p{margin:0;font-size:14px;line-height:1.6;color:#3a4944}
+.br-block ul{margin:0;padding-left:20px;font-size:14px;line-height:1.6;color:#3a4944}
+.br-hist{max-width:600px;margin:22px auto 0;background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:18px;padding:20px 22px}
+.br-hist h2{font-size:19px;margin:0 0 4px}
+.br-hist>p{font-size:14px;color:#5d6b63;margin:0 0 14px;line-height:1.55}
+.br-chart{display:flex;align-items:flex-end;gap:5px;height:110px;padding:0 0 6px;border-bottom:2px solid rgba(14,90,65,.14);overflow-x:auto}
+.br-bar{flex:0 0 26px;border-radius:6px 6px 0 0;background:#2FBF87;position:relative;min-height:4px}
+.br-bar.over{background:#E2483D}
+.br-bar b{position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:11px;color:#3a4944;font-weight:800}
+.br-line{position:relative;height:0;border-top:2px dashed #E7A327;margin-top:-56px;margin-bottom:56px}
+.br-line span{position:absolute;right:0;top:-16px;font-size:11px;font-weight:800;color:#8a6210;background:#fff;padding:0 4px}
+.br-hrow{display:flex;justify-content:space-between;font-size:12.5px;color:#5d6b63;padding:7px 0;border-bottom:1px dashed rgba(14,90,65,.1)}
+.br-hrow:last-child{border-bottom:none}
+.br-clear{margin-top:12px;background:none;border:none;color:#9c2a22;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;padding:0}
+.br-disc{font-size:12.5px;color:#9fb0a7;margin-top:16px;line-height:1.55}
+.br-faq{max-width:600px;margin:26px auto 0}
+.br-faq h2{font-size:22px;margin:0 0 10px}
+.br-faq details{background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:12px;padding:12px 16px;margin:0 0 9px}
+.br-faq summary{font-weight:700;cursor:pointer;color:#16241F;font-size:15px}
+.br-faq p{margin:8px 0 0;font-size:14.5px;line-height:1.6;color:#3a4944}
+@keyframes brin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.br-res{animation:none}.br-tap:active{transform:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://canmypethave.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://canmypethave.com/#tools"},{"@type":"ListItem","position":3,"name":"Breathing rate counter","item":"https://canmypethave.com/tools/pet-breathing-rate-counter.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a normal breathing rate for a sleeping dog or cat?","acceptedAnswer":{"@type":"Answer","text":"A healthy dog or cat that is genuinely asleep or fully at rest usually breathes fewer than 30 times per minute, and most sit between about 15 and 25. A resting rate consistently above 30, and especially above 40, is the single most useful early sign that fluid may be building in the lungs."}},
+{"@type":"Question","name":"How do I count my pet's breaths?","acceptedAnswer":{"@type":"Answer","text":"Wait until your pet is asleep or lying completely relaxed — not panting, not just back from a walk, and not in a warm room. Watch the chest rise and fall. One rise plus one fall is a single breath. Count for 30 seconds and double it, or count for a full minute."}},
+{"@type":"Question","name":"Why do vets ask owners to track resting respiratory rate?","acceptedAnswer":{"@type":"Answer","text":"In pets with heart disease, the breathing rate at rest climbs before an owner notices coughing or tiredness, because fluid begins accumulating in the lungs. Tracking it at home catches that trend days earlier than a routine check-up would, which is why cardiologists ask owners to record it regularly."}}]}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="../index.html"><img src="../assets/logo.svg" width="36" height="36" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../foods/index.html">Food checker</a><a href="../guides/index.html">Guides</a><a href="../about.html">About</a><a href="../sources.html">Sources</a></nav>
+<a class="btn btn-primary" href="../foods/index.html"><i style="font-style:normal">&#8980;</i> Check a food</a>
+<button class="menu-btn" aria-label="Menu">&#9776;</button></div></header>
+<div class="secbar"><div class="container secbar-in">
+  <a href="../foods/index.html">🥦 Food checker</a>
+  <a class="active" href="../index.html#tools">🧰 Tools</a>
+  <a href="../guides/index.html">📖 Guides</a>
+  <a class="emerg" href="../tools/pet-emergency.html">🆘 Emergency</a>
+  <a href="../tools/pet-name-generator.html">🐶 Name generator</a>
+</div></div>
+
+<div class="container">
+  <div class="crumbrow">
+    <a class="backchip" href="../index.html#tools">&larr; All tools</a>
+    <div class="crumb"><a href="../index.html">Home</a> &rsaquo; <a href="../index.html#tools">Tools</a> &rsaquo; <b>Breathing rate counter</b></div>
+  </div>
+  <div style="max-width:680px;margin:16px 0 0">
+    <span class="eyebrow">Free tool &middot; dogs &amp; cats</span>
+    <h1 style="font-size:clamp(28px,5vw,44px);margin:10px 0 8px">Pet breathing rate counter</h1>
+    <p class="muted" style="font-size:17px">Tap along with your sleeping pet's breaths. It takes 30 seconds, and it is the check veterinary cardiologists ask owners to do at home — because a rising resting rate shows up <strong>days before</strong> coughing or tiredness does.</p>
+  </div>
+</div>
+
+<main class="container">
+  <div class="br-wrap">
+    <div class="br-card">
+      <div class="br-when">
+        <b>Count only when they're genuinely resting</b>
+        <p>Asleep is best. Not panting, not just back from a walk, not in a hot room, not excited. A panting dog is regulating temperature, not breathing normally — that reading means nothing. One breath = the chest rising <em>and</em> falling once.</p>
+      </div>
+
+      <span class="br-lbl">Who are you measuring?</span>
+      <div class="br-seg" id="brPet">
+        <button type="button" data-p="dog" class="sel">🐶 Dog</button>
+        <button type="button" data-p="cat">🐱 Cat</button>
+      </div>
+
+      <span class="br-lbl">How long do you want to count?</span>
+      <div class="br-seg" id="brDur">
+        <button type="button" data-d="30" class="sel">30 seconds</button>
+        <button type="button" data-d="60">60 seconds</button>
+      </div>
+
+      <button class="br-tap" id="brTap" type="button">
+        <span class="n" id="brN">0</span>
+        <span class="t" id="brT">Tap here on every breath to start</span>
+      </button>
+      <div class="br-timer"><i id="brBar"></i></div>
+      <p class="br-secs" id="brSecs">Ready when you are</p>
+
+      <div class="br-row">
+        <button class="br-btn" id="brReset" type="button">Reset</button>
+        <button class="br-btn go" id="brSave" type="button" disabled>Save this reading</button>
+      </div>
+
+      <div id="brOut" aria-live="polite"></div>
+      <p class="br-disc">This tool counts and interprets — it does not diagnose. Readings are stored only in this browser, never uploaded. If your pet has diagnosed heart disease, follow the threshold your own vet gave you, since it may differ from the general guidance here.</p>
+    </div>
+  </div>
+
+  <div class="br-hist" id="brHist" hidden>
+    <h2>Your readings</h2>
+    <p>The trend matters more than any single number. A steady climb over several days is exactly what your vet wants to know about.</p>
+    <div class="br-chart" id="brChart"></div>
+    <div class="br-line"><span>30/min</span></div>
+    <div id="brRows"></div>
+    <button class="br-clear" id="brClear" type="button">Clear all readings</button>
+  </div>
+
+  <div class="br-faq">
+    <h2>Questions people ask</h2>
+    <details><summary>What number should worry me?</summary>
+      <p>For a pet that is genuinely asleep or fully at rest, <strong>under 30 breaths per minute</strong> is normal, and most healthy pets sit between 15 and 25. Consistently over 30 is worth a call; consistently over 40, or a sudden jump from your pet's usual baseline, warrants being seen promptly. If your pet has known heart disease, your vet may have given you a personal threshold — use theirs.</p></details>
+    <details><summary>Why does this catch heart problems early?</summary>
+      <p>When the heart struggles, fluid gradually backs up into the lungs. Long before that produces a cough or obvious tiredness, the lungs compensate by breathing a little faster at rest. Owners who track this at home often spot the change days before it would show up at a routine appointment — and in heart failure, days matter.</p></details>
+    <details><summary>My pet's rate is high but they seem fine — do I still call?</summary>
+      <p>Repeat it first: make sure they were genuinely asleep, the room was cool, and you counted full breaths rather than the small movements of dreaming. If two or three calm readings are still above 30, call your vet and bring the numbers with you. A trend recorded at home is genuinely useful clinical information, not fussing.</p></details>
+    <details><summary>What if my pet is panting?</summary>
+      <p>Then don't count. Panting is temperature regulation and produces rates of well over 100 that mean nothing about the heart. Wait until they are cool, calm and settled — ideally asleep. Panting that happens <em>at rest</em>, in a cool room, for no clear reason is itself worth a vet call.</p></details>
+    <details><summary>How often should I measure?</summary>
+      <p>For a healthy pet, occasionally is plenty — mainly so you learn their normal. For a pet with diagnosed heart disease, most cardiologists suggest several times a week, always under similar conditions, so the trend is comparable. Same time of day, same kind of rest.</p></details>
+    <details><summary>Is it different for cats?</summary>
+      <p>The normal range is much the same — under 30 while resting. Cats are harder because they hide illness so well, and a cat that is breathing fast at rest, or breathing with an open mouth, is a serious sign. <strong>Open-mouth breathing in a cat is an emergency</strong>: cats do not pant like dogs, so it usually means real respiratory distress. Go now.</p></details>
+  </div>
+
+  <div style="max-width:600px;margin:26px auto 0;background:#fff;border:1px solid rgba(14,90,65,.12);border-radius:16px;padding:8px 22px 18px">
+    <h2 style="font-size:20px">Related tools &amp; reads</h2>
+    <ul style="margin:0 0 6px 20px;line-height:1.9">
+      <li>🫁 <a href="pet-choking-cpr-guide.html">Choking &amp; CPR — step-by-step guide</a></li>
+      <li>⚖️ <a href="pet-body-condition.html">Is my pet overweight? Body condition score</a></li>
+      <li>💧 <a href="pet-water-calculator.html">How much water should my pet drink?</a></li>
+      <li>🌡️ <a href="hot-pavement-walk-checker.html">Is it too hot to walk my dog?</a></li>
+    </ul>
+  </div>
+</main>
+
+<section class="nl-band"><div class="nl-inner"><div class="nl-copy"><h3>🧊 Get the free Pet Food Fridge Guide</h3><p>A printable checklist of 50+ foods your dog &amp; cat can and can't eat — plus seasonal pet-safety tips. No spam, unsubscribe anytime.</p></div><form class="nl-form" action="https://assets.mailerlite.com/jsonp/2485327/forms/191876818150622400/subscribe" method="post" data-pdf="../assets/fridge-guide.pdf" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><input type="email" name="fields[email]" required placeholder="Your best email" aria-label="Email" style="flex:1;min-width:210px;padding:13px 16px;border-radius:999px;border:none;font:600 15px 'Plus Jakarta Sans',sans-serif;color:#16241F"><input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true"><button type="submit" class="nl-btn" style="cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif">Get the free guide &rarr;</button></form></div></section>
+<footer class="site-footer"><div class="container"><div class="foot-grid">
+<div><a class="brand" href="../index.html"><img src="../assets/logo.svg" width="32" height="32" alt=""> <span class="wm">Can <span class="wm-my">My</span> Pet<span class="wm-my">?</span></span></a>
+<p style="margin-top:14px;max-width:34ch;color:#9fb0a7;font-size:14.5px">Know what's safe in the bowl. Clear, vet-sourced pet food answers and free tools for dog and cat parents.</p><p style="margin-top:12px"><a href="https://www.pinterest.com/lfmdenegocioscanmypet/" target="_blank" rel="noopener" style="color:#ff8b80;font-weight:700;font-size:14.5px;text-decoration:none">&#128204; Follow us on Pinterest &rarr;</a></p></div>
+<div><h5>Tools</h5><a href="pet-emergency.html">My pet ate something</a><a href="pet-choking-cpr-guide.html">Choking &amp; CPR guide</a><a href="pet-breathing-rate-counter.html">Breathing rate counter</a><a href="human-medicine-checker.html">Human medicine checker</a><a href="dog-poop-checker.html">Poop checker</a><a href="../foods/index.html">Food checker</a></div>
+<div><h5>Games</h5><a href="virtual-pet.html">🐣 Pocket Pet</a><a href="daily-bowl.html">🥣 The Daily Bowl</a><a href="pet-iq.html">🧠 Pet IQ</a><a href="treat-drop.html">🍖 Treat Drop</a><a href="bowl-crush.html">🧩 Bowl Crush</a><a href="arcade.html">🎮 Arcade</a></div>
+<div><h5>Foods &amp; guides</h5><a href="../guides/index.html">Pet Life guides</a><a href="../foods/can-dogs-eat-chocolate.html">Dogs &amp; chocolate</a><a href="../guides/foods-toxic-to-dogs.html">Foods toxic to dogs</a><a href="../guides/foods-cats-should-never-eat.html">Foods cats can't eat</a></div>
+<div><h5>Company</h5><a href="../about.html">About</a><a href="../sources.html">Sources &amp; method</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a></div></div>
+<div class="foot-bottom"><p class="foot-disc">CanMyPet is reader-supported. When you buy through links on our site, we may earn a commission (including as an Amazon Associate) — at no extra cost to you. Read our <a href="../privacy.html">Privacy Policy &amp; Affiliate Disclosure</a>.</p><span>© 2026 CanMyPet. For information only — not veterinary advice.</span><span>Made by Muellers Media Works (MMW) 🐾</span></div></div></footer>
+<script defer src="../assets/app.js?v=20260706"></script>
+<script>
+(function(){
+  "use strict";
+  var KEY="cmp_brr";
+  var pet="dog", dur=30, count=0, t0=null, timer=null, done=false;
+
+  var tapEl=document.getElementById("brTap"), nEl=document.getElementById("brN"),
+      tEl=document.getElementById("brT"), barEl=document.getElementById("brBar"),
+      secsEl=document.getElementById("brSecs"), outEl=document.getElementById("brOut"),
+      saveEl=document.getElementById("brSave");
+
+  function seg(id,cb){
+    document.querySelectorAll("#"+id+" button").forEach(function(b){
+      b.addEventListener("click",function(){
+        document.querySelectorAll("#"+id+" button").forEach(function(x){x.classList.remove("sel");});
+        b.classList.add("sel"); cb(b); reset();
+      });
+    });
+  }
+  seg("brPet",function(b){ pet=b.getAttribute("data-p"); });
+  seg("brDur",function(b){ dur=parseInt(b.getAttribute("data-d"),10); });
+
+  function reset(){
+    clearInterval(timer); timer=null; t0=null; count=0; done=false;
+    nEl.textContent="0"; tEl.textContent="Tap here on every breath to start";
+    barEl.style.width="0"; secsEl.textContent="Ready when you are";
+    tapEl.disabled=false; saveEl.disabled=true; outEl.innerHTML="";
+  }
+
+  function finish(){
+    clearInterval(timer); timer=null; done=true; tapEl.disabled=true;
+    var perMin=Math.round(count*(60/dur));
+    tEl.textContent="Done — "+count+" breaths in "+dur+"s";
+    secsEl.textContent="Finished";
+    barEl.style.width="100%";
+    show(perMin);
+    saveEl.disabled=false;
+    saveEl.setAttribute("data-v",perMin);
+    try{ if(window.gtag) gtag("event","breathing_count",{pet:pet,rate:perMin}); }catch(e){}
+  }
+
+  function tick(){
+    var el=(Date.now()-t0)/1000;
+    var pct=Math.min(100,(el/dur)*100);
+    barEl.style.width=pct+"%";
+    secsEl.textContent=Math.max(0,(dur-el)).toFixed(0)+"s left";
+    if(el>=dur) finish();
+  }
+
+  tapEl.addEventListener("click",function(){
+    if(done) return;
+    if(!t0){ t0=Date.now(); timer=setInterval(tick,100); tEl.textContent="Counting — keep tapping"; }
+    count++; nEl.textContent=count;
+  });
+
+  document.getElementById("brReset").addEventListener("click",reset);
+
+  function show(r){
+    var cls,verdict,lead;
+    if(r<30){ cls="ok"; verdict="Normal resting rate 🐾";
+      lead="Under 30 breaths a minute at rest is where healthy dogs and cats sit. Note this number — knowing your pet's normal is what makes a future change obvious."; }
+    else if(r<40){ cls="watch"; verdict="A bit high — repeat it 👀";
+      lead="Between 30 and 40 is above the usual resting range. First make sure they were genuinely asleep and the room was cool, then measure again. If calm readings stay here, mention it to your vet."; }
+    else { cls="high"; verdict="High for a resting pet ⚠️";
+      lead="Over 40 breaths a minute in a pet that is truly at rest is a meaningful finding. If they were genuinely calm and this repeats, call your vet — this is exactly the sign that catches fluid on the lungs early."; }
+
+    var catNote = pet==="cat"
+      ? '<div class="br-block"><h3>🐱 For cats specifically</h3><p>Cats do not pant like dogs. A cat breathing with an <b>open mouth</b>, or with obvious effort from the belly, is in respiratory distress — that is an emergency, not something to measure and monitor. Go now.</p></div>'
+      : '<div class="br-block"><h3>🐶 Panting vs breathing</h3><p>If your dog was panting, this reading does not count. Panting is how dogs shed heat and produces rates well over 100. Wait until they are cool and settled, ideally asleep, and count again.</p></div>';
+
+    outEl.innerHTML=
+      '<div class="br-res '+cls+'">'+
+        '<div class="br-big">'+r+' <span>breaths / minute</span></div>'+
+        '<p class="br-verdict">'+verdict+'</p>'+
+        '<p class="br-lead">'+lead+'</p>'+
+        '<div class="br-block"><h3>📊 What the numbers mean</h3><ul>'+
+          '<li><b>Under 30</b> — normal at rest; most pets sit between 15 and 25</li>'+
+          '<li><b>30–40</b> — above the usual range; repeat under proper resting conditions</li>'+
+          '<li><b>Over 40</b> — call your vet, especially if it repeats or is a change from their baseline</li>'+
+          '</ul></div>'+
+        catNote+
+        '<div class="br-block"><h3>✅ Next step</h3><p>Save this reading to build a trend. A single number is a snapshot; several over a week is information your vet can actually use.</p></div>'+
+      '</div>';
+  }
+
+  /* ---- history (localStorage only) ---- */
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY))||[]; }catch(e){ return []; } }
+  function store(a){ try{ localStorage.setItem(KEY,JSON.stringify(a.slice(-30))); }catch(e){} }
+
+  saveEl.addEventListener("click",function(){
+    var v=parseInt(saveEl.getAttribute("data-v"),10);
+    if(isNaN(v)) return;
+    var a=load(); a.push({v:v,p:pet,d:Date.now()}); store(a);
+    saveEl.disabled=true; saveEl.textContent="Saved ✓";
+    setTimeout(function(){ saveEl.textContent="Save this reading"; },1600);
+    drawHist();
+  });
+
+  function drawHist(){
+    var a=load(), box=document.getElementById("brHist");
+    if(!a.length){ box.hidden=true; return; }
+    box.hidden=false;
+    var max=Math.max(50,Math.max.apply(null,a.map(function(x){return x.v;})));
+    document.getElementById("brChart").innerHTML=a.slice(-14).map(function(x){
+      var h=Math.round((x.v/max)*100);
+      return '<div class="br-bar'+(x.v>=30?" over":"")+'" style="height:'+h+'%" title="'+x.v+'/min"><b>'+x.v+'</b></div>';
+    }).join("");
+    document.getElementById("brRows").innerHTML=a.slice(-8).reverse().map(function(x){
+      var d=new Date(x.d);
+      return '<div class="br-hrow"><span>'+(x.p==="cat"?"🐱":"🐶")+' '+d.toLocaleDateString()+' '+d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})+'</span><b>'+x.v+'/min</b></div>';
+    }).join("");
+  }
+  document.getElementById("brClear").addEventListener("click",function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    drawHist();
+  });
+  drawHist();
+})();
+</script>
+</body>
+</html>
