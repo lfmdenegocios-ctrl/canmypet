@@ -169,6 +169,28 @@ section.block{padding:64px 0}
 .article li{margin-bottom:8px;font-size:17px}
 .emergency{background:#fff;border:1px solid var(--line);border-top:4px solid var(--danger);border-radius:var(--r);padding:24px 26px;margin:26px 0}
 .emergency h3{color:var(--danger);margin-top:0;font-family:var(--serif)}
+/* per-pet serving calculator on food pages */
+.svc{background:linear-gradient(160deg,#0E5A41,#157a57);border-radius:20px;padding:26px 24px;margin:28px 0;color:#eafff5;box-shadow:0 14px 36px rgba(14,90,65,.20)}
+.svc-h{color:#fff;margin:0 0 6px;font-size:clamp(20px,3.4vw,26px);line-height:1.2}
+.svc-h em{color:#9ff0cd;font-style:italic}
+.svc-sub{margin:0 0 16px;font-size:15px;line-height:1.55;color:#cfeee0;max-width:56ch}
+.svc-in{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.svc-w{flex:1;min-width:120px;padding:13px 15px;border:none;border-radius:12px;font:700 16px 'Plus Jakarta Sans',sans-serif;color:#16241F;background:#fff;box-sizing:border-box}
+.svc-w:focus{outline:3px solid #2FBF87;outline-offset:2px}
+.svc-seg{display:flex;gap:6px}
+.svc-u{border:none;border-radius:12px;padding:13px 16px;font:800 15px 'Plus Jakarta Sans',sans-serif;cursor:pointer;background:rgba(255,255,255,.16);color:#eafff5}
+.svc-u.sel{background:#fff;color:#0E5A41}
+.svc-u:focus-visible,.svc-go:focus-visible{outline:3px solid #9ff0cd;outline-offset:2px}
+.svc-go{border:none;border-radius:12px;padding:13px 24px;background:#FF6B5E;color:#fff;font:800 16px 'Plus Jakarta Sans',sans-serif;cursor:pointer}
+.svc-go:hover{background:#e85a4e}
+.svc-res{margin-top:16px;background:rgba(255,255,255,.97);border-radius:14px;padding:18px 20px;color:#16241F}
+.svc-big{font-size:clamp(26px,5vw,36px);font-weight:900;color:#0E5A41;line-height:1.05}
+.svc-big small{display:block;font-size:14px;font-weight:700;color:#5d6b63;margin-top:5px}
+.svc-eq{margin:10px 0 0;font-size:15.5px;font-weight:700;color:#16241F}
+.svc-bd{margin:12px 0 0;padding-top:12px;border-top:1px dashed rgba(14,90,65,.18);font-size:13.5px;color:#5d6b63;line-height:1.6}
+.svc-warn{margin:12px 0 0;background:#FBF1DA;border-left:4px solid #E7A327;border-radius:8px;padding:11px 14px;font-size:14px;color:#7a5708;line-height:1.55}
+.svc-note{margin:14px 0 0;font-size:12.5px;color:#a9d9c4;line-height:1.55}
+@media (max-width:520px){.svc-go{width:100%}}
 .fact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
 .fact{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
 .fact .k{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
