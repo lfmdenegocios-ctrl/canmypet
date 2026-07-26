@@ -100,6 +100,8 @@
   <url><loc>https://canmypethave.com/foods/can-cats-eat-chicken.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-egg.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-egg.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-white-rice.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-white-rice.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-pumpkin.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-pumpkin.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-sweet-potato.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -134,22 +136,58 @@
   <url><loc>https://canmypethave.com/foods/can-cats-eat-orange.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-cherries.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-cherries.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-peach.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-peach.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-plum.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-plum.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-pear.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-pear.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-raspberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-raspberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-blackberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-blackberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cranberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cranberries.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-kiwi.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-kiwi.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cantaloupe.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cantaloupe.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-coconut.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-coconut.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-star-fruit.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-star-fruit.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-papaya.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-papaya.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-celery.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-celery.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-lettuce.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-lettuce.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cabbage.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cabbage.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cauliflower.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cauliflower.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-peas.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-peas.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-potato.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-potato.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-mushroom.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-mushroom.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-asparagus.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-asparagus.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-zucchini.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-zucchini.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-bell-pepper.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-bell-pepper.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-ginger.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-ginger.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cinnamon.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cinnamon.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-nutmeg.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-nutmeg.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-salt.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-salt.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-sugar.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-sugar.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-bacon.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-bacon.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-turkey.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -164,10 +202,32 @@
   <url><loc>https://canmypethave.com/foods/can-cats-eat-cooked-bones.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-ice-cream.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-ice-cream.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-peanuts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-peanuts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-walnuts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-walnuts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-cashews.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-cashews.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-pistachios.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-pistachios.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-pecans.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-pecans.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-raw-bread-dough.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-raw-bread-dough.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-oatmeal.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-oatmeal.html</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-pasta.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-pasta.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-olives.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-olives.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-kale.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-kale.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-brussels-sprouts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-brussels-sprouts.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-eggplant.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-eggplant.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-dogs-eat-chickpeas.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canmypethave.com/foods/can-cats-eat-chickpeas.html</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-leek.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-cats-eat-leek.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://canmypethave.com/foods/can-dogs-eat-chives.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
