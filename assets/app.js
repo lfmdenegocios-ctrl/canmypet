@@ -130,6 +130,8 @@
     var caution = box.getAttribute('data-caution') === '1';
     var unitName = box.getAttribute('data-unit');
     var unitWeight = parseFloat(box.getAttribute('data-uw'));
+    var avoid = box.getAttribute('data-avoid') === '1';
+    var foodName = box.getAttribute('data-food') || 'this food';
     var unit = 'lb';
     var input = box.querySelector('.svc-w');
     var out = box.querySelector('.svc-out');
@@ -167,6 +169,33 @@
         else eq = '<p class="svc-eq">Less than half a ' + unitName + ' — a small taste, not a portion.</p>';
       }
 
+      /* Perspective: what one ordinary serving costs in a body that small. Pets are
+         tiny relative to the food we hand them, and a percentage of the daily calorie
+         budget lands far harder than a number in grams. Scaled to a 2,000 kcal human
+         day so the comparison is intuitive. */
+      var persp = '';
+      if (unitName && unitWeight > 0) {
+        var unitKcal = (unitWeight / 100) * kcal100;
+        var pctDay = (unitKcal / mer) * 100;
+        if (pctDay >= 3) {
+          var human = Math.round((pctDay / 100) * 2000);
+          var food2 = human < 150 ? 'a banana'
+            : human < 300 ? 'a chocolate bar'
+            : human < 500 ? 'a slice of pizza'
+            : human < 800 ? 'a whole cheeseburger'
+            : human < 1300 ? 'a large fast-food meal'
+            : 'two burgers and a side of fries';
+          persp = '<div class="svc-persp"><b>What that actually means</b>' +
+            '<p>One ' + unitName + ' is about ' + Math.round(unitKcal) + ' kcal — ' +
+            '<strong>' + Math.round(pctDay) + '% of everything your ' + sp + ' should eat in a day</strong>. ' +
+            'Scaled to a person, that is like eating ' + food2 + ' as a snack, on top of meals.</p></div>';
+        }
+      }
+
+      var avoidNote = avoid
+        ? '<div class="svc-avoid"><b>Our verdict for ' + sp + 's is: best avoided.</b><p>The number above is a calorie ceiling, not advice to feed it. We show it so you can judge an accident — not so you plan a portion.</p></div>'
+        : '';
+
       var warn = caution
         ? '<div class="svc-warn"><b>This is a ceiling, not a recommendation.</b> This food is on the “in moderation” list, so we’ve already reduced the figure well below the full treat allowance. Offer it occasionally rather than daily, and stop at the first sign of an upset stomach.</div>'
         : '';
@@ -175,6 +204,8 @@
         '<div class="svc-res">' +
           '<div class="svc-big">' + gTxt + ' g <small>maximum per day (' + oz + ' oz) for a ' + (Math.round(kg * 10) / 10) + ' kg ' + sp + '</small></div>' +
           eq +
+          avoidNote +
+          persp +
           '<div class="svc-bd"><b>How we got there:</b> a ' + (Math.round(kg * 10) / 10) + ' kg ' + sp +
             ' needs roughly <b>' + Math.round(mer) + ' kcal</b> a day. Treats should stay under 10% of that — about <b>' + Math.round(treatKcal) + ' kcal</b>' +
             (caution ? ', and we cap this food at ' + Math.round(usableKcal) + ' kcal' : '') +
