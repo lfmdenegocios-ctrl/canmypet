@@ -134,22 +134,22 @@ window.CMP_GUIDES = [
     cover: 'assets/guide/hero-diy-dog-toys.webp', cat: 'Enrichment', date: '2026-08-08' },
 
   { slug: 'boredom-busters-for-cats',
-    title: '15 Boredom Busters for Cats (Vet-Sourced Enrichment Ideas)',
+    title: '15 Boredom Busters for Cats (Source-Checked Enrichment Ideas)',
     excerpt: 'Overgrooming, couch scratching, 3 a.m. zoomies? Food puzzles, window perches and DIY toys that actually help.',
     cover: 'assets/guide/hero-boredom-busters-for-cats.webp', cat: 'Enrichment', date: '2026-08-06' },
 
   { slug: 'calmest-dog-breeds',
-    title: '10 Calmest Dog Breeds (Vet-Sourced Picks for a Low-Key Home)',
+    title: '10 Calmest Dog Breeds (Source-Checked Picks for a Low-Key Home)',
     excerpt: "Greyhounds, Newfoundlands, Berners — plus why 'calm' breeds still have a wild puppy phase.",
     cover: 'assets/guide/hero-calmest-dog-breeds.webp', cat: 'Breeds', date: '2026-08-05' },
 
   { slug: 'best-dog-breeds-for-seniors',
-    title: '10 Best Dog Breeds for Seniors (Vet-Sourced, Low-Maintenance Picks)',
+    title: '10 Best Dog Breeds for Seniors (Source-Checked, Low-Maintenance Picks)',
     excerpt: "Cavaliers, Bichons, Pugs and more — plus the breeds that ask more than most seniors want, and how to plan for a dog's whole life.",
     cover: 'assets/guide/hero-best-dog-breeds-for-seniors.webp', cat: 'Breeds', date: '2026-08-03' },
 
   { slug: 'best-dog-breeds-for-first-time-owners',
-    title: '10 Best Dog Breeds for First-Time Owners (Vet-Sourced Picks)',
+    title: '10 Best Dog Breeds for First-Time Owners (Source-Checked Picks)',
     excerpt: 'Labs, Goldens, Poodles, Cavaliers — plus the breeds that are trickier for beginners and the mistakes new owners make most.',
     cover: 'assets/guide/hero-best-dog-breeds-for-first-time-owners.webp', cat: 'Breeds', date: '2026-08-01' },
 
