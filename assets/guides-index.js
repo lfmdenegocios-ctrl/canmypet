@@ -3,6 +3,61 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'most-affectionate-cat-breeds',
+    title: '12 Most Affectionate Cat Breeds (and What "Affectionate" Really Means)',
+    excerpt: 'Ragdolls, Sphynxes, Burmese — the cats most likely to follow you room to room, plus how to build affection with the cat you already have.',
+    cover: 'assets/guide/hero-most-affectionate-cat-breeds.webp', cat: 'Breeds', date: '2026-09-16' },
+
+  { slug: 'do-pets-have-best-friends',
+    title: 'Do Pets Have Best Friends? What Science Says About Animal Friendship',
+    excerpt: 'Dogs and cats really do prefer certain companions — how to spot a real bond, and when "they\'re friends" is wishful thinking.',
+    cover: 'assets/guide/hero-do-pets-have-best-friends.webp', cat: 'Bonding', date: '2026-09-14' },
+
+  { slug: 'common-dog-behaviors-explained',
+    title: 'Common Dog Behaviors Explained: 14 Odd Habits, Decoded',
+    excerpt: 'Zoomies, circling, scooting, rolling in something foul — the 14 habits owners ask about most, and when each becomes a vet call.',
+    cover: 'assets/guide/hero-common-dog-behaviors-explained.webp', cat: 'Behavior', date: '2026-09-13' },
+
+  { slug: 'dog-or-cat-which-is-right-for-you',
+    title: 'Dog or Cat: Which Is Right for You? An Honest Comparison',
+    excerpt: 'Time, cost, space, noise, allergies and temperament — a practical comparison to choose the pet that actually fits your household.',
+    cover: 'assets/guide/hero-dog-or-cat-which-is-right-for-you.webp', cat: 'Choosing', date: '2026-09-10' },
+
+  { slug: 'how-to-tell-if-your-pet-is-happy',
+    title: 'How to Tell If Your Pet Is Happy: 12 Signs Vets Look For',
+    excerpt: 'The body language, routines and small daily habits that show a pet is thriving — and the quiet signs that say it isn\'t.',
+    cover: 'assets/guide/hero-how-to-tell-if-your-pet-is-happy.webp', cat: 'Behavior', date: '2026-09-09' },
+
+  { slug: 'what-your-pets-sleeping-position-means',
+    title: "What Your Pet's Sleeping Position Means (Just for Fun 🪄)",
+    excerpt: 'From the donut to the sploot to the loaf — a playful guide, plus the one sleeping position that means call your vet.',
+    cover: 'assets/guide/hero-what-your-pets-sleeping-position-means.webp', cat: 'Just for fun', date: '2026-09-07' },
+
+  { slug: 'male-vs-female-dogs',
+    title: "Male vs Female Dogs: What Actually Differs (and What Doesn't)",
+    excerpt: 'Are males friendlier? Are females easier to train? Temperament, size, health risks, marking, cost — and how much sex really predicts.',
+    cover: 'assets/guide/hero-male-vs-female-dogs.webp', cat: 'Choosing', date: '2026-09-05' },
+
+  { slug: 'how-to-introduce-a-new-pet',
+    title: 'How to Introduce a New Pet: A Calm, Step-by-Step Guide',
+    excerpt: 'Cat to cat, dog to dog, dog to cat — the slow-introduction method shelters actually use, with realistic timelines.',
+    cover: 'assets/guide/hero-how-to-introduce-a-new-pet.webp', cat: 'Living together', date: '2026-09-03' },
+
+  { slug: 'can-pets-sense-emotions',
+    title: 'Can Pets Sense Emotions? What Dogs & Cats Actually Pick Up On',
+    excerpt: 'How dogs smell your stress hormones, how cats read your face, and what your mood does to your pet\'s behavior.',
+    cover: 'assets/guide/hero-can-pets-sense-emotions.webp', cat: 'Curiosities', date: '2026-09-02' },
+
+  { slug: 'how-smart-is-my-dog',
+    title: 'How Smart Is My Dog? Intelligence Types, Breed Rankings & Signs',
+    excerpt: 'The 3 kinds of dog smart, where breed intelligence rankings actually come from, and 7 real signs your dog might be a genius.',
+    cover: 'assets/guide/hero-how-smart-is-my-dog.webp', cat: 'Curiosities', date: '2026-08-31' },
+
+  { slug: 'can-dogs-see-color',
+    title: 'Can Dogs See Color? What the World Really Looks Like to Your Dog',
+    excerpt: "Dogs aren't colorblind — they see blues and yellows. A side-by-side look at dog, human and cat eyes, and which toy colors dogs actually see.",
+    cover: 'assets/guide/hero-can-dogs-see-color.webp', cat: 'Fun facts', date: '2026-07-20' },
+
   { slug: 'do-cats-really-have-nine-lives',
     title: 'Do Cats Really Have Nine Lives? The Science (and Myth) Explained',
     excerpt: "The saying isn't nonsense — the righting reflex, high-rise syndrome, and where the nine-lives myth actually came from.",
