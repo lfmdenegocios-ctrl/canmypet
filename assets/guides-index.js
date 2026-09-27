@@ -3,6 +3,16 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'how-much-does-a-puppy-cost-first-year',
+    title: 'How Much Does a Puppy Cost in the First Year?',
+    excerpt: 'A realistic, adjustable budget for supplies, food, training, routine care, insurance and the costs new puppy owners most often forget.',
+    cover: 'assets/guide/hero-puppy-first-year-cost.jpg', cat: 'New puppy', date: '2026-09-27' },
+
+  { slug: 'new-puppy-daily-schedule',
+    title: 'A Realistic Daily Schedule for a New Puppy',
+    excerpt: 'Potty, food, play, potty, nap: a flexible routine that works with real households instead of pretending every puppy follows a perfect clock.',
+    cover: 'assets/guide/hero-new-puppy-daily-schedule.jpg', cat: 'New puppy', date: '2026-09-27' },
+
   { slug: 'most-affectionate-cat-breeds',
     title: '12 Most Affectionate Cat Breeds (and What "Affectionate" Really Means)',
     excerpt: 'Ragdolls, Sphynxes, Burmese — the cats most likely to follow you room to room, plus how to build affection with the cat you already have.',
@@ -115,7 +125,7 @@ window.CMP_GUIDES = [
 
   { slug: 'how-much-exercise-does-my-dog-need',
     title: 'How Much Exercise Does My Dog Need? By Age & Breed',
-    excerpt: 'A vet-sourced breakdown by age and energy level, the signs of too little (or too much), and easy ways to fit it in.',
+    excerpt: 'A source-checked breakdown by age and energy level, the signs of too little (or too much), and easy ways to fit it in.',
     cover: 'assets/guide/hero-how-much-exercise-does-my-dog-need.webp', cat: 'Enrichment', date: '2026-08-10' },
 
   { slug: 'diy-dog-toys',
@@ -180,7 +190,7 @@ window.CMP_GUIDES = [
 
   { slug: 'dog-body-language',
     title: 'Dog Body Language Explained',
-    excerpt: 'What your dog’s tail, ears, eyes and posture really mean — read the whole dog, not just one wag. A vet-sourced guide.',
+    excerpt: 'What your dog’s tail, ears, eyes and posture really mean — read the whole dog, not just one wag. A source-checked guide.',
     cover: 'assets/guide/hero-dog-body-language.webp', cat: 'Behavior', date: '2026-07-01' },
 
   { slug: 'do-dogs-and-cats-get-along',

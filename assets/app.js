@@ -4,6 +4,14 @@
   var inFoods = /\/foods\//.test(p);
   var inTools = /\/tools\//.test(p);
 
+  // Central GA4 measurement layer. Event payloads deliberately exclude email,
+  // names, weights and other user-entered values.
+  function track(name, params) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    } catch (e) {}
+  }
+
   function foodHref(f) {
     var base = inFoods ? '' : inTools ? '../foods/' : 'foods/';
     if (f.rich) return base + f.rich; // hand-crafted dog page
@@ -26,6 +34,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var f = firstMatch(input.value);
+      track('food_search', { found: !!f, page_path: location.pathname });
       if (f) { go(f); }
       else { location.href = (inTools ? '../foods/' : inFoods ? '' : 'foods/') + 'index.html'; }
     });
@@ -94,6 +103,7 @@
     var f = e.target;
     if (!f || !f.classList || !f.classList.contains('nl-form')) return;
     e.preventDefault();
+    track('newsletter_submit', { form_location: location.pathname });
     var btn = f.querySelector('button[type=submit]');
     if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
     var fd = new FormData(f);
@@ -101,6 +111,7 @@
       .then(function (r) { return r.json(); })
       .then(function (j) {
         if (!(j && j.success)) throw new Error('ml');
+        track('sign_up', { method: 'newsletter', form_location: location.pathname });
         var pdf = f.getAttribute('data-pdf') || 'assets/fridge-guide.pdf';
         var inner = f.closest ? f.closest('.nl-inner') : null;
         var html = '<div class="nl-copy"><h3>You\'re in! 🎉</h3><p style="margin-bottom:10px">Check your inbox — and here\'s your guide right away:</p>' +
@@ -108,10 +119,38 @@
         if (inner) inner.innerHTML = html; else f.outerHTML = html;
       })
       .catch(function () {
+        track('newsletter_error', { form_location: location.pathname });
         if (btn) { btn.disabled = false; btn.textContent = 'Get the free guide →'; }
         alert('Something went wrong — please try again in a moment.');
       });
   });
+
+  // Downloads, commercial links and intentional CTA clicks.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf(?:$|[?#])/i.test(href)) track('file_download', { file_name: href.split('/').pop().split(/[?#]/)[0] });
+    if ((a.getAttribute('rel') || '').split(/\s+/).indexOf('sponsored') !== -1) {
+      track('affiliate_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 80) });
+    }
+    var named = a.getAttribute('data-ga-event');
+    if (named) track(named, { link_url: href });
+  });
+
+  // One privacy-safe engagement event per tool page, regardless of the control used.
+  if (inTools) {
+    var toolTracked = false;
+    var toolName = location.pathname.split('/').pop().replace(/\.html$/, '');
+    document.addEventListener('input', function (e) {
+      if (toolTracked || !e.target || !/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+      toolTracked = true; track('tool_start', { tool_name: toolName });
+    }, true);
+    document.addEventListener('click', function (e) {
+      if (toolTracked || !e.target || !e.target.closest || !e.target.closest('main button')) return;
+      toolTracked = true; track('tool_start', { tool_name: toolName });
+    }, true);
+  }
 })();
 
 /* ---------- Per-pet serving calculator (food pages) ----------
