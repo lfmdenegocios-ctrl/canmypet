@@ -3,6 +3,21 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'dog-boarding-checklist',
+    title: 'The Complete Dog Boarding Checklist',
+    excerpt: 'What to ask, pack and write down before boarding — from facility tours and trial stays to food labels, contacts and pickup-day notes.',
+    cover: 'assets/guide/hero-dog-boarding-checklist.jpg', cat: 'Travel', date: '2026-10-08' },
+
+  { slug: 'how-much-time-does-a-dog-need',
+    title: 'How Much Time Does a Dog Need Every Day?',
+    excerpt: 'An honest daily time budget for walks, meals, play, training, companionship and the invisible care jobs every schedule needs. ',
+    cover: 'assets/guide/hero-how-much-time-does-a-dog-need.jpg', cat: 'Dog lifestyle', date: '2026-10-08' },
+
+  { slug: 'how-to-cat-proof-an-apartment',
+    title: 'How to Cat-Proof an Apartment, Room by Room',
+    excerpt: 'A practical, renter-friendly safety sweep for windows, cords, kitchens, bathrooms, laundry rooms and the small hazards most people miss.',
+    cover: 'assets/guide/hero-how-to-cat-proof-an-apartment.jpg', cat: 'Indoor cats', date: '2026-10-08' },
+
   { slug: 'how-much-does-a-puppy-cost-first-year',
     title: 'How Much Does a Puppy Cost in the First Year?',
     excerpt: 'A realistic, adjustable budget for supplies, food, training, routine care, insurance and the costs new puppy owners most often forget.',
