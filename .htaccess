@@ -1,14 +1,9 @@
 # Internal working files (project rules, agent queues/calendars) are never public.
 # Hostinger's git deploy does not delete files removed from the repo, so block by type.
-<FilesMatch "\.(md|csv)$">
-  <IfModule mod_authz_core.c>
-    Require all denied
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order allow,deny
-    Deny from all
-  </IfModule>
-</FilesMatch>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule \.(md|csv)$ - [F,L,NC]
+</IfModule>
 
 # CanMyPet — cache policy
 <IfModule mod_headers.c>
