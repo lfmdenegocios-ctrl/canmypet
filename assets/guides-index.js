@@ -3,6 +3,31 @@
    home #guides strip (3 newest) and the guides/index.html hub (all).
    New article = prepend an entry here with a real `cover` image. */
 window.CMP_GUIDES = [
+  { slug: 'new-kitten-daily-schedule',
+    title: 'A Realistic Daily Schedule for a New Kitten',
+    excerpt: 'A flexible first-weeks routine built around familiar meals, short play sessions, litter checks, calm exploration and plenty of uninterrupted sleep.',
+    cover: 'assets/guide/hero-new-kitten-daily-schedule.jpg', cat: 'New Kitten', date: '2026-10-30' },
+
+  { slug: 'adopting-an-adult-dog-checklist',
+    title: 'Adopting an Adult Dog: First-Week Checklist',
+    excerpt: 'A calm, realistic plan for the first seven days — from the ride home and home-base setup to routines, introductions and the mistakes worth avoiding.',
+    cover: 'assets/guide/hero-adopting-an-adult-dog-checklist.jpg', cat: 'Adoption', date: '2026-10-27' },
+
+  { slug: 'cat-toy-rotation-method',
+    title: 'The Cat Toy Rotation Method: Less Clutter, More Play',
+    excerpt: 'A five-minute weekly system that makes familiar toys interesting again, reveals your cat\'s real play preferences and keeps clutter under control.',
+    cover: 'assets/guide/hero-cat-toy-rotation-method.webp', cat: 'Enrichment', date: '2026-10-23' },
+
+  { slug: 'rainy-day-dog-enrichment-games',
+    title: '15 Rainy-Day Enrichment Games for Dogs',
+    excerpt: 'Scent searches, low-impact movement, training games and a simple 20-minute indoor plan for wet-weather days.',
+    cover: 'assets/guide/hero-rainy-day-dog-enrichment-games.webp', cat: 'Enrichment', date: '2026-10-20' },
+
+  { slug: 'cat-sitter-instructions-checklist',
+    title: 'What to Leave a Cat Sitter: Printable Instructions',
+    excerpt: 'A one-page handoff for feeding, litter, routines, hiding spots, house access, contacts and the details sitters actually need. Print it free.',
+    cover: 'assets/guide/hero-cat-sitter-instructions-checklist.jpg', cat: 'Travel', date: '2026-10-16' },
+
   { slug: 'dog-boarding-checklist',
     title: 'The Complete Dog Boarding Checklist',
     excerpt: 'What to ask, pack and write down before boarding — from facility tours and trial stays to food labels, contacts and pickup-day notes.',

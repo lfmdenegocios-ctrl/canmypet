@@ -16,3 +16,9 @@ pin-engine/
 
 pins/src-worldcup/
 _products/
+
+# Agent working files (local only - never public)
+content-calendar-90-days.csv
+pinterest-30-day-queue.csv
+pinterest-*.png
+_*.csv

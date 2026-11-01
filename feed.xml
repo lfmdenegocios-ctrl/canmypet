@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>CanMyPet — Pet Life guides</title>
+  <link>https://canmypethave.com/guides/index.html</link>
+  <description>New pet care guides from CanMyPet.</description>
+  <language>en-us</language>
+  <atom:link href="https://canmypethave.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>A Realistic Daily Schedule for a New Kitten</title>
+    <link>https://canmypethave.com/guides/new-kitten-daily-schedule.html?utm_source=pinterest&amp;utm_medium=social&amp;utm_campaign=rss</link>
+    <guid isPermaLink="true">https://canmypethave.com/guides/new-kitten-daily-schedule.html</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 GMT</pubDate>
+    <description>A flexible first-weeks routine built around familiar meals, short play sessions, litter checks, calm exploration and plenty of uninterrupted sleep.</description>
+    <enclosure url="https://canmypethave.com/assets/guide/hero-new-kitten-daily-schedule.jpg" type="image/jpeg" length="0"/>
+    <media:content url="https://canmypethave.com/assets/guide/hero-new-kitten-daily-schedule.jpg" medium="image"/>
+  </item>
+  <item>
+    <title>Adopting an Adult Dog: First-Week Checklist</title>
+    <link>https://canmypethave.com/guides/adopting-an-adult-dog-checklist.html?utm_source=pinterest&amp;utm_medium=social&amp;utm_campaign=rss</link>
+    <guid isPermaLink="true">https://canmypethave.com/guides/adopting-an-adult-dog-checklist.html</guid>
+    <pubDate>Tue, 27 Oct 2026 12:00:00 GMT</pubDate>
+    <description>A calm, realistic plan for the first seven days — from the ride home and home-base setup to routines, introductions and the mistakes worth avoiding.</description>
+    <enclosure url="https://canmypethave.com/assets/guide/hero-adopting-an-adult-dog-checklist.jpg" type="image/jpeg" length="0"/>
+    <media:content url="https://canmypethave.com/assets/guide/hero-adopting-an-adult-dog-checklist.jpg" medium="image"/>
+  </item>
+  <item>
+    <title>What to Leave a Cat Sitter: Printable Instructions</title>
+    <link>https://canmypethave.com/guides/cat-sitter-instructions-checklist.html?utm_source=pinterest&amp;utm_medium=social&amp;utm_campaign=rss</link>
+    <guid isPermaLink="true">https://canmypethave.com/guides/cat-sitter-instructions-checklist.html</guid>
+    <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+    <description>A one-page handoff for feeding, litter, routines, hiding spots, house access, contacts and the details sitters actually need. Print it free.</description>
+    <enclosure url="https://canmypethave.com/assets/guide/hero-cat-sitter-instructions-checklist.jpg" type="image/jpeg" length="0"/>
+    <media:content url="https://canmypethave.com/assets/guide/hero-cat-sitter-instructions-checklist.jpg" medium="image"/>
+  </item>
+</channel>
+</rss>
